@@ -1,4 +1,7 @@
 {
   "Главная": "Main",
-  "Язык": "English"
+  "Язык": "English",
+  "Страница не найдена": "Page not found",
+  "Произошла непредвиденная ошибка": "Unpredictable error",
+  "Обновить страницу": "Reload page"
 }
