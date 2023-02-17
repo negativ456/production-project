@@ -4,7 +4,7 @@ import React, { type ButtonHTMLAttributes } from 'react'
 
 export enum ThemeButton {
   CLEAR = 'clear',
-
+  OUTLINE = 'outline'
 }
 type ButtonProps = {
   className?: string
@@ -18,7 +18,7 @@ export const Button: React.FC<ButtonProps> = props => {
     ...otherProps
   } = props
   return (
-		<button className={classNames(cls.Button, {}, [className, cls[theme]])} {...otherProps}>
+		<button className={classNames(cls.Button, {}, [className, theme && cls[theme]])} {...otherProps}>
 			{children}
 		</button>
   )

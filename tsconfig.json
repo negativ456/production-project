@@ -10,6 +10,7 @@
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "baseUrl": ".",
+    "strictNullChecks": true,
     "paths": {
       "*": ["./src/*"]
     }
@@ -18,5 +19,12 @@
     "compilerOptions": {
       "module": "CommonJS"
     }
-  }
+  },
+  "include": [
+    "./config/jest/setupTest.ts",
+    "./config/storybook/webpack.config.ts",
+    "./src/**/*.ts",
+    "./src/**/*.tsx",
+    ".eslintrc.js"
+  ]
 }
