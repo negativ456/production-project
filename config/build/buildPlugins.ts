@@ -17,8 +17,7 @@ export function buildPlugins ({ paths, isDev }: BuildOptions): webpack.WebpackPl
     }),
     new webpack.DefinePlugin({
       __IS_DEV__: JSON.stringify(isDev)
-    }),
-
+    })
   ]
   if (isDev) {
     plugins.push(new ReactRefreshPlugin())
