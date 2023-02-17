@@ -1,5 +1,3 @@
-import { Story } from '@storybook/react'
-
 // export const themeDecorator = (StoryComponent: Story) => {
 //   return (
 //       <div className="app">
