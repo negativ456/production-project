@@ -85,6 +85,10 @@
     "storybook-addon-themes": "^6.1.0"
   },
   "loki": {
+    "looks-same": {
+      "ignoreCaret": true
+    },
+    "skipStories": "Loader",
     "configurations": {
       "chrome.laptop": {
         "target": "chrome.app",
