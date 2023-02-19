@@ -9,8 +9,7 @@ interface NavBarProps {
 export const Navbar: React.FC<NavBarProps> = ({ className }) => (
 	<div className={classNames(cls.Navbar, {}, [className])}>
 		<div className={cls.links}>
-			<AppLink theme={AppLinkTheme.PRIMARY} to='/'>Main</AppLink>
-			<AppLink theme={AppLinkTheme.SECONDARY} to='/about'>About</AppLink>
+			/
 		</div>
 	</div>
 )
