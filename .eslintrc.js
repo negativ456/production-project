@@ -11,7 +11,7 @@ module.exports = {
     sourceType: 'module',
     project: ['./tsconfig.json']
   },
-  plugins: ['react'],
+  plugins: ['react', 'react-hooks'],
   rules: {
     'no-tabs': 0,
     'import/prefer-default-export': 'off',
@@ -23,7 +23,9 @@ module.exports = {
     '@typescript-eslint/naming-convention': 'off',
     '@typescript-eslint/explicit-function-return-type': 'warn',
     '@typescript-eslint/no-floating-promises': 'off',
-    '@typescript-eslint/consistent-type-assertions': 'warn'
+    '@typescript-eslint/consistent-type-assertions': 'warn',
+    'react-hooks/rules-of-hooks': 'error',
+    'react-hooks/exhaustive-deps': 'warn'
   },
   globals: {
     __IS_DEV__: true

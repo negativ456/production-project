@@ -1,0 +1,25 @@
+.Modal {
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  position: fixed;
+  z-index: var(--modal-z-index);
+}
+
+.overlay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background: var(--overlay-background);
+}
+
+.content {
+  max-width: 60%;
+  background: var(--bg-color);
+  color: var(--primary-color);
+  padding: 10px;
+  border-radius: 12px;
+}

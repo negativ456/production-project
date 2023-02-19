@@ -23,7 +23,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ className }) => {
 		<div data-testid='sidebar' className={classNames(cls.Sidebar, { [cls.collapsed]: collapsed }, [className])}>
       <div className={cls.links}>
         <AppLink
-            theme={AppLinkTheme.PRIMARY}
+            theme={AppLinkTheme.INVERTED_PRIMARY}
             to={RoutePath.main}
             className={cls.link}
         >
@@ -33,7 +33,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ className }) => {
           </span>
         </AppLink>
         <AppLink
-            theme={AppLinkTheme.PRIMARY}
+            theme={AppLinkTheme.INVERTED_PRIMARY}
             to={RoutePath.about}
             className={cls.link}
         >
