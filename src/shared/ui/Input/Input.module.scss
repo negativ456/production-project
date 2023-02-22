@@ -1,0 +1,11 @@
+.Input {
+  display: flex;
+
+  input {
+    border: 0;
+    outline: none;
+    background: transparent;
+    margin-left: 10px;
+    color: var(--primary-color);
+  }
+}
