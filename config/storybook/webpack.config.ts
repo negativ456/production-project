@@ -10,7 +10,7 @@ export default ({ config }: { config: webpack.Configuration }): webpack.Configur
     src: path.resolve(__dirname, '../../src')
   }
   if (config.resolve && config.module && config.module.rules) {
-    config.resolve.modules?.push(paths.src)
+    config.resolve.modules?.push(paths.src, 'node_modules')
     config.module?.rules?.push(buildCssLoader(true))
     config.resolve.extensions?.push('.ts', '.tsx')
     config.module.rules = config.module.rules.map((rule: webpack.RuleSetRule) => {
@@ -25,6 +25,9 @@ export default ({ config }: { config: webpack.Configuration }): webpack.Configur
       use: ['@svgr/webpack']
     })
   }
+  config?.plugins?.push(new webpack.DefinePlugin({
+    __IS_DEV__: true
+  }))
 
   return config
 }

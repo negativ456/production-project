@@ -6,5 +6,8 @@
   "Обновить страницу": "Reload page",
   "Короткий язык": "En",
   "О нас": "About",
-  "Войти": "Login"
+  "Войти": "Login",
+  "Форма авторизации": "Authorization form",
+  "Выйти": "Logout",
+  "Неправильный логин или пароль": "Incorrect login or password"
 }

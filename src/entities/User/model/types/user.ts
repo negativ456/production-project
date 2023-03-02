@@ -3,5 +3,5 @@ export interface User {
   username: string
 }
 export interface UserSchema {
-  userData?: User | null
+  userData: User | null
 }

@@ -1,6 +1,6 @@
 import { classNames } from 'shared/lib/classNames/classNames'
 import cls from './Button.module.scss'
-import React, { type ButtonHTMLAttributes } from 'react'
+import React, { type ButtonHTMLAttributes, useEffect } from 'react'
 
 export enum ButtonTheme {
   CLEAR = 'clear',
@@ -19,6 +19,7 @@ type ButtonProps = {
   theme?: ButtonTheme
   square?: boolean
   size?: ButtonSize
+  disabled?: boolean
 } & ButtonHTMLAttributes<HTMLButtonElement>
 export const Button: React.FC<ButtonProps> = props => {
   const {
@@ -26,11 +27,24 @@ export const Button: React.FC<ButtonProps> = props => {
     children,
     theme,
     square = false,
+    disabled,
     size = ButtonSize.M,
     ...otherProps
   } = props
+  useEffect(() => {
+    console.log(cls)
+  }, [])
   return (
-		<button className={classNames(cls.Button, { [cls.square]: square }, [className, theme && cls[theme], cls[size]])} {...otherProps}>
+		<button
+      disabled={disabled}
+      className={
+      classNames(cls.Button,
+        { [cls.square]: square },
+        [className, theme && cls[theme], cls[size]]
+      )
+    }
+      {...otherProps}
+    >
 			{children}
 		</button>
   )
