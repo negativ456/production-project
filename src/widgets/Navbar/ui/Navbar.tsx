@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import { classNames } from 'shared/lib/classNames/classNames'
 import cls from './Navbar.module.scss'
 import { Button, ButtonTheme } from 'shared/ui/Button/Button'
@@ -19,7 +19,12 @@ export const Navbar: React.FC<NavBarProps> = ({ className }) => {
   const closeModal = useCallback(() => {
     setIsOpen(false)
   }, [])
-
+  const openModal = useCallback(() => {
+    setIsOpen(true)
+  }, [])
+  useEffect(() => {
+    console.log(isOpen)
+  }, [isOpen])
   const onLogout = useCallback(() => {
     dispatch(userActions.logout())
   }, [dispatch])
@@ -35,7 +40,7 @@ export const Navbar: React.FC<NavBarProps> = ({ className }) => {
   return (
 			<div className={classNames(cls.Navbar, {}, [className])}>
 				<div className={cls.links}>
-          <Button theme={ButtonTheme.CLEAR_INVERTED} onClick={() => { setIsOpen(true) }}>{t('Войти')}</Button>
+          <Button theme={ButtonTheme.CLEAR_INVERTED} onClick={openModal}>{t('Войти')}</Button>
 					{isOpen && <LoginModal open={isOpen} onClose={closeModal}/>}
 				</div>
 			</div>

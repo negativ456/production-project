@@ -3,9 +3,8 @@ import cls from './LoginForm.module.scss'
 import { useTranslation } from 'react-i18next'
 import React, { useCallback } from 'react'
 import { Button, ButtonTheme } from 'shared/ui/Button/Button'
-import { Loader } from 'shared/ui/Loader/Loader'
 import { Input } from 'shared/ui/Input/Input'
-import { useDispatch, useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 import { loginActions, loginReducer } from '../../model/slice/loginSlice'
 import { loginByUsername } from 'features/AuthByUsername/model/services/loginByUsername/loginByUsername'
 import { Text, TextTheme } from 'shared/ui/Text/Text'
@@ -14,16 +13,18 @@ import { getLoginPassword } from '../../model/selectors/getLoginPassword/getLogi
 import { getLoginLoading } from '../../model/selectors/getLoginLoading/getLoginLoading'
 import { getLoginError } from '../../model/selectors/getLoginError/getLoginError'
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/DynamicModuleLoader/DynamicModuleLoader'
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch'
 
 interface LoginFormProps {
   className?: string
+  onSuccess: () => void
 }
 const initialReducers: ReducersList = {
   loginForm: loginReducer
 }
-const LoginForm: React.FC<LoginFormProps> = ({ className }) => {
+const LoginForm: React.FC<LoginFormProps> = ({ className, onSuccess }) => {
   const { t } = useTranslation()
-  const dispatch = useDispatch()
+  const dispatch = useAppDispatch()
   const username = useSelector(getLoginUsername)
   const password = useSelector(getLoginPassword)
   const isLoading = useSelector(getLoginLoading)
@@ -36,9 +37,12 @@ const LoginForm: React.FC<LoginFormProps> = ({ className }) => {
     dispatch(loginActions.setPassword(value))
   }, [dispatch])
 
-  const onLoginClick = useCallback(() => {
+  const onLoginClick = useCallback(async () => {
     if (username && password) {
-      dispatch(loginByUsername({ username, password }))
+      const result = await dispatch(loginByUsername({ username, password }))
+      if (result.meta.requestStatus === 'fulfilled') {
+        onSuccess()
+      }
     }
   }, [dispatch, password, username])
 
@@ -47,15 +51,15 @@ const LoginForm: React.FC<LoginFormProps> = ({ className }) => {
         <div className={classNames(cls.LoginForm, {}, [className])}>
           <Text title={t('Форма авторизации')}/>
           {error && <Text theme={TextTheme.ERROR} text={t('Неправильный логин или пароль')}/>}
-          <Input value={username} onChange={onChangeUsername} autofocus placeholder={t('Введите логин')}/>
-          <Input value={password} onChange={onChangePassword} placeholder={t('Введите пароль')}/>
+          <Input value={username ?? ''} onChange={onChangeUsername} autofocus placeholder={t('Введите логин')}/>
+          <Input value={password ?? ''} onChange={onChangePassword} placeholder={t('Введите пароль')}/>
           <Button
               onClick={onLoginClick}
               theme={ButtonTheme.OUTLINE}
               className={cls.button}
               disabled={isLoading}
           >
-            {isLoading ? <Loader className={cls.loader}/> : t('Войти')}
+            {t('Войти')}
           </Button>
         </div>
       </DynamicModuleLoader>

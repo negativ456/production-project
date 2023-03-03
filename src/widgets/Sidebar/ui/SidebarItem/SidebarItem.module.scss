@@ -1,0 +1,19 @@
+.SidebarItem {
+  display: flex;
+  align-items: center;
+
+  .icon {
+    fill: var(--inverted-primary-color);
+    margin-right: 10px;
+  }
+}
+
+.collapsed {
+  .icon {
+    margin-right: 0;
+  }
+
+  span {
+    display: none;
+  }
+}

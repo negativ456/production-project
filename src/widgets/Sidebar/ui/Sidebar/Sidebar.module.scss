@@ -26,16 +26,6 @@
   gap: 10px;
 }
 
-.link {
-  display: flex;
-  align-items: center;
-
-  .icon {
-    fill: var(--inverted-primary-color);
-    margin-right: 10px;
-  }
-}
-
 .toggle {
   position: absolute;
   right: -32px;
@@ -56,15 +46,5 @@
   .links {
     margin-left: 0;
     align-items: center;
-  }
-
-  .link {
-    .icon {
-      margin-right: 0;
-    }
-
-    span {
-      display: none;
-    }
   }
 }
