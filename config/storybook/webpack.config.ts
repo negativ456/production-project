@@ -13,6 +13,8 @@ export default ({ config }: { config: webpack.Configuration }): webpack.Configur
     config.resolve.modules?.push(paths.src, 'node_modules')
     config.module?.rules?.push(buildCssLoader(true))
     config.resolve.extensions?.push('.ts', '.tsx')
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-expect-error
     config.module.rules = config.module.rules.map((rule: webpack.RuleSetRule) => {
       // eslint-disable-next-line @typescript-eslint/prefer-includes
       if (/svg/.test(rule.test as string)) {
@@ -26,7 +28,9 @@ export default ({ config }: { config: webpack.Configuration }): webpack.Configur
     })
   }
   config?.plugins?.push(new webpack.DefinePlugin({
-    __IS_DEV__: true
+    __IS_DEV__: JSON.stringify(true),
+    __API__: JSON.stringify(''),
+    __PROJECT__: JSON.stringify('storybook')
   }))
 
   return config

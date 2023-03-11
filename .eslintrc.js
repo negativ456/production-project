@@ -29,6 +29,8 @@ module.exports = {
     'react/display-name': 'warn'
   },
   globals: {
-    __IS_DEV__: true
+    __IS_DEV__: true,
+    __API__: true,
+    __PROJECT__: true
   }
 }

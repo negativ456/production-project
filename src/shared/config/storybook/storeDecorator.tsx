@@ -2,8 +2,9 @@ import { StateSchema, StoreProvider } from 'app/providers/StoreProvider'
 import { Story } from '@storybook/react'
 import { DeepPartial, ReducersMapObject } from '@reduxjs/toolkit'
 import { loginReducer } from 'features/AuthByUsername/model/slice/loginSlice'
-import { profileReducer } from 'entities/Profile'
-const defaultAsyncReducers: DeepPartial<ReducersMapObject<StateSchema>> = {
+import { ReducersList } from 'shared/lib/DynamicModuleLoader/DynamicModuleLoader'
+import { profileReducer } from 'features/EditableProfileCard'
+const defaultAsyncReducers: ReducersList = {
   loginForm: loginReducer,
   profile: profileReducer
 }
