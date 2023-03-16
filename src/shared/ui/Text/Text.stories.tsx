@@ -1,7 +1,8 @@
 import React from 'react'
-import { ComponentStory, ComponentMeta } from '@storybook/react'
+import { ComponentMeta, ComponentStory } from '@storybook/react'
 
-import { Text, TextTheme } from './Text'
+import { Text, TextSize, TextTheme } from './Text'
+
 export default {
   title: 'shared/Text',
   component: Text,
@@ -24,6 +25,12 @@ OnlyTitle.args = {
 export const OnlyText = Template.bind({})
 OnlyText.args = {
   text: 'Title test'
+}
+export const SizeL = Template.bind({})
+SizeL.args = {
+  title: 'Title test',
+  text: 'Title test',
+  size: TextSize.L
 }
 export const Error = Template.bind({})
 Error.args = {
