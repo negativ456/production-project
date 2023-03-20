@@ -9,6 +9,8 @@ import { getProfileReadonly } from '../../model/selectors/getProfileReadonly/get
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch'
 import { profileActions } from 'features/EditableProfileCard/model/slice/profileSlice'
 import { updateProfileData } from 'features/EditableProfileCard/model/services/updateProfileData/updateProfileData'
+import { getUserAuthData } from 'entities/User/model/selectors/getUserAuthData/getUserAuthData'
+import { getProfileData } from 'features/EditableProfileCard/model/selectors/getProfileData/getProfileData'
 
 interface EditHeaderProps {
   className?: string
@@ -16,6 +18,9 @@ interface EditHeaderProps {
 export const EditHeader: React.FC<EditHeaderProps> = ({ className }) => {
   const { t } = useTranslation('profile')
   const readonly = useSelector(getProfileReadonly)
+  const authData = useSelector(getUserAuthData)
+  const profileData = useSelector(getProfileData)
+  const canEdit = authData?.id === profileData?.id
   const dispatch = useAppDispatch()
   const onEdit = useCallback(() => {
     dispatch(profileActions.setReadonly(false))
@@ -30,19 +35,22 @@ export const EditHeader: React.FC<EditHeaderProps> = ({ className }) => {
   return (
       <div className={classNames(cls.EditHeader, {}, [className])}>
         <Text title={t('Профиль')} />
-        {readonly
-          ? (<Button theme={ButtonTheme.OUTLINE} onClick={onEdit}>
-          {t('Редактировать')}
-        </Button>)
-          : <div>
-              <Button theme={ButtonTheme.OUTLINE_RED} onClick={onCancelEdit} className={cls.edit}>
-                {t('Отменить')}
-              </Button>
-              <Button theme={ButtonTheme.OUTLINE} onClick={onSave}>
-                {t('Сохранить')}
-              </Button>
-            </div>
-            }
+        {canEdit && <div>
+          {readonly
+            ? (<Button theme={ButtonTheme.OUTLINE} onClick={onEdit}>
+                {t('Редактировать')}
+              </Button>)
+            : <div>
+                <Button theme={ButtonTheme.OUTLINE_RED} onClick={onCancelEdit} className={cls.edit}>
+                  {t('Отменить')}
+                </Button>
+                <Button theme={ButtonTheme.OUTLINE} onClick={onSave}>
+                  {t('Сохранить')}
+                </Button>
+              </div>}
+        </div>
+        }
+
       </div>
   )
 }
