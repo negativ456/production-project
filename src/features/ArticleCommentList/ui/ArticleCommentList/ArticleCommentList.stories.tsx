@@ -20,6 +20,7 @@ Normal.decorators = [
   storeDecorator({
     articleComments: {
       ids: ['1'],
+      isLoading: false,
       entities: {
         1: {
           id: '1',

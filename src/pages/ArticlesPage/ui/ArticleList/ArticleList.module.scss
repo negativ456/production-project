@@ -1,0 +1,11 @@
+.TILE {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.LIST {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}

@@ -9,6 +9,7 @@ import { ProfileSchema } from 'features/EditableProfileCard'
 import { ArticleDetailsSchema } from 'entities/Article'
 import { ArticleCommentsSchema } from 'features/ArticleCommentList'
 import { AddNewCommentSchema } from 'features/addNewComment'
+import { ArticlesListSchema } from 'pages/ArticlesPage'
 
 export interface StateSchema {
   counter: CounterSchema
@@ -18,6 +19,7 @@ export interface StateSchema {
   articleDetails?: ArticleDetailsSchema
   articleComments?: ArticleCommentsSchema
   addNewComment?: AddNewCommentSchema
+  articlesList?: ArticlesListSchema
 }
 
 export type StateSchemaKey = keyof StateSchema

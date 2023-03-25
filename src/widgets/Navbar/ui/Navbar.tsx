@@ -30,19 +30,19 @@ export const Navbar: React.FC<NavBarProps> = ({ className }) => {
   }, [dispatch])
   if (userData) {
     return (
-    <div className={classNames(cls.Navbar, {}, [className])}>
+    <header className={classNames(cls.Navbar, {}, [className])}>
       <div className={cls.links}>
         <Button theme={ButtonTheme.CLEAR_INVERTED} onClick={onLogout}>{t('Выйти')}</Button>
       </div>
-    </div>
+    </header>
     )
   }
   return (
-			<div className={classNames(cls.Navbar, {}, [className])}>
+			<header className={classNames(cls.Navbar, {}, [className])}>
 				<div className={cls.links}>
           <Button theme={ButtonTheme.CLEAR_INVERTED} onClick={openModal}>{t('Войти')}</Button>
 					{isOpen && <LoginModal open={isOpen} onClose={closeModal}/>}
 				</div>
-			</div>
+			</header>
   )
 }

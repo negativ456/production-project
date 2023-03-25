@@ -12,10 +12,8 @@ export const AppRouter = () => {
 				element={route.authOnly ? <RequireAuth>{route.element}</RequireAuth> : route.element}/>
   }, [])
   return <React.Suspense fallback={<PageLoader/>}>
-		<div className='page-wrapper'>
-			<Routes>
-				{routeConfig.map(renderWithWrapper)}
-			</Routes>
-		</div>
+		<Routes>
+			{routeConfig.map(renderWithWrapper)}
+		</Routes>
 	</React.Suspense>
 }

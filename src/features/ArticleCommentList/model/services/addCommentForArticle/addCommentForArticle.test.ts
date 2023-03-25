@@ -8,6 +8,7 @@ const article: Article = {
   img: 'img',
   views: 12,
   createdAt: '12',
+  user: { id: 1, username: 'user' },
   type: [],
   blocks: []
 }

@@ -6,6 +6,7 @@ import { ArticleDetails } from 'entities/Article'
 import { useParams } from 'react-router-dom'
 import { Text } from 'shared/ui/Text/Text'
 import { ArticleCommentList } from 'features/ArticleCommentList/ui/ArticleCommentList/ArticleCommentList'
+import { Page } from 'shared/ui/Page/Page'
 
 interface ArticlesDetailsPageProps {
   className?: string
@@ -17,17 +18,17 @@ const ArticlesDetailsPage: React.FC<ArticlesDetailsPageProps> = ({ className }) 
 
   if (!id) {
     return (
-        <div className={classNames(cls.ArticlesDetailsPage, {}, [className])}>
+        <Page className={classNames(cls.ArticlesDetailsPage, {}, [className])}>
           {t('Статья не найдена')}
-        </div>
+        </Page>
     )
   }
   return (
-      <div className={classNames(cls.ArticlesDetailsPage, {}, [className])}>
+      <Page className={classNames(cls.ArticlesDetailsPage, {}, [className])}>
         <ArticleDetails id={id}/>
         <Text title={t('Комментарии')} className={cls.comment_title}/>
         <ArticleCommentList articleID={id}/>
-      </div>
+      </Page>
   )
 }
 export default ArticlesDetailsPage

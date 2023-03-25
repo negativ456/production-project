@@ -2,15 +2,16 @@ import { classNames } from 'shared/lib/classNames/classNames'
 import cls from './ProfilePage.module.scss'
 import React from 'react'
 import { EditableProfileCard } from 'features/EditableProfileCard'
+import { Page } from 'shared/ui/Page/Page'
 
 interface ProfileProps {
   className?: string
 }
 const ProfilePage: React.FC<ProfileProps> = ({ className }) => {
   return (
-    <div className={classNames(cls.ProfilePage, {}, [className])}>
+    <Page className={classNames(cls.ProfilePage, {}, [className])}>
       <EditableProfileCard/>
-    </div>
+    </Page>
   )
 }
 export default ProfilePage
