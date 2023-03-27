@@ -53,7 +53,8 @@ Normal.decorators = [
         1: article
       },
       page: 1,
-      hasMore: true
+      hasMore: true,
+      mounted: false
     }
   })
 ]

@@ -15,7 +15,6 @@ export const loginByUsername = createAsyncThunk<User, LoginByUsernameProps, Thun
         throw new Error()
       }
       dispatch(userActions.setUser(response.data))
-      if (extra.navigate) extra.navigate('/profile')
       return response.data
     } catch (e) {
       return rejectWithValue('error')
