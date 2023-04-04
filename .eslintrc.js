@@ -21,7 +21,7 @@ module.exports = {
     '@typescript-eslint/space-before-blocks': 'off',
     '@typescript-eslint/strict-boolean-expressions': 'off',
     '@typescript-eslint/naming-convention': 'off',
-    '@typescript-eslint/explicit-function-return-type': 'warn',
+    '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/no-floating-promises': 'off',
     '@typescript-eslint/consistent-type-assertions': 'warn',
     'react-hooks/rules-of-hooks': 'error',

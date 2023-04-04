@@ -8,11 +8,15 @@ import { ArticleDetailsSchema } from 'entities/Article'
 import { ArticleCommentsSchema } from 'features/ArticleCommentList'
 import { AddNewCommentSchema } from 'features/addNewComment'
 import { ArticlesListSchema } from 'pages/ArticlesPage'
+import { ScrollSaveSchema } from 'widgets/Page'
+import { ArticlesFilterSchema } from 'features/ArticlesFilter/model/types/ArticlesFilterSchema'
 
 export interface StateSchema {
   counter: CounterSchema
   user: UserSchema
+  scroll: ScrollSaveSchema
   loginForm?: LoginSchema
+  articleFilter?: ArticlesFilterSchema
   profile?: ProfileSchema
   articleDetails?: ArticleDetailsSchema
   articleComments?: ArticleCommentsSchema

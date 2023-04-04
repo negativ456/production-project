@@ -1,6 +1,6 @@
 import { classNames } from 'shared/lib/classNames/classNames'
 import cls from './Button.module.scss'
-import React, { type ButtonHTMLAttributes, useEffect } from 'react'
+import React, { type ButtonHTMLAttributes } from 'react'
 
 export enum ButtonTheme {
   CLEAR = 'clear',
@@ -32,9 +32,6 @@ export const Button: React.FC<ButtonProps> = props => {
     size = ButtonSize.M,
     ...otherProps
   } = props
-  useEffect(() => {
-    console.log(cls)
-  }, [])
   return (
 		<button
       disabled={disabled}

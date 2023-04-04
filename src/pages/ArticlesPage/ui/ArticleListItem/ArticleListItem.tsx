@@ -67,7 +67,7 @@ export const ArticleListItem = ({ className, article, view }: ArticleListItemPro
               {types}
               {viewBlock}
             </div>
-            <Text text={article.title}/>
+            <Text className={cls.title} text={article.title}/>
           </div>
         </Card>
       </AppLink>

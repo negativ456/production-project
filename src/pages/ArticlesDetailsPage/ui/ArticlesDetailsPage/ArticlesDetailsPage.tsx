@@ -6,7 +6,7 @@ import { ArticleDetails } from 'entities/Article'
 import { useParams } from 'react-router-dom'
 import { Text } from 'shared/ui/Text/Text'
 import { ArticleCommentList } from 'features/ArticleCommentList/ui/ArticleCommentList/ArticleCommentList'
-import { Page } from 'shared/ui/Page/Page'
+import { Page } from 'widgets/Page/ui/Page'
 
 interface ArticlesDetailsPageProps {
   className?: string
