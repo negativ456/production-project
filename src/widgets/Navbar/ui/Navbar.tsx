@@ -7,6 +7,9 @@ import { LoginModal } from 'features/AuthByUsername'
 import { useDispatch, useSelector } from 'react-redux'
 import { getUserAuthData } from 'entities/User/model/selectors/getUserAuthData/getUserAuthData'
 import { userActions } from 'entities/User'
+import { Text, TextTheme } from 'shared/ui/Text/Text'
+import { AppLink } from 'shared/ui/AppLink/AppLink'
+import { RoutePath } from 'shared/config/routerConfig/routeConfig'
 
 interface NavBarProps {
   className?: string
@@ -32,7 +35,11 @@ export const Navbar: React.FC<NavBarProps> = ({ className }) => {
     return (
     <header className={classNames(cls.Navbar, {}, [className])}>
       <div className={cls.links}>
-        <Button theme={ButtonTheme.CLEAR_INVERTED} onClick={onLogout}>{t('Выйти')}</Button>
+        <Text className={cls.app_name} theme={TextTheme.INVERTED} title={t('Project title')}/>
+        <div className={cls.menu}>
+          <AppLink to={RoutePath.article_create}>{t('Создать статью')}</AppLink>
+          <Button theme={ButtonTheme.CLEAR_INVERTED} onClick={onLogout}>{t('Выйти')}</Button>
+        </div>
       </div>
     </header>
     )

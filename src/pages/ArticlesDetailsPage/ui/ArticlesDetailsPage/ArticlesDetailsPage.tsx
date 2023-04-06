@@ -7,6 +7,8 @@ import { useParams } from 'react-router-dom'
 import { Text } from 'shared/ui/Text/Text'
 import { ArticleCommentList } from 'features/ArticleCommentList/ui/ArticleCommentList/ArticleCommentList'
 import { Page } from 'widgets/Page/ui/Page'
+import { ArticleRecommendations } from 'features/articleRecommendations/ui/articleRecommendations/ArticleRecommendations'
+import { Header } from 'pages/ArticlesDetailsPage/ui/Header/Header'
 
 interface ArticlesDetailsPageProps {
   className?: string
@@ -25,7 +27,9 @@ const ArticlesDetailsPage: React.FC<ArticlesDetailsPageProps> = ({ className }) 
   }
   return (
       <Page className={classNames(cls.ArticlesDetailsPage, {}, [className])}>
+        <Header/>
         <ArticleDetails id={id}/>
+        <ArticleRecommendations/>
         <Text title={t('Комментарии')} className={cls.comment_title}/>
         <ArticleCommentList articleID={id}/>
       </Page>

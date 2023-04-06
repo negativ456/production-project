@@ -2,13 +2,14 @@ import { createAsyncThunk } from '@reduxjs/toolkit'
 import { ThunkConfig } from 'app/providers/StoreProvider/config/StateSchema'
 import { Article } from 'entities/Article'
 
-export const fetchArticleByID = createAsyncThunk<Article, string, ThunkConfig<string>>('articleDetails/fetchArticleByID',
-  async (articleID, thunkAPI) => {
+// eslint-disable-next-line @typescript-eslint/no-invalid-void-type
+export const fetchArticleRecommendations = createAsyncThunk<Article[], void, ThunkConfig<string>>('articles/fetchArticlesList',
+  async (props, thunkAPI) => {
     const { rejectWithValue, extra } = thunkAPI
     try {
-      const response = await extra.api.get<Article>('/articles/' + articleID, {
+      const response = await extra.api.get<Article[]>('/articles', {
         params: {
-          _expand: 'user'
+          _limit: 4
         }
       })
 

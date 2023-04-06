@@ -11,7 +11,7 @@ interface ArticleListProps {
   view?: ArticleView
 }
 
-export const ArticleList = ({ className, articles, view = ArticleView.LIST, isLoading }: ArticleListProps) => {
+export const ArticleList = ({ className, articles, view = ArticleView.TILE, isLoading }: ArticleListProps) => {
   return (
       <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
         {articles.length

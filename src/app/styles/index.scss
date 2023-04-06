@@ -17,3 +17,17 @@ body {
 .content-page {
   display: flex;
 }
+
+*::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--card-bg);
+}
+
+*::-webkit-scrollbar-thumb {
+  background: var(--inverted-primary-color);
+  border-radius: 20px;
+}

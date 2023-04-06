@@ -1,4 +1,3 @@
-import { CounterSchema } from 'entities/Counter'
 import { UserSchema } from 'entities/User'
 import { LoginSchema } from 'features/AuthByUsername'
 import { AnyAction, CombinedState, EnhancedStore, Reducer, ReducersMapObject } from '@reduxjs/toolkit'
@@ -10,9 +9,9 @@ import { AddNewCommentSchema } from 'features/addNewComment'
 import { ArticlesListSchema } from 'pages/ArticlesPage'
 import { ScrollSaveSchema } from 'widgets/Page'
 import { ArticlesFilterSchema } from 'features/ArticlesFilter/model/types/ArticlesFilterSchema'
+import { ArticleRecommendationsSchema } from 'features/articleRecommendations/model/types/articleRecommendationsTypes'
 
 export interface StateSchema {
-  counter: CounterSchema
   user: UserSchema
   scroll: ScrollSaveSchema
   loginForm?: LoginSchema
@@ -22,6 +21,7 @@ export interface StateSchema {
   articleComments?: ArticleCommentsSchema
   addNewComment?: AddNewCommentSchema
   articlesList?: ArticlesListSchema
+  articleRecommendations?: ArticleRecommendationsSchema
 }
 
 export type StateSchemaKey = keyof StateSchema

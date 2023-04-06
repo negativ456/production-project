@@ -4,7 +4,8 @@ import React from 'react'
 
 export enum TextTheme {
   PRIMARY = 'primary',
-  ERROR = 'error'
+  ERROR = 'error',
+  INVERTED = 'inverted'
 }
 export enum TextAlign {
   RIGHT = 'right',
