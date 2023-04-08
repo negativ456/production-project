@@ -7,13 +7,13 @@ import React, { useCallback } from 'react'
 import { useSelector } from 'react-redux'
 import {
   getArticleCommentLoading
-} from 'features/ArticleCommentList/model/selectors/commentsSelectors'
+} from '../../model/selectors/commentsSelectors'
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect'
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch'
-import { fetchCommentsByID } from 'features/ArticleCommentList/model/services/fetchCommentsByID/fetchCommentsByID'
+import { fetchCommentsByID } from '../../model/services/fetchCommentsByID/fetchCommentsByID'
 import {
   addCommentForArticle
-} from 'features/ArticleCommentList/model/services/addCommentForArticle/addCommentForArticle'
+} from '../../model/services/addCommentForArticle/addCommentForArticle'
 import { AddNewComment } from 'features/addNewComment/ui/AddNewComment/AddNewComment'
 
 interface ArticleCommentListProps {

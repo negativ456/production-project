@@ -4,21 +4,23 @@ import { DynamicModuleLoader, ReducersList } from 'shared/lib/DynamicModuleLoade
 import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice'
 import React, { ReactNode, useEffect } from 'react'
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch'
-import { fetchArticleByID } from 'entities/Article/model/services/fetchArticleByID/fetchArticleByID'
+import { fetchArticleByID } from '../../model/services/fetchArticleByID/fetchArticleByID'
 import { useSelector } from 'react-redux'
 import {
   getArticleDetailsData,
   getArticleDetailsError,
   getArticleDetailsLoading
-} from 'entities/Article/model/selectors/getArticleDetailsData'
+} from '../../model/selectors/getArticleDetailsData'
 import { Text, TextSize, TextTheme } from 'shared/ui/Text/Text'
 import { Skeleton } from 'shared/ui/Skeleton/Skeleton'
 import { Avatar } from 'shared/ui/Avatar/Avatar'
 import EyeIcon from 'shared/assets/icons/eye.svg'
 import CalendarIcon from 'shared/assets/icons/calendar.svg'
 import { Icon } from 'shared/ui/Icon/Icon'
-import { ArticleBlock, ArticleBlockType } from 'entities/Article/model/types/article'
-import { ArticleCodeBlockComponent, ArticleImageBlockComponent, ArticleTextBlockComponent } from 'entities/Article'
+import { ArticleBlock, ArticleBlockType } from '../../model/types/article'
+import { ArticleCodeBlockComponent } from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent'
+import { ArticleImageBlockComponent } from '../ArticleImageBlockComponent/ArticleImageBlockComponent'
+import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent'
 
 interface ArticleDetailsProps {
   className?: string

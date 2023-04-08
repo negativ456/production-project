@@ -7,10 +7,10 @@ import React, { useCallback } from 'react'
 import { useSelector } from 'react-redux'
 import { getProfileReadonly } from '../../model/selectors/getProfileReadonly/getProfileReadonly'
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch'
-import { profileActions } from 'features/EditableProfileCard/model/slice/profileSlice'
-import { updateProfileData } from 'features/EditableProfileCard/model/services/updateProfileData/updateProfileData'
+import { profileActions } from '../../model/slice/profileSlice'
+import { updateProfileData } from '../../model/services/updateProfileData/updateProfileData'
 import { getUserAuthData } from 'entities/User/model/selectors/getUserAuthData/getUserAuthData'
-import { getProfileData } from 'features/EditableProfileCard/model/selectors/getProfileData/getProfileData'
+import { getProfileData } from '../../model/selectors/getProfileData/getProfileData'
 
 interface EditHeaderProps {
   className?: string

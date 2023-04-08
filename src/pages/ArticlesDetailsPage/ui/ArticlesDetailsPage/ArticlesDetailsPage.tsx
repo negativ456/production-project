@@ -8,7 +8,7 @@ import { Text } from 'shared/ui/Text/Text'
 import { ArticleCommentList } from 'features/ArticleCommentList/ui/ArticleCommentList/ArticleCommentList'
 import { Page } from 'widgets/Page/ui/Page'
 import { ArticleRecommendations } from 'features/articleRecommendations/ui/articleRecommendations/ArticleRecommendations'
-import { Header } from 'pages/ArticlesDetailsPage/ui/Header/Header'
+import { Header } from '../Header/Header'
 
 interface ArticlesDetailsPageProps {
   className?: string

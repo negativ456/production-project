@@ -4,13 +4,13 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch'
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect'
 import {
   fetchArticleRecommendations
-} from 'features/articleRecommendations/model/services/fetchAricleRecommendations/fetchArticleRecommendations'
+} from '../../model/services/fetchAricleRecommendations/fetchArticleRecommendations'
 import {
   articleRecommendationsReducer,
   getArticleRecommendations
-} from 'features/articleRecommendations/model/slice/articleRecommendationSlice'
+} from '../../model/slice/articleRecommendationSlice'
 import { useSelector } from 'react-redux'
-import { getArticleRecommendationLoading } from 'features/articleRecommendations/selectors/recommendationsSelectors'
+import { getArticleRecommendationLoading } from '../../selectors/recommendationsSelectors'
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/DynamicModuleLoader/DynamicModuleLoader'
 
 interface ArticleRecommendationsProps {

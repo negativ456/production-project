@@ -1,8 +1,8 @@
 import { classNames } from 'shared/lib/classNames/classNames'
 import cls from './ArticleList.module.scss'
 import { Article, ArticleView } from 'entities/Article/model/types/article'
-import { ArticleListItem } from 'pages/ArticlesPage/ui/ArticleListItem/ArticleListItem'
-import { ArticleListItemSkeleton } from 'pages/ArticlesPage/ui/ArticleListItem/ArticleListItemSkeleton'
+import { ArticleListItem } from '../ArticleListItem/ArticleListItem'
+import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton'
 
 interface ArticleListProps {
   className?: string

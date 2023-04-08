@@ -1,6 +1,6 @@
 import { classNames } from 'shared/lib/classNames/classNames'
 import cls from './CommentCard.module.scss'
-import { CommentTypes } from 'entities/Comment'
+import { CommentTypes } from '../../model/types/comment'
 import { Avatar } from 'shared/ui/Avatar/Avatar'
 import { Text } from 'shared/ui/Text/Text'
 import { Skeleton } from 'shared/ui/Skeleton/Skeleton'

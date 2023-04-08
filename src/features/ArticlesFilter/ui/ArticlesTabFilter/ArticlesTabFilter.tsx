@@ -5,7 +5,7 @@ import { useEffect, useMemo } from 'react'
 import { TabItem, Tabs } from 'shared/ui/Tabs/Tabs'
 import { ArticleType } from 'entities/Article/model/types/article'
 import { useSelector } from 'react-redux'
-import { getArticleType } from 'features/ArticlesFilter/model/selectors/articleFilterSelectors'
+import { getArticleType } from '../../model/selectors/articleFilterSelectors'
 
 interface ArticlesTabFilterProps {
   className?: string

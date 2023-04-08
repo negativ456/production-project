@@ -11,7 +11,7 @@ module.exports = {
     sourceType: 'module',
     project: ['./tsconfig.json']
   },
-  plugins: ['react', 'react-hooks'],
+  plugins: ['react', 'react-hooks', 'fsd-architecture-plugin'],
   rules: {
     'no-tabs': 0,
     'import/prefer-default-export': 'off',
@@ -23,10 +23,11 @@ module.exports = {
     '@typescript-eslint/naming-convention': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/no-floating-promises': 'off',
-    '@typescript-eslint/consistent-type-assertions': 'warn',
+    '@typescript-eslint/consistent-type-assertions': 'off',
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',
-    'react/display-name': 'warn'
+    'react/display-name': 'warn',
+    'fsd-architecture-plugin/path-checker': 'error'
   },
   globals: {
     __IS_DEV__: true,

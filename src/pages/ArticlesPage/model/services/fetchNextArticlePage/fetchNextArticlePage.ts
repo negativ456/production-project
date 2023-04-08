@@ -4,7 +4,7 @@ import {
   getArticlesPageHasMore, getArticlesPageIsLoading,
   getArticlesPageQuantity
 } from '../../selectors/articlesPageSelectors'
-import { articlesListActions } from 'pages/ArticlesPage'
+import { articlesListActions } from '../../slice/articlesListSlice'
 import { fetchArticlesList } from '../fetchArticlesList/fetchArticlesList'
 
 // eslint-disable-next-line @typescript-eslint/no-invalid-void-type
