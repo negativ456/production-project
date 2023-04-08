@@ -7,7 +7,9 @@ export default ({ config }: { config: webpack.Configuration }): webpack.Configur
     build: '',
     html: '',
     entry: '',
-    src: path.resolve(__dirname, '../../src')
+    src: path.resolve(__dirname, '../../src'),
+    locales: '',
+    buildLocales: ''
   }
   if (config.resolve && config.module && config.module.rules) {
     config.resolve.modules?.push(paths.src, 'node_modules')
