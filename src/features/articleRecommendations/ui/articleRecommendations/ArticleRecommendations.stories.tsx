@@ -2,6 +2,7 @@ import React from 'react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 
 import { ArticleRecommendations } from './ArticleRecommendations'
+import { storeDecorator } from 'shared/config/storybook/storeDecorator'
 
 export default {
   title: 'shared/ArticleRecommendations',
@@ -15,3 +16,7 @@ const Template: ComponentStory<typeof ArticleRecommendations> = (args) => <Artic
 
 export const Normal = Template.bind({})
 Normal.args = {}
+
+Normal.decorators = [
+  storeDecorator({})
+]

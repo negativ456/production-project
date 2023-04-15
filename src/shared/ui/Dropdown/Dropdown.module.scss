@@ -1,0 +1,40 @@
+.Dropdown {
+  position: relative;
+}
+
+.menu {
+  background: var(--card-bg);
+  position: absolute;
+  z-index: 1000;
+  border-radius: 10px;
+  border: 1px solid var(--primary-color);
+  display: flex;
+  flex-direction: column;
+}
+
+.left {
+  .menu {
+    left: 0;
+  }
+}
+
+.right {
+  .menu {
+    right: 0;
+  }
+}
+
+.btn {
+  background: none;
+  outline: none;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.item {
+  padding: 10px 25px;
+  width: 100%;
+  background: none;
+  color: var(--primary-color);
+}

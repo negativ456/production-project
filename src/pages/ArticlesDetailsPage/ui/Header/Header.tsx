@@ -7,6 +7,7 @@ import { getCanEditArticle } from 'entities/Article/model/selectors/article'
 import { useNavigate } from 'react-router-dom'
 import { getArticleDetailsData } from 'entities/Article/model/selectors/getArticleDetailsData'
 import { RoutePath } from 'shared/config/routerConfig/routeConfig'
+import { HStack } from 'shared/ui/Stack'
 
 interface HeaderProps {
   className?: string
@@ -21,8 +22,8 @@ export const Header = ({ className }: HeaderProps) => {
     if (article) navigate(`${RoutePath.articles}/${article?.id}/edit`)
   }
   return (
-      <div className={classNames(cls.Header, {}, [className])}>
+      <HStack max justify={'between'} className={classNames(cls.Header, {}, [className])}>
         {canEdit && <Button onClick={onEditArticle} theme={ButtonTheme.OUTLINE}>{t('Редактировать')}</Button>}
-      </div>
+      </HStack>
   )
 }

@@ -32,6 +32,20 @@ SizeL.args = {
   text: 'Title test',
   size: TextSize.L
 }
+
+export const SizeM = Template.bind({})
+SizeM.args = {
+  title: 'Title test',
+  text: 'Title test',
+  size: TextSize.M
+}
+
+export const SizeS = Template.bind({})
+SizeS.args = {
+  title: 'Title test',
+  text: 'Title test',
+  size: TextSize.S
+}
 export const Error = Template.bind({})
 Error.args = {
   text: 'Error ex',

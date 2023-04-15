@@ -9,11 +9,12 @@ import { AddNewCommentSchema } from 'features/addNewComment'
 import { ArticlesListSchema } from 'pages/ArticlesPage'
 import { ScrollSaveSchema } from 'widgets/Page'
 import { ArticlesFilterSchema } from 'features/ArticlesFilter/model/types/ArticlesFilterSchema'
-import { ArticleRecommendationsSchema } from 'features/articleRecommendations/model/types/articleRecommendationsTypes'
+import { rtkApi } from 'shared/api/rtkApi'
 
 export interface StateSchema {
   user: UserSchema
   scroll: ScrollSaveSchema
+  [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>
   loginForm?: LoginSchema
   articleFilter?: ArticlesFilterSchema
   profile?: ProfileSchema
@@ -21,7 +22,6 @@ export interface StateSchema {
   articleComments?: ArticleCommentsSchema
   addNewComment?: AddNewCommentSchema
   articlesList?: ArticlesListSchema
-  articleRecommendations?: ArticleRecommendationsSchema
 }
 
 export type StateSchemaKey = keyof StateSchema

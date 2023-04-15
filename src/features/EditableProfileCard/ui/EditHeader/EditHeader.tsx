@@ -1,5 +1,3 @@
-import { classNames } from 'shared/lib/classNames/classNames'
-import cls from './EditHeader.module.scss'
 import { useTranslation } from 'react-i18next'
 import { Text } from 'shared/ui/Text/Text'
 import { Button, ButtonTheme } from 'shared/ui/Button/Button'
@@ -11,6 +9,7 @@ import { profileActions } from '../../model/slice/profileSlice'
 import { updateProfileData } from '../../model/services/updateProfileData/updateProfileData'
 import { getUserAuthData } from 'entities/User/model/selectors/getUserAuthData/getUserAuthData'
 import { getProfileData } from '../../model/selectors/getProfileData/getProfileData'
+import { HStack } from 'shared/ui/Stack/HStack/HStack'
 
 interface EditHeaderProps {
   className?: string
@@ -33,24 +32,24 @@ export const EditHeader: React.FC<EditHeaderProps> = ({ className }) => {
     dispatch(updateProfileData())
   }, [dispatch])
   return (
-      <div className={classNames(cls.EditHeader, {}, [className])}>
+      <HStack max justify={'between'}>
         <Text title={t('Профиль')} />
         {canEdit && <div>
           {readonly
             ? (<Button theme={ButtonTheme.OUTLINE} onClick={onEdit}>
                 {t('Редактировать')}
               </Button>)
-            : <div>
-                <Button theme={ButtonTheme.OUTLINE_RED} onClick={onCancelEdit} className={cls.edit}>
+            : <HStack gap={'8'}>
+                <Button theme={ButtonTheme.OUTLINE_RED} onClick={onCancelEdit} >
                   {t('Отменить')}
                 </Button>
                 <Button theme={ButtonTheme.OUTLINE} onClick={onSave}>
                   {t('Сохранить')}
                 </Button>
-              </div>}
+              </HStack>}
         </div>
         }
 
-      </div>
+      </HStack>
   )
 }

@@ -21,6 +21,7 @@ import { ArticleBlock, ArticleBlockType } from '../../model/types/article'
 import { ArticleCodeBlockComponent } from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent'
 import { ArticleImageBlockComponent } from '../ArticleImageBlockComponent/ArticleImageBlockComponent'
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent'
+import { HStack, VStack } from 'shared/ui/Stack'
 
 interface ArticleDetailsProps {
   className?: string
@@ -65,26 +66,28 @@ export const ArticleDetails: React.FC<ArticleDetailsProps> = ({ className, id })
     content = <Text theme={TextTheme.ERROR} title={'Произошла ошибка'} />
   } else {
     content = <>
-      <div className={cls.avatar_wrapper}>
+      <HStack justify={'center'} max className={cls.avatar_wrapper}>
         <Avatar src={article?.img} size={200} className={cls.avatar}/>
-      </div>
-      <Text size={TextSize.L} title={article?.title} text={article?.subtitle}/>
-      <div className={cls.article_info}>
-        <Icon Svg={EyeIcon}/>
-        <Text text={String(article?.views)}/>
-      </div>
-      <div className={cls.article_info}>
-        <Icon Svg={CalendarIcon}/>
-        <Text text={String(article?.createdAt)}/>
-      </div>
+      </HStack>
+      <VStack gap={'4'} max>
+        <Text size={TextSize.L} title={article?.title} text={article?.subtitle}/>
+        <HStack className={cls.article_info}>
+          <Icon Svg={EyeIcon}/>
+          <Text text={String(article?.views)}/>
+        </HStack>
+        <HStack className={cls.article_info}>
+          <Icon Svg={CalendarIcon}/>
+          <Text text={String(article?.createdAt)}/>
+        </HStack>
+      </VStack>
       {article?.blocks.map(renderBlock)}
     </>
   }
   return (
       <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-        <div className={classNames(cls.ArticleDetails, {}, [className])}>
+        <VStack gap={'16'} align={'stretch'} className={classNames(cls.ArticleDetails, {}, [className])}>
           {content}
-        </div>
+        </VStack>
       </DynamicModuleLoader>
 
   )

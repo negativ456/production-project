@@ -10,6 +10,7 @@ import { Avatar } from 'shared/ui/Avatar/Avatar'
 import { Currency } from 'entities/Currency/model/types/currency'
 import { CurrencySelect } from 'entities/Currency'
 import { Country, CountrySelect } from 'entities/Country'
+import { HStack, VStack } from 'shared/ui/Stack'
 
 interface ProfileCardProps {
   className?: string
@@ -44,44 +45,40 @@ export const ProfileCard: React.FC<ProfileCardProps> = (props) => {
   } = props
   const { t } = useTranslation('profile')
   if (isLoading) {
-    return (<div className={classNames(cls.ProfileCard, {}, [className, cls.loading])}>
+    return (<HStack justify={'center'} className={classNames(cls.ProfileCard, {}, [className, cls.loading])}>
       <Loader/>
-    </div>)
+    </HStack>)
   }
   if (error) {
-    return (<div className={classNames(cls.ProfileCard, {}, [className, cls.error])}>
+    return (<HStack justify={'center'} className={classNames(cls.ProfileCard, {}, [className, cls.error])}>
       <Text
           theme={TextTheme.ERROR}
           title={t('Произошла ошибка при загрузке')}
           text={t('Попробуйте обновить страницу')}
           align={TextAlign.CENTER}
       />
-    </div>)
+    </HStack>)
   }
   return (
-      <div className={classNames(cls.ProfileCard, { [cls.editing]: !readonly }, [className])}>
-        <div className={cls.data}>
+      <VStack gap={'8'} max className={classNames(cls.ProfileCard, { [cls.editing]: !readonly }, [className])}>
           {data?.avatar && (
-              <div className={cls.avatarWrapper}>
+              <HStack max justify={'center'} className={cls.avatarWrapper}>
                 <Avatar src={data?.avatar}/>
-              </div>
+              </HStack>
           )}
           <Input
               value={data?.first}
               placeholder={t('Ваше имя')}
-              className={cls.input}
               onChange={onChangeFirstname}
               readonly={readonly}
           />
           <Input
-              className={cls.input}
               value={data?.lastname}
               placeholder={t('Ваша фамилия')}
               onChange={onChangeLastname}
               readonly={readonly}
           />
           <Input
-              className={cls.input}
               value={data?.age}
               type='number'
               placeholder={t('Ваш возраст')}
@@ -89,28 +86,24 @@ export const ProfileCard: React.FC<ProfileCardProps> = (props) => {
               readonly={readonly}
           />
           <Input
-              className={cls.input}
               value={data?.city}
               placeholder={t('Ваш город')}
               onChange={onChangeCity}
               readonly={readonly}
           />
           <Input
-              className={cls.input}
               value={data?.username}
               placeholder={t('Имя пользователя')}
               onChange={onChangeUsername}
               readonly={readonly}
           />
           <Input
-              className={cls.input}
               value={data?.avatar}
               placeholder={t('Аватар')}
               onChange={onChangeAvatar}
               readonly={readonly}
           />
           <CurrencySelect
-              className={cls.input}
               value={data?.currency}
               onChange={onChangeCurrency}
               readonly={readonly}
@@ -120,7 +113,6 @@ export const ProfileCard: React.FC<ProfileCardProps> = (props) => {
               onChange={onChangeCountry}
               readonly={readonly}
           />
-        </div>
-      </div>
+      </VStack>
   )
 }

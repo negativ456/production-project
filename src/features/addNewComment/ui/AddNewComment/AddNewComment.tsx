@@ -9,6 +9,7 @@ import { useCallback } from 'react'
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch'
 import { addNewCommentActions, addNewCommentReducer } from '../../model/slice/addNewCommentSlice'
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/DynamicModuleLoader/DynamicModuleLoader'
+import { HStack } from 'shared/ui/Stack'
 
 interface AddNewCommentProps {
   className?: string
@@ -31,12 +32,12 @@ export const AddNewComment = ({ className, onSendComment }: AddNewCommentProps) 
   }, [onCommentChange, onSendComment, text])
   return (
       <DynamicModuleLoader reducers={reducers}>
-        <div className={classNames(cls.AddNewComment, {}, [className])}>
+        <HStack justify={'between'} max className={classNames(cls.AddNewComment, {}, [className])}>
           <Input className={cls.input} value={text} onChange={onCommentChange} placeholder={t('Введите комментарий')} />
           <Button onClick={onSendHandler}>
             {t('Отправить')}
           </Button>
-        </div>
+        </HStack>
       </DynamicModuleLoader>
   )
 }

@@ -2,6 +2,7 @@ import React from 'react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 
 import AboutPage from './AboutPage'
+import { storeDecorator } from 'shared/config/storybook/storeDecorator'
 export default {
   title: 'pages/AboutPage',
   component: AboutPage,
@@ -12,7 +13,10 @@ export default {
 
 const Template: ComponentStory<typeof AboutPage> = (args) => <AboutPage/>
 
-export const Light = Template.bind({})
+export const Normal = Template.bind({})
 // export const Dark = Template.bind({})
 // Light.args = {
 // }
+Normal.decorators = [
+  storeDecorator({})
+]

@@ -28,7 +28,7 @@ const article: Article = {
   ]
 }
 export default {
-  title: 'pages/ArticleList',
+  title: 'pages/ArticlesPage/ArticleList',
   component: ArticleList,
   argTypes: {
     backgroundColor: { control: 'color' }

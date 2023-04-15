@@ -1,4 +1,3 @@
-import { classNames } from 'shared/lib/classNames/classNames'
 import { useTranslation } from 'react-i18next'
 import React, { useCallback } from 'react'
 import { useSelector } from 'react-redux'
@@ -20,16 +19,17 @@ import {
 import { Text, TextTheme } from 'shared/ui/Text/Text'
 import { ValidateProfileError } from '../../model/types/ProfileSchema'
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect'
-import { useParams } from 'react-router-dom'
+import { VStack } from 'shared/ui/Stack/VStack/VStack'
 
 const reducers: ReducersList = {
   profile: profileReducer
 }
 interface EditableProfileCardProps {
   className?: string
+  id: string
 }
 
-export const EditableProfileCard: React.FC<EditableProfileCardProps> = ({ className }) => {
+export const EditableProfileCard: React.FC<EditableProfileCardProps> = ({ className, id }) => {
   const { t } = useTranslation('profile')
   const formData = useSelector(getProfileForm) ?? null
   const error = useSelector(getProfileError)
@@ -37,7 +37,6 @@ export const EditableProfileCard: React.FC<EditableProfileCardProps> = ({ classN
   const readonly = useSelector(getProfileReadonly)
   const validateErrors = useSelector(getProfileValidateErrors)
   const dispatch = useAppDispatch()
-  const { id } = useParams<{ id: string }>()
 
   const validateErrorTranslates = {
     [ValidateProfileError.SERVER_ERROR]: t('Серверная ошибка'),
@@ -85,7 +84,7 @@ export const EditableProfileCard: React.FC<EditableProfileCardProps> = ({ classN
   }, [dispatch])
   return (
       <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-        <div className={classNames('', {}, [className])}>
+        <VStack align={'stretch'} max gap={'16'}>
           <EditHeader/>
           {validateErrors?.length && validateErrors.map(err =>
               <Text key={err} theme={TextTheme.ERROR} text={validateErrorTranslates[err]} />
@@ -104,7 +103,7 @@ export const EditableProfileCard: React.FC<EditableProfileCardProps> = ({ classN
               onChangeCurrency={onChangeCurrency}
               onChangeCountry={onChangeCountry}
           />
-        </div>
+        </VStack>
       </DynamicModuleLoader>
   )
 }

@@ -1,1 +1,1 @@
-export { articleRecommendationsReducer } from './model/slice/articleRecommendationSlice'
+export { ArticleRecommendations } from './ui/articleRecommendations/ArticleRecommendations'

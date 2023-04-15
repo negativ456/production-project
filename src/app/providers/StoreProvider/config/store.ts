@@ -4,13 +4,15 @@ import { userReducer } from 'entities/User'
 import { createReducerManager } from 'app/providers/StoreProvider/config/reducerManager'
 import { $api } from 'shared/api/api'
 import { scrollReducer } from 'widgets/Page'
+import { rtkApi } from 'shared/api/rtkApi'
 
 export function createReduxStore
 (initialState?: StateSchema, asyncReducers?: ReducersMapObject<StateSchema>) {
   const rootReducer: ReducersMapObject<StateSchema> = {
     ...asyncReducers,
     user: userReducer,
-    scroll: scrollReducer
+    scroll: scrollReducer,
+    [rtkApi.reducerPath]: rtkApi.reducer
   }
   const reducerManager = createReducerManager(rootReducer)
   const extraArg: ThunkExtraArgs = {
@@ -24,7 +26,7 @@ export function createReduxStore
       thunk: {
         extraArgument: extraArg
       }
-    })
+    }).concat(rtkApi.middleware)
   })
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-expect-error

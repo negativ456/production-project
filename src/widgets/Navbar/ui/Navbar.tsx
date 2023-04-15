@@ -10,6 +10,9 @@ import { userActions } from 'entities/User'
 import { Text, TextTheme } from 'shared/ui/Text/Text'
 import { AppLink } from 'shared/ui/AppLink/AppLink'
 import { RoutePath } from 'shared/config/routerConfig/routeConfig'
+import { Dropdown } from 'shared/ui/Dropdown/Dropdown'
+import { Avatar } from 'shared/ui/Avatar/Avatar'
+import { HStack } from 'shared/ui/Stack'
 
 interface NavBarProps {
   className?: string
@@ -36,10 +39,17 @@ export const Navbar: React.FC<NavBarProps> = ({ className }) => {
     <header className={classNames(cls.Navbar, {}, [className])}>
       <div className={cls.links}>
         <Text className={cls.app_name} theme={TextTheme.INVERTED} title={t('Project title')}/>
-        <div className={cls.menu}>
+        <HStack justify={'between'} max >
           <AppLink to={RoutePath.article_create}>{t('Создать статью')}</AppLink>
-          <Button theme={ButtonTheme.CLEAR_INVERTED} onClick={onLogout}>{t('Выйти')}</Button>
-        </div>
+          <Dropdown
+              direction={'right'}
+              items={[
+                { content: t('Профиль'), href: `${RoutePath.profile}${userData.id}` },
+                { content: t('Выйти'), onClick: onLogout }
+              ]}
+              trigger={<Avatar size={40} src={userData.avatar}></Avatar>}
+          />
+        </HStack>
       </div>
     </header>
     )

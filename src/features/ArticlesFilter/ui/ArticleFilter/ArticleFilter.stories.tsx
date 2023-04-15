@@ -2,9 +2,10 @@ import React from 'react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 
 import { ArticleFilter } from './ArticleFilter'
+import { storeDecorator } from 'shared/config/storybook/storeDecorator'
 
 export default {
-  title: 'shared/ArticleFilter',
+  title: 'features/ArticleFilter',
   component: ArticleFilter,
   argTypes: {
     backgroundColor: { control: 'color' }
@@ -15,3 +16,6 @@ const Template: ComponentStory<typeof ArticleFilter> = (args) => <ArticleFilter 
 
 export const Normal = Template.bind({})
 Normal.args = {}
+Normal.decorators = [
+  storeDecorator({})
+]
