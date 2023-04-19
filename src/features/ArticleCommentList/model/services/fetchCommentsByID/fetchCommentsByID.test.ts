@@ -4,7 +4,7 @@ import { CommentTypes } from 'entities/Comment'
 const comments: CommentTypes[] = [
   {
     id: '1',
-    user: { id: 1, username: 'username' },
+    user: { id: '1', username: 'username' },
     text: 'text'
   }
 ]

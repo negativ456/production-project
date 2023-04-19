@@ -19,12 +19,12 @@ Normal.args = {
   comments: [
     {
       id: '1',
-      user: { id: 1, username: 'username' },
+      user: { id: '1', username: 'username' },
       text: 'text'
     },
     {
       id: '2',
-      user: { id: 2, username: 'username 2' },
+      user: { id: '2', username: 'username 2' },
       text: 'text 2'
     }
   ]

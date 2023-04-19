@@ -24,7 +24,7 @@ Normal.decorators = [
       entities: {
         1: {
           id: '1',
-          user: { id: 1, username: 'user' },
+          user: { id: '1', username: 'user' },
           text: 'text'
         }
       }

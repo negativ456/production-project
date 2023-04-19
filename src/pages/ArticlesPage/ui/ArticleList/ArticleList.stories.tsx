@@ -9,7 +9,7 @@ const article: Article = {
   id: '16',
   title: 'Javascript news 16',
   subtitle: 'Что нового в JS за 2022 год?',
-  user: { id: 1, username: 'user' },
+  user: { id: '1', username: 'user' },
   img: 'https://teknotower.com/wp-content/uploads/2020/11/js.png',
   views: 1022,
   createdAt: '26.02.2022',

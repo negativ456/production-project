@@ -17,7 +17,7 @@ export const Normal = Template.bind({})
 Normal.args = {
   comment: {
     id: '1',
-    user: { id: 1, username: 'username' },
+    user: { id: '1', username: 'username' },
     text: 'text'
   }
 }

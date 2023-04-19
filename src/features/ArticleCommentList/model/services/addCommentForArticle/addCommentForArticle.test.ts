@@ -8,7 +8,7 @@ const article: Article = {
   img: 'img',
   views: 12,
   createdAt: '12',
-  user: { id: 1, username: 'user' },
+  user: { id: '1', username: 'user' },
   type: [],
   blocks: []
 }
@@ -16,13 +16,13 @@ describe('addCommentForArticle.test', () => {
   test('success', async () => {
     const comment = {
       id: '1',
-      user: { id: 1, username: 'username' },
+      user: { id: '1', username: 'username' },
       text: 'text'
     }
     const thunk = new TestAsyncThunk(addCommentForArticle, {
       user: {
         userData: {
-          id: 1, username: 'username'
+          id: '1', username: 'username'
         }
       },
       articleDetails: {

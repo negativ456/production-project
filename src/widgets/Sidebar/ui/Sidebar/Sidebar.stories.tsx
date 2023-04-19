@@ -5,7 +5,7 @@ import { Sidebar } from './Sidebar'
 import { storeDecorator } from 'shared/config/storybook/storeDecorator'
 import { User } from 'entities/User'
 const user: User = {
-  id: 1,
+  id: '1',
   username: 'user'
 }
 export default {

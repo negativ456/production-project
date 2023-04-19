@@ -22,7 +22,7 @@ AuthNavbar.decorators = [
   storeDecorator({
     user: {
       userData: {
-        id: 1,
+        id: '1',
         username: ''
       }
     }
