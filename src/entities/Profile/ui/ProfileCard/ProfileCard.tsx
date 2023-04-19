@@ -68,12 +68,14 @@ export const ProfileCard: React.FC<ProfileCardProps> = (props) => {
           )}
           <Input
               value={data?.first}
+              data-testid={'ProfileCard.firstName'}
               placeholder={t('Ваше имя')}
               onChange={onChangeFirstname}
               readonly={readonly}
           />
           <Input
               value={data?.lastname}
+              data-testid={'ProfileCard.lastName'}
               placeholder={t('Ваша фамилия')}
               onChange={onChangeLastname}
               readonly={readonly}

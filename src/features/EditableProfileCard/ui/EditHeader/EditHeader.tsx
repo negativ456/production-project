@@ -36,14 +36,14 @@ export const EditHeader: React.FC<EditHeaderProps> = ({ className }) => {
         <Text title={t('Профиль')} />
         {canEdit && <div>
           {readonly
-            ? (<Button theme={ButtonTheme.OUTLINE} onClick={onEdit}>
+            ? (<Button data-testid={'EditHeader.EditButton'} theme={ButtonTheme.OUTLINE} onClick={onEdit}>
                 {t('Редактировать')}
               </Button>)
             : <HStack gap={'8'}>
-                <Button theme={ButtonTheme.OUTLINE_RED} onClick={onCancelEdit} >
+                <Button data-testid={'EditHeader.CancelButton'} theme={ButtonTheme.OUTLINE_RED} onClick={onCancelEdit} >
                   {t('Отменить')}
                 </Button>
-                <Button theme={ButtonTheme.OUTLINE} onClick={onSave}>
+                <Button data-testid={'EditHeader.SaveButton'} theme={ButtonTheme.OUTLINE} onClick={onSave}>
                   {t('Сохранить')}
                 </Button>
               </HStack>}

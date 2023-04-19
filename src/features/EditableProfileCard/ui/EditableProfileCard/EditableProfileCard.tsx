@@ -87,7 +87,7 @@ export const EditableProfileCard: React.FC<EditableProfileCardProps> = ({ classN
         <VStack align={'stretch'} max gap={'16'}>
           <EditHeader/>
           {validateErrors?.length && validateErrors.map(err =>
-              <Text key={err} theme={TextTheme.ERROR} text={validateErrorTranslates[err]} />
+              <Text data-testid={'EditableProfileCard.Error'} key={err} theme={TextTheme.ERROR} text={validateErrorTranslates[err]} />
           )}
           <ProfileCard
               readonly={readonly}

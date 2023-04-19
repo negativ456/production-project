@@ -9,7 +9,7 @@ interface ArticleRecommendationsProps {
 export const ArticleRecommendations = ({ className }: ArticleRecommendationsProps) => {
   const { isLoading, data: articles, error } = useArticleRecommendations(3)
 
-  if (isLoading || error) {
+  if ((isLoading || error) ?? !articles) {
     return null
   }
   return (
