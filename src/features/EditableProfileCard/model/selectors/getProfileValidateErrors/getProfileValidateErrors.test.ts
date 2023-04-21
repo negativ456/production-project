@@ -1,7 +1,8 @@
 import { DeepPartial } from '@reduxjs/toolkit'
 import { StateSchema } from 'app/providers/StoreProvider'
 import { getProfileValidateErrors } from './getProfileValidateErrors'
-import { ValidateProfileError } from '../../types/ProfileSchema'
+
+import { ValidateProfileError } from '../../const/const'
 describe('getProfileValidateErrors.test', () => {
   const errors = [
     ValidateProfileError.SERVER_ERROR,

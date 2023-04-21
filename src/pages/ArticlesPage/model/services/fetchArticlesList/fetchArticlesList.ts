@@ -5,7 +5,8 @@ import { getArticlesPageLimit, getArticlesPageQuantity } from '../../selectors/a
 import { getArticleSearch, getArticleSort, getArticleSortOrder } from 'features/ArticlesFilter'
 import { addQueryParams } from 'shared/lib/addQueryParams/addQueryParams'
 import { getArticleType } from 'features/ArticlesFilter/model/selectors/articleFilterSelectors'
-import { ArticleType } from 'entities/Article/model/types/article'
+
+import { ArticleType } from 'entities/Article/model/consts/articleConsts'
 
 interface FetchArticlesListProps {
   replace?: boolean

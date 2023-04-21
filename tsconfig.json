@@ -12,6 +12,7 @@
     "baseUrl": ".",
     "strict": true,
     "strictNullChecks": true,
+    "isolatedModules": true,
     "paths": {
       "*": ["./src/*"]
     }

@@ -6,7 +6,7 @@ import { useTranslation } from 'react-i18next'
 import { LoginModal } from 'features/AuthByUsername'
 import { useDispatch, useSelector } from 'react-redux'
 import { getUserAuthData } from 'entities/User/model/selectors/getUserAuthData/getUserAuthData'
-import { userActions } from 'entities/User'
+import { isUserAdmin, isUserManager, userActions } from 'entities/User'
 import { Text, TextTheme } from 'shared/ui/Text/Text'
 import { AppLink } from 'shared/ui/AppLink/AppLink'
 import { RoutePath } from 'shared/config/routerConfig/routeConfig'
@@ -21,6 +21,9 @@ export const Navbar: React.FC<NavBarProps> = ({ className }) => {
   const [isOpen, setIsOpen] = useState(false)
   const userData = useSelector(getUserAuthData)
   const dispatch = useDispatch()
+  const isAdmin = useSelector(isUserAdmin)
+  const isManager = useSelector(isUserManager)
+  const isAdminAvailable = isAdmin || isManager
   const { t } = useTranslation()
   const closeModal = useCallback(() => {
     setIsOpen(false)
@@ -44,6 +47,7 @@ export const Navbar: React.FC<NavBarProps> = ({ className }) => {
           <Dropdown
               direction={'right'}
               items={[
+                ...(isAdminAvailable ? [{ content: t('Админка'), href: RoutePath.admin_panel }] : []),
                 { content: t('Профиль'), href: `${RoutePath.profile}${userData.id}` },
                 { content: t('Выйти'), onClick: onLogout }
               ]}

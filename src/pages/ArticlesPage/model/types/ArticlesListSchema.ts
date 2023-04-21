@@ -1,6 +1,5 @@
 import { EntityState } from '@reduxjs/toolkit'
-import { Article } from 'entities/Article'
-import { ArticleView } from 'entities/Article/model/types/article'
+import { Article, ArticleView } from 'entities/Article'
 
 export interface ArticlesListSchema extends EntityState<Article>{
   view: ArticleView

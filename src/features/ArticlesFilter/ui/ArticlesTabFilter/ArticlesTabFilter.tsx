@@ -3,9 +3,9 @@ import cls from './ArticlesTabFilter.module.scss'
 import { useTranslation } from 'react-i18next'
 import { useEffect, useMemo } from 'react'
 import { TabItem, Tabs } from 'shared/ui/Tabs/Tabs'
-import { ArticleType } from 'entities/Article/model/types/article'
 import { useSelector } from 'react-redux'
 import { getArticleType } from '../../model/selectors/articleFilterSelectors'
+import { ArticleType } from 'entities/Article/model/consts/articleConsts'
 
 interface ArticlesTabFilterProps {
   className?: string

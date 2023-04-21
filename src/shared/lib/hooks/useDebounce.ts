@@ -4,7 +4,7 @@ import { TimeoutId } from '@reduxjs/toolkit/dist/query/core/buildMiddleware/type
 export function useDebounce<T> (func: (...args: T[]) => void, delay: number) {
   const timer = useRef<TimeoutId>()
 
-  return useCallback((...args) => {
+  return useCallback((...args: T[]) => {
     if (timer.current) {
       clearInterval(timer.current)
     }

@@ -17,16 +17,16 @@ import {
   getProfileValidateErrors
 } from '../../model/selectors/getProfileValidateErrors/getProfileValidateErrors'
 import { Text, TextTheme } from 'shared/ui/Text/Text'
-import { ValidateProfileError } from '../../model/types/ProfileSchema'
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect'
 import { VStack } from 'shared/ui/Stack/VStack/VStack'
+import { ValidateProfileError } from '../../model/const/const'
 
 const reducers: ReducersList = {
   profile: profileReducer
 }
 interface EditableProfileCardProps {
   className?: string
-  id: string
+  id?: string
 }
 
 export const EditableProfileCard: React.FC<EditableProfileCardProps> = ({ className, id }) => {

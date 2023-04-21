@@ -19,7 +19,7 @@ import { useTranslation } from 'react-i18next'
 
 interface ArticleCommentListProps {
   className?: string
-  articleID: string
+  articleID?: string
 }
 
 const reducers: ReducersList = {

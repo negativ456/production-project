@@ -1,6 +1,7 @@
 import { fetchArticleByID } from './fetchArticleByID'
 import { TestAsyncThunk } from 'shared/config/tests/TestAsyncThunk/TestAsyncThunk'
-import { ArticleBlockType } from '../../types/article'
+
+import { ArticleBlockType } from '../../consts/articleConsts'
 const article = {
   id: '1',
   title: 'Javascript news',

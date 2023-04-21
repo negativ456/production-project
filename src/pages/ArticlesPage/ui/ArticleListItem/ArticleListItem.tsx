@@ -1,8 +1,8 @@
 import { classNames } from 'shared/lib/classNames/classNames'
 import cls from './ArticleListItem.module.scss'
 import { useTranslation } from 'react-i18next'
-import { Article, ArticleTextBlockComponent } from 'entities/Article'
-import { ArticleBlockType, ArticleTextBlock, ArticleView } from 'entities/Article/model/types/article'
+import { Article, ArticleTextBlockComponent, ArticleView } from 'entities/Article'
+import { ArticleTextBlock } from 'entities/Article/model/types/article'
 import { Text } from 'shared/ui/Text/Text'
 import EyeIcon from 'shared/assets/icons/eye.svg'
 import { Icon } from 'shared/ui/Icon/Icon'
@@ -10,6 +10,8 @@ import { Card } from 'shared/ui/Card/Card'
 import { Avatar } from 'shared/ui/Avatar/Avatar'
 import { Button, ButtonTheme } from 'shared/ui/Button/Button'
 import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink'
+import { RoutePath } from 'shared/config/routerConfig/routeConfig'
+import { ArticleBlockType } from 'entities/Article/model/consts/articleConsts'
 
 interface ArticleListItemProps {
   className?: string
@@ -56,7 +58,7 @@ export const ArticleListItem = ({ className, article, view }: ArticleListItemPro
       <AppLink
           theme={AppLinkTheme.NO_UNDERLINE}
           className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}
-          to={article.id}>
+          to={`${RoutePath.articles_details}${article.id}`}>
         <Card>
           <div className={cls.article_top}>
             <img src={article.img} alt={article.subtitle} className={cls.image}/>

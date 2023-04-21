@@ -2,8 +2,9 @@ import React from 'react'
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 
 import { ArticleList } from './ArticleList'
-import { Article } from 'entities/Article'
-import { ArticleBlockType, ArticleType, ArticleView } from 'entities/Article/model/types/article'
+import { Article, ArticleView } from 'entities/Article'
+
+import { ArticleBlockType, ArticleType } from 'entities/Article/model/consts/articleConsts'
 
 const article: Article = {
   id: '16',

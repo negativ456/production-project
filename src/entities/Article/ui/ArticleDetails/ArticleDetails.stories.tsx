@@ -3,7 +3,8 @@ import { ComponentMeta, ComponentStory } from '@storybook/react'
 
 import { ArticleDetails } from './ArticleDetails'
 import { storeDecorator } from 'shared/config/storybook/storeDecorator'
-import { Article, ArticleBlockType } from '../../model/types/article'
+import { Article } from '../../model/types/article'
+import { ArticleBlockType } from '../../model/consts/articleConsts'
 
 const article: Article = {
   id: '1',

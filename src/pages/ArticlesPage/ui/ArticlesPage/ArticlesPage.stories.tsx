@@ -3,7 +3,9 @@ import { ComponentMeta, ComponentStory } from '@storybook/react'
 
 import ArticlesPage from './ArticlesPage'
 import { storeDecorator } from 'shared/config/storybook/storeDecorator'
-import { Article, ArticleBlockType, ArticleType, ArticleView } from 'entities/Article/model/types/article'
+import { Article } from 'entities/Article/model/types/article'
+import { ArticleView } from 'entities/Article'
+import { ArticleBlockType, ArticleType } from 'entities/Article/model/consts/articleConsts'
 
 const article: Article = {
   id: '16',

@@ -1,10 +1,11 @@
 import { DeepPartial } from '@reduxjs/toolkit'
 import { profileActions, profileReducer } from './profileSlice'
-import { ProfileSchema, ValidateProfileError } from '../types/ProfileSchema'
+import { ProfileSchema } from '../types/ProfileSchema'
 
 import { updateProfileData } from '../services/updateProfileData/updateProfileData'
 import { Currency } from 'entities/Currency'
 import { Country } from 'entities/Country'
+import { ValidateProfileError } from '../const/const'
 
 describe('profileSlice.test', () => {
   const data = {

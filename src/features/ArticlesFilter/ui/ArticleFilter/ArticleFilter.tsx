@@ -20,9 +20,9 @@ import { SortOrder } from 'shared/types/SortOrder'
 import { fetchArticlesList } from 'pages/ArticlesPage/model/services/fetchArticlesList/fetchArticlesList'
 import { articlesListActions } from 'pages/ArticlesPage'
 import { useDebounce } from 'shared/lib/hooks/useDebounce'
-import { ArticleType } from 'entities/Article/model/types/article'
 import { ArticlesTabFilter } from '../ArticlesTabFilter/ArticlesTabFilter'
 import { TabItem } from 'shared/ui/Tabs/Tabs'
+import { ArticleType } from 'entities/Article/model/consts/articleConsts'
 
 interface ArticleFilterProps {
   className?: string

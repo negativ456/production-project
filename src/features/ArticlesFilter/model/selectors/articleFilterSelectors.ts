@@ -1,6 +1,7 @@
 import { StateSchema } from 'app/providers/StoreProvider'
 import { ArticleSortField, ArticleView } from 'entities/Article'
-import { ArticleType } from 'entities/Article/model/types/article'
+
+import { ArticleType } from 'entities/Article/model/consts/articleConsts'
 
 export const getArticleView = (state: StateSchema) => state.articleFilter?.view ?? ArticleView.TILE
 export const getArticleSortOrder = (state: StateSchema) => state.articleFilter?.sortOrder ?? 'asc'

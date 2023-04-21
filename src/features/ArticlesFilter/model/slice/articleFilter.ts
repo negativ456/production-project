@@ -3,7 +3,8 @@ import { ArticlesFilterSchema } from '../types/ArticlesFilterSchema'
 import { SortOrder } from 'shared/types/SortOrder'
 import { ArticleSortField, ArticleView } from 'entities/Article'
 import { SELECTED_ARTICLE_VIEW } from 'shared/const/userKey'
-import { ArticleType } from 'entities/Article/model/types/article'
+
+import { ArticleType } from 'entities/Article/model/consts/articleConsts'
 
 const initialState: ArticlesFilterSchema = {
   view: ArticleView.TILE,
