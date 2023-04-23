@@ -4,5 +4,6 @@ export {
   getArticleView,
   getArticleSort,
   getArticleSearch,
-  getArticleSortOrder
+  getArticleSortOrder,
+  getArticleType
 } from './model/selectors/articleFilterSelectors'

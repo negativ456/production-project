@@ -14,7 +14,6 @@ import { getLoginLoading } from '../../model/selectors/getLoginLoading/getLoginL
 import { getLoginError } from '../../model/selectors/getLoginError/getLoginError'
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/DynamicModuleLoader/DynamicModuleLoader'
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch'
-import { useNavigate } from 'react-router-dom'
 
 interface LoginFormProps {
   className?: string
@@ -30,7 +29,6 @@ const LoginForm: React.FC<LoginFormProps> = ({ className, onSuccess }) => {
   const password = useSelector(getLoginPassword)
   const isLoading = useSelector(getLoginLoading)
   const error = useSelector(getLoginError)
-  const navigate = useNavigate()
 
   const onChangeUsername = useCallback((value: string) => {
     dispatch(loginActions.setUsername(value))
@@ -44,7 +42,6 @@ const LoginForm: React.FC<LoginFormProps> = ({ className, onSuccess }) => {
       const result = await dispatch(loginByUsername({ username, password }))
       if (result.meta.requestStatus === 'fulfilled') {
         onSuccess()
-        navigate('/profile')
       }
     }
   }, [dispatch, password, username])

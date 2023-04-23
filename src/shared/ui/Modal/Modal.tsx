@@ -2,6 +2,7 @@ import { classNames } from 'shared/lib/classNames/classNames'
 import cls from './Modal.module.scss'
 import React, { ReactNode, useCallback, useEffect } from 'react'
 import { Portal } from '../Portal/Portal'
+import { Overlay } from '../Overlay/Overlay'
 interface ModalProps {
   className?: string
   children?: ReactNode
@@ -28,10 +29,9 @@ export const Modal: React.FC<ModalProps> = ({ className, onClose, children, open
   return (
       <Portal>
         <div className={classNames(cls.Modal, {}, [className])}>
-          <div className={cls.overlay} onClick={onClose}>
-            <div className={cls.content} onClick={(e) => { e.stopPropagation() }}>
-              {children}
-            </div>
+          <Overlay onClick={onClose}/>
+          <div className={cls.content}>
+            {children}
           </div>
         </div>
       </Portal>

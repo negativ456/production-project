@@ -2,9 +2,11 @@ import { Fragment, ReactNode } from 'react'
 import { Listbox as HListBox } from '@headlessui/react'
 import cls from './ListBox.module.scss'
 import { classNames } from 'shared/lib/classNames/classNames'
-import { Button } from '../Button/Button'
-import { HStack } from '../Stack/HStack/HStack'
+import { Button } from '../../../Button/Button'
+import { HStack } from '../../../Stack/HStack/HStack'
 import { DropdownDirection } from 'shared/types/ui'
+import { mapDirectionClass } from '../../styles/consts'
+import popUpCls from '../../styles/popup.module.scss'
 
 export interface ListBoxItem {
   value: string
@@ -23,13 +25,6 @@ interface ListBoxProps {
   label?: string
 }
 
-const mapDirectionClass: Record<DropdownDirection, string> = {
-  'bottom left': cls.bottom_left,
-  'bottom right': cls.bottom_right,
-  'top left': cls.top_left,
-  'top right': cls.top_right
-}
-
 export function ListBox (props: ListBoxProps) {
   const { items = [], className, label, direction = 'bottom left', value, readonly, defaultValue, onChange } = props
 
@@ -39,10 +34,10 @@ export function ListBox (props: ListBoxProps) {
         <HListBox
             disabled={readonly}
             as={'div'}
-            className={classNames(cls.ListBox, {}, [className])}
+            className={classNames('', {}, [className, popUpCls.popup])}
             value={value}
             onChange={onChange}>
-          <HListBox.Button className={cls.trigger}>
+          <HListBox.Button className={popUpCls.trigger}>
             <Button disabled={readonly}>
               {value ?? defaultValue}
             </Button>
@@ -56,7 +51,7 @@ export function ListBox (props: ListBoxProps) {
                     disabled={item.disabled}
                 >
                   {({ active, selected }) => (
-                      <li className={classNames(cls.item, { [cls.active]: active })}>
+                      <li className={classNames(cls.item, { [popUpCls.active]: active, [popUpCls.disabled]: item.disabled })}>
                         {selected && '!'}
                         {item.content}
                       </li>

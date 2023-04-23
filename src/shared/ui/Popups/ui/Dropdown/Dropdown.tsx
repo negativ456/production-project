@@ -2,7 +2,10 @@ import { Menu } from '@headlessui/react'
 import cls from './Dropdown.module.scss'
 import { classNames } from 'shared/lib/classNames/classNames'
 import { Fragment, ReactNode } from 'react'
-import { AppLink } from '../AppLink/AppLink'
+import { AppLink } from '../../../AppLink/AppLink'
+import { DropdownDirection } from 'shared/types/ui'
+import { mapDirectionClass } from '../../styles/consts'
+import popUpCls from '../../styles/popup.module.scss'
 
 export interface DropdownItem {
   disabled?: boolean
@@ -14,22 +17,21 @@ interface DropdownProps {
   className?: string
   items: DropdownItem[]
   trigger: ReactNode
-  direction?: 'left' | 'right'
-
+  direction?: DropdownDirection
 }
 export function Dropdown (props: DropdownProps) {
-  const { className, items, trigger, direction = 'left' } = props
+  const { className, items, trigger, direction = 'bottom left' } = props
   return (
-      <Menu as={'div'} className={classNames(cls.Dropdown, {}, [className, cls[direction]])}>
-        <Menu.Button className={cls.btn}>{trigger}</Menu.Button>
-        <Menu.Items className={cls.menu}>
+      <Menu as={'div'} className={classNames('', {}, [className, popUpCls.popup])}>
+        <Menu.Button className={popUpCls.trigger}>{trigger}</Menu.Button>
+        <Menu.Items className={classNames(cls.menu, {}, [mapDirectionClass[direction]])}>
           {items.map((item, idx) => {
             const content = ({ active }: { active: boolean }) => (
               <button
                   type={'button'}
                   onClick={item.onClick}
                   disabled={item.disabled}
-                  className={classNames(cls.item, { [cls.active]: active })}
+                  className={classNames(cls.item, { [popUpCls.active]: active })}
               >
                 {item.content}
               </button>
