@@ -2,7 +2,7 @@ import React from 'react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 
 import { ArticlesTabFilter } from './ArticlesTabFilter'
-import { storeDecorator } from 'shared/config/storybook/storeDecorator'
+import { storeDecorator } from '@/shared/config/storybook/storeDecorator'
 
 export default {
   title: 'features/ArticleFilter/ArticlesTabFilter',

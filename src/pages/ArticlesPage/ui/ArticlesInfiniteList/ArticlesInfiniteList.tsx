@@ -5,11 +5,11 @@ import { useSelector } from 'react-redux'
 import { getArticlesList } from '../../model/slice/articlesListSlice'
 import { getArticlesPageError, getArticlesPageIsLoading } from '../../model/selectors/articlesPageSelectors'
 import { useSearchParams } from 'react-router-dom'
-import { articleFilterActions, getArticleView } from 'features/ArticlesFilter'
-import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect'
+import { articleFilterActions, getArticleView } from '@/features/ArticlesFilter'
+import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect'
 import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage'
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch'
-import { Text } from 'shared/ui/Text/Text'
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch'
+import { Text } from '@/shared/ui/Text/Text'
 
 interface ArticlesInfiniteListProps {
   className?: string

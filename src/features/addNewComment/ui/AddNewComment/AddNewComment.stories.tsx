@@ -3,7 +3,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react'
 
 import { AddNewComment } from './AddNewComment'
 import { action } from '@storybook/addon-actions'
-import { storeDecorator } from 'shared/config/storybook/storeDecorator'
+import { storeDecorator } from '@/shared/config/storybook/storeDecorator'
 
 export default {
   title: 'features/AddNewComment',

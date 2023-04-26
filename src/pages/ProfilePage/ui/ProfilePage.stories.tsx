@@ -2,7 +2,7 @@ import React from 'react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 
 import ProfilePage from './ProfilePage'
-import { storeDecorator } from 'shared/config/storybook/storeDecorator'
+import { storeDecorator } from '@/shared/config/storybook/storeDecorator'
 export default {
   title: 'pages/ProfilePage',
   component: ProfilePage,

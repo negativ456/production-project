@@ -1,6 +1,6 @@
 import { fetchCommentsByID } from './fetchCommentsByID'
-import { TestAsyncThunk } from 'shared/config/tests/TestAsyncThunk/TestAsyncThunk'
-import { CommentTypes } from 'entities/Comment'
+import { TestAsyncThunk } from '@/shared/config/tests/TestAsyncThunk/TestAsyncThunk'
+import { CommentTypes } from '@/entities/Comment'
 const comments: CommentTypes[] = [
   {
     id: '1',

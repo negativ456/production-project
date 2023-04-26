@@ -28,6 +28,7 @@ export default ({ config }: { config: webpack.Configuration }): webpack.Configur
       test: /\.svg$/,
       use: ['@svgr/webpack']
     })
+    config.resolve.alias = { '@': paths.src }
   }
   config?.plugins?.push(new webpack.DefinePlugin({
     __IS_DEV__: JSON.stringify(true),

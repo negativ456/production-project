@@ -14,7 +14,7 @@
     "strictNullChecks": true,
     "isolatedModules": true,
     "paths": {
-      "*": ["./src/*"]
+      "@/*": ["./src/*"]
     }
   },
   "ts-node": {
@@ -30,6 +30,7 @@
     "./src/**/*.ts",
     "./src/**/*.tsx",
     ".eslintrc.js",
-    "webpack.config.ts"
+    "webpack.config.ts",
+    "./scripts/*.ts"
   ]
 }

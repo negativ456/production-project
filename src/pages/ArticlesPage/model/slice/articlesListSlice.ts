@@ -1,9 +1,9 @@
 import { createEntityAdapter, createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { StateSchema } from 'app/providers/StoreProvider'
-import { Article, ArticleView } from 'entities/Article'
+import { StateSchema } from '@/app/providers/StoreProvider'
+import { Article, ArticleView } from '@/entities/Article'
 import { ArticlesListSchema } from '../types/ArticlesListSchema'
 import { fetchArticlesList } from '../services/fetchArticlesList/fetchArticlesList'
-import { SELECTED_ARTICLE_VIEW } from 'shared/const/userKey'
+import { SELECTED_ARTICLE_VIEW } from '@/shared/const/userKey'
 
 const articlesListAdapter = createEntityAdapter<Article>({
   selectId: (article) => article.id

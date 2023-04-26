@@ -1,12 +1,12 @@
 import React, { Suspense, useEffect } from 'react'
-import { classNames } from 'shared/lib/classNames/classNames'
-import { AppRouter } from 'app/providers/router'
-import { Navbar } from 'widgets/Navbar'
-import { Sidebar } from 'widgets/Sidebar'
+import { classNames } from '@/shared/lib/classNames/classNames'
+import { AppRouter } from '@/app/providers/router'
+import { Navbar } from '@/widgets/Navbar'
+import { Sidebar } from '@/widgets/Sidebar'
 import { useDispatch, useSelector } from 'react-redux'
-import { userActions } from 'entities/User'
-import { getUserMounted } from 'entities/User/model/selectors/getUserMounted/getUserMounted'
-import { useTheme } from 'app/providers/ThemeProvider/lib/useTheme'
+import { userActions } from '@/entities/User'
+import { getUserMounted } from '@/entities/User/model/selectors/getUserMounted/getUserMounted'
+import { useTheme } from '@/app/providers/ThemeProvider/lib/useTheme'
 
 const App = () => {
   const dispatch = useDispatch()

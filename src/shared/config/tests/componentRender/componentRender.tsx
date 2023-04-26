@@ -3,9 +3,9 @@ import { render } from '@testing-library/react'
 import { I18nextProvider } from 'react-i18next'
 import i18nForTests from '../../i18n/i18nForTests'
 import { MemoryRouter } from 'react-router-dom'
-import { StateSchema, StoreProvider } from 'app/providers/StoreProvider'
+import { StateSchema, StoreProvider } from '@/app/providers/StoreProvider'
 import { DeepPartial } from '@reduxjs/toolkit'
-import { ReducersList } from 'shared/lib/DynamicModuleLoader/DynamicModuleLoader'
+import { ReducersList } from '@/shared/lib/DynamicModuleLoader/DynamicModuleLoader'
 
 export interface componentRenderOptions {
   route?: string

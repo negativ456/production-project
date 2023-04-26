@@ -1,15 +1,15 @@
 import { useTranslation } from 'react-i18next'
-import { Text } from 'shared/ui/Text/Text'
-import { Button, ButtonTheme } from 'shared/ui/Button/Button'
+import { Text } from '@/shared/ui/Text/Text'
+import { Button, ButtonTheme } from '@/shared/ui/Button/Button'
 import React, { useCallback } from 'react'
 import { useSelector } from 'react-redux'
 import { getProfileReadonly } from '../../model/selectors/getProfileReadonly/getProfileReadonly'
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch'
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch'
 import { profileActions } from '../../model/slice/profileSlice'
 import { updateProfileData } from '../../model/services/updateProfileData/updateProfileData'
-import { getUserAuthData } from 'entities/User/model/selectors/getUserAuthData/getUserAuthData'
+import { getUserAuthData } from '@/entities/User/model/selectors/getUserAuthData/getUserAuthData'
 import { getProfileData } from '../../model/selectors/getProfileData/getProfileData'
-import { HStack } from 'shared/ui/Stack/HStack/HStack'
+import { HStack } from '@/shared/ui/Stack/HStack/HStack'
 
 interface EditHeaderProps {
   className?: string

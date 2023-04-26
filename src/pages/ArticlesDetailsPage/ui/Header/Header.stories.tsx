@@ -2,7 +2,7 @@ import React from 'react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 
 import { Header } from './Header'
-import { storeDecorator } from 'shared/config/storybook/storeDecorator'
+import { storeDecorator } from '@/shared/config/storybook/storeDecorator'
 
 export default {
   title: 'pages/ArticleDetailsPage/Header',

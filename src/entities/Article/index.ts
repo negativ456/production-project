@@ -4,5 +4,5 @@ export { ArticleCodeBlockComponent } from './ui/ArticleCodeBlockComponent/Articl
 export { ArticleTextBlockComponent } from './ui/ArticleTextBlockComponent/ArticleTextBlockComponent'
 export type { Article } from './model/types/article'
 export type { ArticleDetailsSchema } from './model/types/articleDetailsSchema'
-export { ArticleView } from 'entities/Article/model/consts/articleConsts'
-export { ArticleSortField } from 'entities/Article/model/consts/articleConsts'
+export { ArticleView } from './model/consts/articleConsts'
+export { ArticleSortField } from './model/consts/articleConsts'

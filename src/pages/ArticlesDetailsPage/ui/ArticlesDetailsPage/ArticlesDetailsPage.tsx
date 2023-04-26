@@ -1,13 +1,13 @@
-import { classNames } from 'shared/lib/classNames/classNames'
+import { classNames } from '@/shared/lib/classNames/classNames'
 import cls from './ArticlesDetailsPage.module.scss'
 import React from 'react'
-import { ArticleDetails } from 'entities/Article'
+import { ArticleDetails } from '@/entities/Article'
 import { useParams } from 'react-router-dom'
-import { Page } from 'widgets/Page/ui/Page'
+import { Page } from '@/widgets/Page/ui/Page'
 import { Header } from '../Header/Header'
-import { VStack } from 'shared/ui/Stack'
-import { ArticleRecommendations } from 'features/articleRecommendations'
-import { ArticleCommentList } from 'features/ArticleCommentList'
+import { VStack } from '@/shared/ui/Stack'
+import { ArticleRecommendations } from '@/features/articleRecommendations'
+import { ArticleCommentList } from '@/features/ArticleCommentList'
 
 interface ArticlesDetailsPageProps {
   className?: string

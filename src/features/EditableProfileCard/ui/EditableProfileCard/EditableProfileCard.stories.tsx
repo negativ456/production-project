@@ -1,10 +1,10 @@
 import React from 'react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 import { EditableProfileCard } from './EditableProfileCard'
-import { storeDecorator } from 'shared/config/storybook/storeDecorator'
-import { Currency } from 'entities/Currency'
-import { Country } from 'entities/Country'
-import avatar from 'shared/assets/tests/storybook.jpg'
+import { storeDecorator } from '@/shared/config/storybook/storeDecorator'
+import { Currency } from '@/entities/Currency'
+import { Country } from '@/entities/Country'
+import avatar from '@/shared/assets/tests/storybook.jpg'
 export default {
   title: 'features/EditableProfileCard',
   component: EditableProfileCard,

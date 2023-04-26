@@ -1,5 +1,5 @@
 import cls from './ArticleRecommendations.module.scss'
-import { ArticleList } from 'pages/ArticlesPage/ui/ArticleList/ArticleList'
+import { ArticleList } from '@/pages/ArticlesPage/ui/ArticleList/ArticleList'
 import { useArticleRecommendations } from '../../api/articlesRecommendationsApi'
 
 interface ArticleRecommendationsProps {

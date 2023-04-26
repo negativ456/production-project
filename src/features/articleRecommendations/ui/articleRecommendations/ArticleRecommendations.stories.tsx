@@ -2,11 +2,11 @@ import React from 'react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 
 import { ArticleRecommendations } from './ArticleRecommendations'
-import { storeDecorator } from 'shared/config/storybook/storeDecorator'
+import { storeDecorator } from '@/shared/config/storybook/storeDecorator'
 import withMock from 'storybook-addon-mock'
-import { Article } from 'entities/Article'
+import { Article } from '@/entities/Article'
 
-import { ArticleBlockType, ArticleType } from 'entities/Article/model/consts/articleConsts'
+import { ArticleBlockType, ArticleType } from '@/entities/Article/model/consts/articleConsts'
 const article: Article = {
   id: '16',
   title: 'Javascript news 16',

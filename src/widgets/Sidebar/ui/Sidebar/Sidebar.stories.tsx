@@ -2,8 +2,8 @@ import React from 'react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 
 import { Sidebar } from './Sidebar'
-import { storeDecorator } from 'shared/config/storybook/storeDecorator'
-import { User } from 'entities/User'
+import { storeDecorator } from '@/shared/config/storybook/storeDecorator'
+import { User } from '@/entities/User'
 const user: User = {
   id: '1',
   username: 'user'

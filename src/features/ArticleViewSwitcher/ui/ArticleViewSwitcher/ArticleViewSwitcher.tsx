@@ -1,10 +1,10 @@
-import { classNames } from 'shared/lib/classNames/classNames'
+import { classNames } from '@/shared/lib/classNames/classNames'
 import cls from './ArticleViewSwitcher.module.scss'
-import Tile from 'shared/assets/icons/tile.svg'
-import List from 'shared/assets/icons/list.svg'
-import { Button, ButtonTheme } from 'shared/ui/Button/Button'
-import { Icon } from 'shared/ui/Icon/Icon'
-import { ArticleView } from 'entities/Article'
+import Tile from '@/shared/assets/icons/tile.svg'
+import List from '@/shared/assets/icons/list.svg'
+import { Button, ButtonTheme } from '@/shared/ui/Button/Button'
+import { Icon } from '@/shared/ui/Icon/Icon'
+import { ArticleView } from '@/entities/Article'
 
 interface ArticleViewSwitcherProps {
   className?: string

@@ -1,9 +1,9 @@
-import { classNames } from 'shared/lib/classNames/classNames'
+import { classNames } from '@/shared/lib/classNames/classNames'
 import cls from './ArticleDetails.module.scss'
-import { DynamicModuleLoader, ReducersList } from 'shared/lib/DynamicModuleLoader/DynamicModuleLoader'
+import { DynamicModuleLoader, ReducersList } from '@/shared/lib/DynamicModuleLoader/DynamicModuleLoader'
 import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice'
 import React, { ReactNode, useEffect } from 'react'
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch'
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch'
 import { fetchArticleByID } from '../../model/services/fetchArticleByID/fetchArticleByID'
 import { useSelector } from 'react-redux'
 import {
@@ -11,17 +11,17 @@ import {
   getArticleDetailsError,
   getArticleDetailsLoading
 } from '../../model/selectors/getArticleDetailsData'
-import { Text, TextSize, TextTheme } from 'shared/ui/Text/Text'
-import { Skeleton } from 'shared/ui/Skeleton/Skeleton'
-import { Avatar } from 'shared/ui/Avatar/Avatar'
-import EyeIcon from 'shared/assets/icons/eye.svg'
-import CalendarIcon from 'shared/assets/icons/calendar.svg'
-import { Icon } from 'shared/ui/Icon/Icon'
+import { Text, TextSize, TextTheme } from '@/shared/ui/Text/Text'
+import { Skeleton } from '@/shared/ui/Skeleton/Skeleton'
+import { Avatar } from '@/shared/ui/Avatar/Avatar'
+import EyeIcon from '@/shared/assets/icons/eye.svg'
+import CalendarIcon from '@/shared/assets/icons/calendar.svg'
+import { Icon } from '@/shared/ui/Icon/Icon'
 import { ArticleBlock } from '../../model/types/article'
 import { ArticleCodeBlockComponent } from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent'
 import { ArticleImageBlockComponent } from '../ArticleImageBlockComponent/ArticleImageBlockComponent'
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent'
-import { HStack, VStack } from 'shared/ui/Stack'
+import { HStack, VStack } from '@/shared/ui/Stack'
 import { ArticleBlockType } from '../../model/consts/articleConsts'
 
 interface ArticleDetailsProps {

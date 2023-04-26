@@ -1,7 +1,7 @@
 import { updateProfileData } from './updateProfileData'
-import { TestAsyncThunk } from 'shared/config/tests/TestAsyncThunk/TestAsyncThunk'
-import { Currency } from 'entities/Currency'
-import { Country } from 'entities/Country'
+import { TestAsyncThunk } from '@/shared/config/tests/TestAsyncThunk/TestAsyncThunk'
+import { Currency } from '@/entities/Currency'
+import { Country } from '@/entities/Country'
 
 import { ValidateProfileError } from '../../const/const'
 const data = {

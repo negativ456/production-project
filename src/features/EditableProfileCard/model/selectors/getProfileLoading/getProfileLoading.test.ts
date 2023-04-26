@@ -1,5 +1,5 @@
 import { DeepPartial } from '@reduxjs/toolkit'
-import { StateSchema } from 'app/providers/StoreProvider'
+import { StateSchema } from '@/app/providers/StoreProvider'
 import { getProfileLoading } from './getProfileLoading'
 describe('getProfileLoading.test', () => {
   test('should return value', () => {

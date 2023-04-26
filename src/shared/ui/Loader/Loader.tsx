@@ -1,7 +1,7 @@
-import { classNames } from 'shared/lib/classNames/classNames'
+import { classNames } from '@/shared/lib/classNames/classNames'
 import cls from './Loader.module.scss'
 import React from 'react'
-import LoaderIcon from 'shared/assets/icons/loader.svg'
+import LoaderIcon from '@/shared/assets/icons/loader.svg'
 interface LoaderProps {
   className?: string
 }
