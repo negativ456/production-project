@@ -4,7 +4,7 @@ import { ReactNode, useEffect } from 'react'
 import { useTheme } from '@/app/providers/ThemeProvider/lib/useTheme'
 import { Portal } from '../Portal/Portal'
 import { Overlay } from '../Overlay/Overlay'
-import { useAnimationLibs } from '@/shared/lib/AnimationProvider'
+import { AnimationProvider, useAnimationLibs } from '@/shared/lib/AnimationProvider'
 
 interface DrawerProps {
   className?: string
@@ -70,7 +70,7 @@ const DrawerContent = ({ className, children, onClose, isOpen }: DrawerProps) =>
   )
 }
 
-export const Drawer = (props: DrawerProps) => {
+export const AsyncDrawer = (props: DrawerProps) => {
   const { isLoaded } = useAnimationLibs()
 
   if (!isLoaded) {
@@ -78,4 +78,10 @@ export const Drawer = (props: DrawerProps) => {
   }
 
   return <DrawerContent {...props}/>
+}
+
+export const Drawer = (props: DrawerProps) => {
+  return <AnimationProvider>
+    <AsyncDrawer {...props}/>
+  </AnimationProvider>
 }
