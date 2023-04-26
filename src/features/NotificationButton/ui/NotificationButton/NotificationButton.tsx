@@ -8,6 +8,7 @@ import { NotificationList } from 'entities/Notification'
 import { useState } from 'react'
 import { Drawer } from 'shared/ui/Drawer/Drawer'
 import { isMobile } from 'shared/lib/detectDevice/detectDevice'
+import { AnimationProvider } from 'shared/lib/AnimationProvider'
 
 interface NotificationButtonProps {
   className?: string
@@ -33,9 +34,11 @@ export const NotificationButton = ({ className }: NotificationButtonProps) => {
         {isMobile()
           ? <>
               {trigger}
-              <Drawer isOpen={isOpen} onClose={onCloseDrawer}>
-                <NotificationList/>
-              </Drawer>
+              <AnimationProvider>
+                <Drawer isOpen={isOpen} onClose={onCloseDrawer}>
+                  <NotificationList/>
+                </Drawer>
+              </AnimationProvider>
             </>
           : <Popover
             className={classNames('', {}, [className])}
