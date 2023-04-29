@@ -8,6 +8,7 @@ import { Header } from '../Header/Header'
 import { VStack } from '@/shared/ui/Stack'
 import { ArticleRecommendations } from '@/features/articleRecommendations'
 import { ArticleCommentList } from '@/features/ArticleCommentList'
+import { ArticleRating } from '@/features/articleRating'
 
 interface ArticlesDetailsPageProps {
   className?: string
@@ -16,11 +17,16 @@ interface ArticlesDetailsPageProps {
 const ArticlesDetailsPage: React.FC<ArticlesDetailsPageProps> = ({ className }) => {
   const { id } = useParams()
 
+  if (!id) {
+    return null
+  }
+
   return (
       <Page className={classNames(cls.ArticlesDetailsPage, {}, [className])}>
         <Header/>
         <VStack align={'stretch'} gap={'16'} max >
           <ArticleDetails id={id}/>
+          <ArticleRating articleId={id}/>
           <ArticleRecommendations/>
           <ArticleCommentList articleID={id}/>
         </VStack>

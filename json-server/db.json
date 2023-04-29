@@ -705,7 +705,7 @@
       "roles": [
         "ADMIN"
       ],
-      "avatar": "https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8aHVtYW58ZW58MHx8MHx8&w=1000&q=80"
+      "avatar": "https://yakutsk.ru/wp-content/uploads/2022/07/12/bystrov_haker.jpeg"
     },
     {
       "id": "2",
@@ -748,6 +748,79 @@
       "city": "Moscow",
       "username": "ulbi tv",
       "avatar": "https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg"
+    }
+  ],
+  "article-ratings": [
+    {
+      "id": "1",
+      "rate": 4,
+      "feedback": "Хорошая статья",
+      "userId": "1",
+      "articleId": "1"
+    },
+    {
+      "id": "2",
+      "rate": 4,
+      "feedback": "Хорошая статья",
+      "userId": "1",
+      "articleId": "2"
+    },
+    {
+      "userId": "1",
+      "articleId": "3",
+      "rate": 3,
+      "feedback": "",
+      "id": "I7ofk1u"
+    },
+    {
+      "userId": "1",
+      "articleId": "9",
+      "rate": 5,
+      "feedback": "asdasdasdasd",
+      "id": "Y7MhPzo"
+    },
+    {
+      "userId": "1",
+      "articleId": "10",
+      "rate": 1,
+      "feedback": "отстой",
+      "id": "II0a75O"
+    },
+    {
+      "userId": "1",
+      "articleId": "7",
+      "rate": 3,
+      "feedback": "",
+      "id": "bcPnbbZ"
+    },
+    {
+      "userId": "1",
+      "articleId": "1",
+      "rate": 4,
+      "id": "R8mBP7y"
+    },
+    {
+      "userId": "1",
+      "articleId": "18",
+      "feedback": "cool",
+      "rate": 5,
+      "id": "-8kU2Ow"
+    }
+  ],
+  "profile-ratings": [
+    {
+      "id": "1",
+      "rate": 4,
+      "feedback": "Хорошая статья",
+      "userId": "1",
+      "profileId": "1"
+    },
+    {
+      "id": "2",
+      "rate": 4,
+      "feedback": "Хорошая статья",
+      "userId": "1",
+      "profileId": "2"
     }
   ]
 }

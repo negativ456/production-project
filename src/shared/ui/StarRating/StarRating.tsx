@@ -2,7 +2,7 @@ import { classNames } from '@/shared/lib/classNames/classNames'
 import StarIcon from '@/shared/assets/icons/star.svg'
 import cls from './StarRating.module.scss'
 import { Icon } from '@/shared/ui/Icon/Icon'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 interface StarRatingProps {
   className?: string
@@ -11,9 +11,15 @@ interface StarRatingProps {
   selectedStars?: number
 }
 const stars = [1, 2, 3, 4, 5]
-export const StarRating = ({ className, onSelect, selectedStars, size }: StarRatingProps) => {
-  const [currentStarsCount, setCurrentStarsCount] = useState(0)
+export const StarRating = ({ className, onSelect, selectedStars = 0, size }: StarRatingProps) => {
+  const [currentStarsCount, setCurrentStarsCount] = useState(selectedStars)
   const [isSelected, setIsSelected] = useState(false)
+
+  useEffect(() => {
+    if (selectedStars) {
+      setIsSelected(true)
+    }
+  }, [selectedStars])
 
   const onHover = (starsCount: number) => () => {
     if (!isSelected) {
