@@ -1,7 +1,7 @@
 import { classNames } from '@/shared/lib/classNames/classNames'
 import StarIcon from '@/shared/assets/icons/star.svg'
 import cls from './StarRating.module.scss'
-import { Icon } from '@/shared/ui/Icon/Icon'
+import { Icon } from '../Icon/Icon'
 import { useEffect, useState } from 'react'
 
 interface StarRatingProps {

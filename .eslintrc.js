@@ -27,7 +27,7 @@ module.exports = {
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',
     'react/display-name': 'warn',
-    'fsd-architecture-plugin/path-checker': 'error'
+    'fsd-architecture-plugin/path-checker': ['error', { alias: '@' }]
   },
   globals: {
     __IS_DEV__: true,

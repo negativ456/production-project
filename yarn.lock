@@ -6888,10 +6888,10 @@
     "eslint-utils" "^2.0.0"
     "regexpp" "^3.0.0"
 
-"eslint-plugin-fsd-architecture-plugin@^0.0.1":
-  "integrity" "sha512-M204oTf28EIHaQmz7rT5jgd87ZXa2I/qYClPAX7CieHEV+X10xg7GV/BtN7hUNvcZ/S/CpR5v8fb3s9ooIltEg=="
-  "resolved" "https://registry.npmjs.org/eslint-plugin-fsd-architecture-plugin/-/eslint-plugin-fsd-architecture-plugin-0.0.1.tgz"
-  "version" "0.0.1"
+"eslint-plugin-fsd-architecture-plugin@^0.0.2":
+  "integrity" "sha512-c/HlmH7xflxYzEZI4rXwztpxigTTeHIlZxXKHskh5/5ILuPJkDka50TexwhW9la+zEnpkcojyV6dNOf24PxRfw=="
+  "resolved" "https://registry.npmjs.org/eslint-plugin-fsd-architecture-plugin/-/eslint-plugin-fsd-architecture-plugin-0.0.2.tgz"
+  "version" "0.0.2"
   dependencies:
     "requireindex" "^1.2.0"
 
