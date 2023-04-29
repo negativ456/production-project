@@ -30,7 +30,7 @@ const article: Article = {
   ]
 }
 export default {
-  title: 'shared/ArticleRecommendations',
+  title: 'features/ArticleRecommendations',
   component: ArticleRecommendations,
   argTypes: {
     backgroundColor: { control: 'color' }

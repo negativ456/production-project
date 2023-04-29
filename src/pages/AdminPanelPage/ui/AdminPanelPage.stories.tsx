@@ -4,7 +4,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react'
 import AdminPanelPage from './AdminPanelPage'
 import { storeDecorator } from '@/shared/config/storybook/storeDecorator'
 export default {
-  title: 'pages/AboutPage',
+  title: 'pages/AdminPanelPage',
   component: AdminPanelPage,
   argTypes: {
     backgroundColor: { control: 'color' }

@@ -4,7 +4,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react'
 import { RatingCard } from './RatingCard'
 
 export default {
-  title: 'shared/RatingCard',
+  title: 'entities/Rating/RatingCard',
   component: RatingCard,
   argTypes: {
     backgroundColor: { control: 'color' }
@@ -14,4 +14,11 @@ export default {
 const Template: ComponentStory<typeof RatingCard> = (args) => <RatingCard {...args} />
 
 export const Normal = Template.bind({})
-Normal.args = {}
+Normal.args = {
+  title: 'Evaluate the article'
+}
+export const WithRate = Template.bind({})
+WithRate.args = {
+  title: 'Evaluate the article',
+  rate: 2
+}

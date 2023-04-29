@@ -4,7 +4,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react'
 import LoginForm from './LoginForm'
 import { storeDecorator } from '@/shared/config/storybook/storeDecorator'
 export default {
-  title: 'features/LoginForm',
+  title: 'features/AuthByUsername/LoginForm',
   component: LoginForm,
   argTypes: {
     backgroundColor: { control: 'color' }

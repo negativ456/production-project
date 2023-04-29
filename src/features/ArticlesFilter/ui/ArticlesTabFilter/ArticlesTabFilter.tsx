@@ -1,7 +1,7 @@
 import { classNames } from '@/shared/lib/classNames/classNames'
 import cls from './ArticlesTabFilter.module.scss'
 import { useTranslation } from 'react-i18next'
-import { useEffect, useMemo } from 'react'
+import { useMemo } from 'react'
 import { TabItem, Tabs } from '@/shared/ui/Tabs/Tabs'
 import { useSelector } from 'react-redux'
 import { getArticleType } from '../../model/selectors/articleFilterSelectors'
@@ -34,9 +34,7 @@ export const ArticlesTabFilter = ({ className, onChangeTab }: ArticlesTabFilterP
       content: t('Наука')
     }
   ], [t])
-  useEffect(() => {
-    console.log(type)
-  }, [type])
+
   return (
       <Tabs value={type} onTabClick={onChangeTab} tabs={tabList} className={classNames(cls.ArticlesTabFilter, {}, [className])}/>
   )
