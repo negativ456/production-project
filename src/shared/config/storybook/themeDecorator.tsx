@@ -1,10 +1,3 @@
-// export const themeDecorator = (StoryComponent: Story) => {
-//   return (
-//       <div className="app">
-//         <StoryComponent/>
-//       </div>
-//   )
-// }
 export const themeDecorator = (props: { children: any, themeClasses: any }) => {
   const { children, themeClasses } = props
   return (

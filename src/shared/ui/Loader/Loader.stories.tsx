@@ -12,4 +12,4 @@ export default {
 
 const Template: ComponentStory<typeof Loader> = (args) => <Loader {...args} />
 
-export const Light = Template.bind({})
+export const Normal = Template.bind({})

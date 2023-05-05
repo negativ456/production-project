@@ -4,17 +4,16 @@ import React, { useCallback } from 'react'
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch'
 import { articlesListReducer } from '../../model/slice/articlesListSlice'
 import { DynamicModuleLoader, ReducersList } from '@/shared/lib/DynamicModuleLoader/DynamicModuleLoader'
-import { Page } from '@/widgets/Page/ui/Page'
+import { Page } from '@/widgets/Page'
 import { fetchNextArticlePage } from '../../model/services/fetchNextArticlePage/fetchNextArticlePage'
-import { ArticleFilter, articleFilterReducer } from '@/features/ArticlesFilter'
+import { ArticleFilter } from '../ArticleFilter/ArticleFilter'
 import { ArticlesInfiniteList } from '../ArticlesInfiniteList/ArticlesInfiniteList'
 
 interface ArticlesPageProps {
   className?: string
 }
 const reducers: ReducersList = {
-  articlesList: articlesListReducer,
-  articleFilter: articleFilterReducer
+  articlesList: articlesListReducer
 }
 const ArticlesPage: React.FC<ArticlesPageProps> = ({ className }) => {
   const dispatch = useAppDispatch()

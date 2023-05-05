@@ -1,6 +1,6 @@
 import cls from './ArticleRecommendations.module.scss'
-import { ArticleList } from '@/pages/ArticlesPage/ui/ArticleList/ArticleList'
 import { useArticleRecommendations } from '../../api/articlesRecommendationsApi'
+import { ArticleList } from '@/entities/Article'
 
 interface ArticleRecommendationsProps {
   className?: string

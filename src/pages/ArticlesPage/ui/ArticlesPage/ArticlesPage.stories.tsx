@@ -3,9 +3,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react'
 
 import ArticlesPage from './ArticlesPage'
 import { storeDecorator } from '@/shared/config/storybook/storeDecorator'
-import { Article } from '@/entities/Article/model/types/article'
-import { ArticleView } from '@/entities/Article'
-import { ArticleBlockType, ArticleType } from '@/entities/Article/model/consts/articleConsts'
+import { Article, ArticleView, ArticleBlockType, ArticleType, ArticleSortField } from '@/entities/Article'
 
 const article: Article = {
   id: '16',
@@ -56,7 +54,11 @@ Normal.decorators = [
       },
       page: 1,
       hasMore: true,
-      mounted: false
+      mounted: false,
+      search: '',
+      sortOrder: 'asc',
+      sort: ArticleSortField.VIEWS,
+      type: ArticleType.ALL
     }
   })
 ]

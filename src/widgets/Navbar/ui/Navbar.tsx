@@ -5,13 +5,13 @@ import { Button, ButtonTheme } from '@/shared/ui/Button/Button'
 import { useTranslation } from 'react-i18next'
 import { LoginModal } from '@/features/AuthByUsername'
 import { useSelector } from 'react-redux'
-import { getUserAuthData } from '@/entities/User/model/selectors/getUserAuthData/getUserAuthData'
+import { getUserAuthData } from '@/entities/User'
 import { Text, TextTheme } from '@/shared/ui/Text/Text'
 import { AppLink } from '@/shared/ui/AppLink/AppLink'
-import { RoutePath } from '@/shared/config/routerConfig/routeConfig'
 import { HStack } from '@/shared/ui/Stack'
 import { NotificationButton } from '@/features/NotificationButton'
-import { AvatarDropdown } from '@/features/AvatarDropdown/ui/AvatarDropdown/AvatarDropdown'
+import { AvatarDropdown } from '@/features/AvatarDropdown'
+import { RoutePath } from '@/shared/const/router'
 
 interface NavBarProps {
   className?: string

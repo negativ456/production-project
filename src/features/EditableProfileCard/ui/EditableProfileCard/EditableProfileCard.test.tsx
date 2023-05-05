@@ -1,7 +1,7 @@
 import { screen } from '@testing-library/react'
 import { EditableProfileCard } from './EditableProfileCard'
 import { componentRender } from '@/shared/config/tests/componentRender/componentRender'
-import { Profile } from '@/entities/Profile/model/types/profile'
+import { Profile } from '@/entities/Profile'
 import { Currency } from '@/entities/Currency'
 import { Country } from '@/entities/Country'
 import { profileReducer } from '../../model/slice/profileSlice'

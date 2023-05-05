@@ -1,9 +1,10 @@
 import { createEntityAdapter, createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { StateSchema } from '@/app/providers/StoreProvider'
-import { Article, ArticleView } from '@/entities/Article'
+import { Article, ArticleSortField, ArticleType, ArticleView } from '@/entities/Article'
 import { ArticlesListSchema } from '../types/ArticlesListSchema'
 import { fetchArticlesList } from '../services/fetchArticlesList/fetchArticlesList'
-import { SELECTED_ARTICLE_VIEW } from '@/shared/const/userKey'
+import { SELECTED_ARTICLE_VIEW } from '@/shared/const/localstorageKeys'
+import { SortOrder } from '@/shared/types/SortOrder'
 
 const articlesListAdapter = createEntityAdapter<Article>({
   selectId: (article) => article.id
@@ -21,7 +22,11 @@ export const articlesListSlice = createSlice({
     entities: {},
     page: 1,
     hasMore: true,
-    mounted: false
+    mounted: false,
+    search: '',
+    sortOrder: 'asc',
+    sort: ArticleSortField.VIEWS,
+    type: ArticleType.ALL
   }),
   reducers: {
     setPage: (state, action: PayloadAction<number>) => {
@@ -31,6 +36,26 @@ export const articlesListSlice = createSlice({
       const view = localStorage.getItem(SELECTED_ARTICLE_VIEW) as ArticleView ?? ArticleView.TILE
       state.limit = view === ArticleView.TILE ? 9 : 4
       state.mounted = true
+    },
+    setView: (state, action: PayloadAction<ArticleView>) => {
+      state.view = action.payload
+      localStorage.setItem(SELECTED_ARTICLE_VIEW, action.payload)
+    },
+    setStartView: (state) => {
+      const view = localStorage.getItem(SELECTED_ARTICLE_VIEW) as ArticleView
+      state.view = view
+    },
+    setSearch: (state, action: PayloadAction<string>) => {
+      state.search = action.payload
+    },
+    setSort: (state, action: PayloadAction<ArticleSortField>) => {
+      state.sort = action.payload
+    },
+    setType: (state, action: PayloadAction<ArticleType>) => {
+      state.type = action.payload
+    },
+    setOrder: (state, action: PayloadAction<SortOrder>) => {
+      state.sortOrder = action.payload
     }
   },
   extraReducers: (builder) => {

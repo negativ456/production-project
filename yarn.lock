@@ -6888,11 +6888,12 @@
     "eslint-utils" "^2.0.0"
     "regexpp" "^3.0.0"
 
-"eslint-plugin-fsd-architecture-plugin@^0.0.2":
-  "integrity" "sha512-c/HlmH7xflxYzEZI4rXwztpxigTTeHIlZxXKHskh5/5ILuPJkDka50TexwhW9la+zEnpkcojyV6dNOf24PxRfw=="
-  "resolved" "https://registry.npmjs.org/eslint-plugin-fsd-architecture-plugin/-/eslint-plugin-fsd-architecture-plugin-0.0.2.tgz"
-  "version" "0.0.2"
+"eslint-plugin-fsd-architecture-plugin@^0.0.7":
+  "integrity" "sha512-N4f+ADomEvjpLD3Z8cQgUcaHpqvBi+gCtB0bHe3U/qubKLUGls7PM9aHB5qQ/EQh6clokaLtwuPt8GBjRZnJxw=="
+  "resolved" "https://registry.npmjs.org/eslint-plugin-fsd-architecture-plugin/-/eslint-plugin-fsd-architecture-plugin-0.0.7.tgz"
+  "version" "0.0.7"
   dependencies:
+    "micromatch" "^4.0.5"
     "requireindex" "^1.2.0"
 
 "eslint-plugin-import@^2.25.2", "eslint-plugin-import@^2.25.4":
@@ -10447,7 +10448,7 @@
     "snapdragon" "^0.8.1"
     "to-regex" "^3.0.2"
 
-"micromatch@^4.0.0", "micromatch@^4.0.2", "micromatch@^4.0.4":
+"micromatch@^4.0.0", "micromatch@^4.0.2", "micromatch@^4.0.4", "micromatch@^4.0.5":
   "integrity" "sha512-DMy+ERcEW2q8Z2Po+WNXuw3c5YaUSFjAO5GsJqfEl7UjvtIuFKO6ZrKvcItdy98dwFI2N1tg3zNIdKaQT+aNdA=="
   "resolved" "https://registry.npmjs.org/micromatch/-/micromatch-4.0.5.tgz"
   "version" "4.0.5"

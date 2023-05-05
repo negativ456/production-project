@@ -2,7 +2,7 @@ import { initArticlesPage } from './initArticlesPage'
 import { fetchArticlesList } from '../fetchArticlesList/fetchArticlesList'
 import { TestAsyncThunk } from '@/shared/config/tests/TestAsyncThunk/TestAsyncThunk'
 
-import { ArticleView } from '@/entities/Article'
+import { ArticleSortField, ArticleType, ArticleView } from '@/entities/Article'
 
 jest.mock('../fetchArticlesList/fetchArticlesList')
 
@@ -17,7 +17,11 @@ describe('initArticlesPage.test', () => {
         isLoading: false,
         hasMore: true,
         view: ArticleView.TILE,
-        mounted: false
+        mounted: false,
+        search: '',
+        sortOrder: 'asc',
+        sort: ArticleSortField.VIEWS,
+        type: ArticleType.ALL
       }
     })
 
@@ -36,7 +40,11 @@ describe('initArticlesPage.test', () => {
         isLoading: false,
         hasMore: false,
         view: ArticleView.LIST,
-        mounted: true
+        mounted: true,
+        search: '',
+        sortOrder: 'asc',
+        sort: ArticleSortField.VIEWS,
+        type: ArticleType.ALL
       }
     })
 

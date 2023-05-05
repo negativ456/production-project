@@ -8,7 +8,6 @@ import { ArticleCommentsSchema } from '@/features/ArticleCommentList'
 import { AddNewCommentSchema } from '@/features/addNewComment'
 import { ArticlesListSchema } from '@/pages/ArticlesPage'
 import { ScrollSaveSchema } from '@/widgets/Page'
-import { ArticlesFilterSchema } from '@/features/ArticlesFilter/model/types/ArticlesFilterSchema'
 import { rtkApi } from '@/shared/api/rtkApi'
 
 export interface StateSchema {
@@ -16,7 +15,6 @@ export interface StateSchema {
   scroll: ScrollSaveSchema
   [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>
   loginForm?: LoginSchema
-  articleFilter?: ArticlesFilterSchema
   profile?: ProfileSchema
   articleDetails?: ArticleDetailsSchema
   articleComments?: ArticleCommentsSchema

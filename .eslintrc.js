@@ -27,7 +27,15 @@ module.exports = {
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',
     'react/display-name': 'warn',
-    'fsd-architecture-plugin/path-checker': ['error', { alias: '@' }]
+    'fsd-architecture-plugin/path-checker': ['error', { alias: '@' }],
+    'fsd-architecture-plugin/public-api-imports': ['error', { alias: '@', testFilesPatterns: ['**/*.test.ts', '**/*.test.tsx', '**/storeDecorator.tsx'] }],
+    'fsd-architecture-plugin/layer-imports': [
+      'error',
+      {
+        alias: '@',
+        ignoreImportPatterns: ['**/StoreProvider', '**/testing']
+      }
+    ]
   },
   globals: {
     __IS_DEV__: true,

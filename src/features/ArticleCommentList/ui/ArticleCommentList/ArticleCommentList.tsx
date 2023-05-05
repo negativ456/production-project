@@ -12,7 +12,8 @@ import { fetchCommentsByID } from '../../model/services/fetchCommentsByID/fetchC
 import {
   addCommentForArticle
 } from '../../model/services/addCommentForArticle/addCommentForArticle'
-import { AddNewComment } from '@/features/addNewComment/ui/AddNewComment/AddNewComment'
+// eslint-disable-next-line fsd-architecture-plugin/layer-imports
+import { AddNewComment } from '@/features/addNewComment'
 import { VStack } from '@/shared/ui/Stack'
 import { Text } from '@/shared/ui/Text/Text'
 import { useTranslation } from 'react-i18next'

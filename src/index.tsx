@@ -17,3 +17,4 @@ root.render(<BrowserRouter>
 		</ErrorBoundary>
 	</StoreProvider>
 </BrowserRouter>)
+export { Theme } from '@/shared/const/theme'
