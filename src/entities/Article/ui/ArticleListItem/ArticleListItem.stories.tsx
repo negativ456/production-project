@@ -1,8 +1,8 @@
 import React from 'react'
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 import { ArticleListItem } from './ArticleListItem'
-import { Article, ArticleView, ArticleBlockType, ArticleType } from '@/entities/Article'
-
+import { Article } from '../../model/types/article'
+import { ArticleView, ArticleBlockType, ArticleType } from '../../model/consts/articleConsts'
 const article: Article = {
   id: '16',
   title: 'Javascript news 16',

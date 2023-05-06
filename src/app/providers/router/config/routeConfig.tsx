@@ -9,54 +9,54 @@ import { UserRole } from '@/entities/User'
 import { ForbiddenPage } from '@/pages/ForbiddenPage'
 import { NotFoundPage } from '@/pages/NotFoundPage'
 import { AppRoutesProps } from '@/shared/types/router'
-import { RoutePath } from '@/shared/const/router'
+import { AppRoutes, routes } from '@/shared/const/router'
 
 export const routeConfig: AppRoutesProps[] = [
   {
-    path: RoutePath.main,
+    path: routes[AppRoutes.MAIN](),
     element: <MainPage/>
   },
   {
-    path: RoutePath.about,
+    path: routes[AppRoutes.ABOUT](),
     element: <AboutPage/>
   },
   {
-    path: RoutePath.profile + ':id',
+    path: routes[AppRoutes.PROFILE](':id'),
     element: <ProfilePage/>,
     authOnly: true
   },
   {
-    path: RoutePath.articles,
+    path: routes[AppRoutes.ARTICLES](),
     element: <ArticlesPage/>,
     authOnly: true
   },
   {
-    path: RoutePath.articles_details + ':id',
+    path: routes[AppRoutes.ARTICLES_DETAILS](':id'),
     element: <ArticlesDetailsPage/>,
     authOnly: true
   },
   {
-    path: RoutePath.article_edit,
+    path: routes[AppRoutes.ARTICLE_EDIT](':id'),
     element: <ArticleEditPage/>,
     authOnly: true
   },
   {
-    path: RoutePath.article_create,
+    path: routes[AppRoutes.ARTICLE_CREATE](),
     element: <ArticleEditPage/>,
     authOnly: true
   },
   {
-    path: RoutePath.admin_panel,
+    path: routes[AppRoutes.ADMIN_PANEL](),
     element: <AdminPanelPage/>,
     authOnly: true,
     roles: [UserRole.MANAGER, UserRole.ADMIN]
   },
   {
-    path: RoutePath.forbidden,
+    path: routes[AppRoutes.FORBIDDEN](),
     element: <ForbiddenPage/>
   },
   {
-    path: RoutePath.not_found,
+    path: routes[AppRoutes.NOT_FOUND](),
     element: <NotFoundPage/>
   }
 ]

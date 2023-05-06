@@ -4,9 +4,9 @@ import { Avatar } from '@/shared/ui/Avatar/Avatar'
 import { Dropdown } from '@/shared/ui/Popups'
 import React, { useCallback } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { isUserAdmin, isUserManager, userActions, getUserAuthData } from '@/entities/User'
+import { getUserAuthData, isUserAdmin, isUserManager, userActions } from '@/entities/User'
 
-import { RoutePath } from '@/shared/const/router'
+import { AppRoutes, routes } from '@/shared/const/router'
 
 interface AvatarDropdownProps {
   className?: string
@@ -31,8 +31,8 @@ export const AvatarDropdown = ({ className }: AvatarDropdownProps) => {
           className={classNames('', {}, [className])}
           direction={'bottom left'}
           items={[
-            ...(isAdminAvailable ? [{ content: t('Админка'), href: RoutePath.admin_panel }] : []),
-            { content: t('Профиль'), href: `${RoutePath.profile}${userData.id}` },
+            ...(isAdminAvailable ? [{ content: t('Админка'), href: routes[AppRoutes.ADMIN_PANEL]() }] : []),
+            { content: t('Профиль'), href: routes[AppRoutes.PROFILE](userData.id) },
             { content: t('Выйти'), onClick: onLogout }
           ]}
           trigger={<Avatar size={40} src={userData.avatar}></Avatar>}

@@ -1,8 +1,9 @@
 import { classNames } from '@/shared/lib/classNames/classNames'
 import cls from './ArticleListItem.module.scss'
 import { useTranslation } from 'react-i18next'
-import { Article, ArticleTextBlockComponent, ArticleView, ArticleTextBlock, ArticleBlockType } from '@/entities/Article'
-
+import { ArticleBlockType, ArticleView } from '../../model/consts/articleConsts'
+import { Article, ArticleTextBlock } from '../../model/types/article'
+import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent'
 import { Text } from '@/shared/ui/Text/Text'
 import EyeIcon from '@/shared/assets/icons/eye.svg'
 import { Icon } from '@/shared/ui/Icon/Icon'
@@ -11,7 +12,9 @@ import { Avatar } from '@/shared/ui/Avatar/Avatar'
 import { Button, ButtonTheme } from '@/shared/ui/Button/Button'
 import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink/AppLink'
 
-import { RoutePath } from '@/shared/const/router'
+import { AppRoutes, routes } from '@/shared/const/router'
+import { AppImage } from '@/shared/ui/AppImage/AppImage'
+import { Skeleton } from '@/shared/ui/Skeleton/Skeleton'
 
 interface ArticleListItemProps {
   className?: string
@@ -40,7 +43,7 @@ export const ArticleListItem = ({ className, article, view }: ArticleListItemPro
             </div>
             <Text title={article.title} className={cls.title}/>
             {types}
-            <img src={article.img} alt={article.title} className={cls.image}/>
+            <AppImage fallback={<Skeleton width={'100%'} height={250} />} src={article.img} alt={article.title} className={cls.image}/>
             {textBlock && <ArticleTextBlockComponent className={cls.text_block} block={textBlock}/>}
             <div className={cls.bottom}>
               <AppLink theme={AppLinkTheme.NO_UNDERLINE} to={article.id}>
@@ -58,10 +61,10 @@ export const ArticleListItem = ({ className, article, view }: ArticleListItemPro
       <AppLink
           theme={AppLinkTheme.NO_UNDERLINE}
           className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}
-          to={`${RoutePath.articles_details}${article.id}`}>
+          to={routes[AppRoutes.ARTICLES_DETAILS](article.id)}>
         <Card>
           <div className={cls.article_top}>
-            <img src={article.img} alt={article.subtitle} className={cls.image}/>
+            <AppImage fallback={<Skeleton width={170} height={170} />} src={article.img} alt={article.subtitle} className={cls.image}/>
             <Text text={article.createdAt} className={cls.date}/>
           </div>
           <div className={cls.article_bottom}>

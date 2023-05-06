@@ -68,7 +68,7 @@ export const ArticleDetails: React.FC<ArticleDetailsProps> = ({ className, id })
   } else {
     content = <>
       <HStack justify={'center'} max className={cls.avatar_wrapper}>
-        <Avatar src={article?.img} size={200} className={cls.avatar}/>
+        <Avatar fallbackInverted={true} src={article?.img} size={200} className={cls.avatar}/>
       </HStack>
       <VStack gap={'4'} max>
         <Text size={TextSize.L} title={article?.title} text={article?.subtitle}/>

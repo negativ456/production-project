@@ -10,14 +10,16 @@ import { getScrollByPath } from '../model/selectors/scrollSelectors'
 import { StateSchema } from '@/app/providers/StoreProvider'
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect'
 import { useThrottle } from '@/shared/lib/hooks/useThrottle'
+import { TestProps } from '@/shared/types/tests'
 
-interface PageProps {
+interface PageProps extends TestProps {
   className?: string
   children: ReactNode
   onScrollCallback?: () => void
 }
 
-export const Page = ({ className, children, onScrollCallback }: PageProps) => {
+export const Page = (props: PageProps) => {
+  const { className, children, onScrollCallback } = props
   const wrapperRef = useRef() as MutableRefObject<HTMLDivElement>
   const triggerRef = useRef() as MutableRefObject<HTMLDivElement>
   const { pathname } = useLocation()
@@ -39,7 +41,7 @@ export const Page = ({ className, children, onScrollCallback }: PageProps) => {
     }))
   }, 500)
   return (
-      <section onScroll={onScroll} ref={wrapperRef} className={classNames(cls.Page, {}, [className])}>
+      <section data-testid={props['data-testid'] ?? 'Page'} onScroll={onScroll} ref={wrapperRef} className={classNames(cls.Page, {}, [className])}>
         {children}
         {onScrollCallback && <div className={cls.trigger} ref={triggerRef}/>}
       </section>
