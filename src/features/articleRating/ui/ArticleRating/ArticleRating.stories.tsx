@@ -1,8 +1,8 @@
 import React from 'react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 
-import withMock from 'storybook-addon-mock'
 import ArticleRating from './ArticleRating'
+import withMock from 'storybook-addon-mock'
 import { storeDecorator } from '@/shared/config/storybook/storeDecorator'
 
 export default {
@@ -17,20 +17,16 @@ export default {
 const Template: ComponentStory<typeof ArticleRating> = (args) => <ArticleRating {...args} />
 
 export const Normal = Template.bind({})
-Normal.args = {
-  articleId: '1'
-}
-Normal.decorators = [
-  storeDecorator({
-    user: {
-      userData: { id: '1', username: 'user' }
-    }
-  })
-]
+Normal.args = {}
+Normal.decorators = [storeDecorator({
+  user: {
+    userData: { id: '1', username: 'user' }
+  }
+})]
 Normal.parameters = {
   mockData: [
     {
-      url: `${__API__}/article-ratings?userId=1&articleId=1`,
+      url: __API__ + '/article-ratings?userId=1&articleId=1',
       method: 'GET',
       status: 200,
       response: [
@@ -43,23 +39,20 @@ Normal.parameters = {
 }
 
 export const WithoutRate = Template.bind({})
-WithoutRate.args = {
-  articleId: '1'
-}
-WithoutRate.decorators = [
-  storeDecorator({
-    user: {
-      userData: { id: '1', username: 'user' }
-    }
-  })
-]
+WithoutRate.decorators = [storeDecorator({
+  user: {
+    userData: { id: '1', username: 'user' }
+  }
+})]
 WithoutRate.parameters = {
   mockData: [
     {
-      url: `${__API__}/article-ratings?userId=1&articleId=1`,
+      url: __API__ + '/article-ratings?userId=1&articleId=1',
       method: 'GET',
       status: 200,
-      response: []
+      response: [
+
+      ]
     }
   ]
 }
