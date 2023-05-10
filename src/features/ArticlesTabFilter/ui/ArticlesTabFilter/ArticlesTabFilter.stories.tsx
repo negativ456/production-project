@@ -1,20 +1,20 @@
-import React from 'react'
-import { ComponentStory, ComponentMeta } from '@storybook/react'
+import React from 'react';
+import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { ArticlesTabFilter } from './ArticlesTabFilter'
-import { ArticleType } from '../../../../entities/Article/model/consts/articleConsts'
+import { ArticlesTabFilter } from './ArticlesTabFilter';
+import { ArticleType } from '../../../../entities/Article/model/consts/articleConsts';
 
 export default {
   title: 'features/ArticleFilter/ArticlesTabFilter',
   component: ArticlesTabFilter,
   argTypes: {
-    backgroundColor: { control: 'color' }
-  }
-} as ComponentMeta<typeof ArticlesTabFilter>
+    backgroundColor: { control: 'color' },
+  },
+} as ComponentMeta<typeof ArticlesTabFilter>;
 
-const Template: ComponentStory<typeof ArticlesTabFilter> = (args) => <ArticlesTabFilter {...args} />
+const Template: ComponentStory<typeof ArticlesTabFilter> = (args) => <ArticlesTabFilter {...args} />;
 
-export const Normal = Template.bind({})
+export const Normal = Template.bind({});
 Normal.args = {
-  value: ArticleType.ALL
-}
+  value: ArticleType.ALL,
+};

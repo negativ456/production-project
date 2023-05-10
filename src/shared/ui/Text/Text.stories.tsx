@@ -1,54 +1,54 @@
-import React from 'react'
-import { ComponentMeta, ComponentStory } from '@storybook/react'
+import React from 'react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import { Text, TextSize, TextTheme } from './Text'
+import { Text, TextSize, TextTheme } from './Text';
 
 export default {
   title: 'shared/Text',
   component: Text,
   argTypes: {
-    backgroundColor: { control: 'color' }
-  }
-} as ComponentMeta<typeof Text>
+    backgroundColor: { control: 'color' },
+  },
+} as ComponentMeta<typeof Text>;
 
-const Template: ComponentStory<typeof Text> = (args) => <Text {...args} />
+const Template: ComponentStory<typeof Text> = (args) => <Text {...args} />;
 
-export const Primary = Template.bind({})
+export const Primary = Template.bind({});
 Primary.args = {
   title: 'Title test',
-  text: 'Title test'
-}
-export const OnlyTitle = Template.bind({})
+  text: 'Title test',
+};
+export const OnlyTitle = Template.bind({});
 OnlyTitle.args = {
-  title: 'Title test'
-}
-export const OnlyText = Template.bind({})
+  title: 'Title test',
+};
+export const OnlyText = Template.bind({});
 OnlyText.args = {
-  text: 'Title test'
-}
-export const SizeL = Template.bind({})
+  text: 'Title test',
+};
+export const SizeL = Template.bind({});
 SizeL.args = {
   title: 'Title test',
   text: 'Title test',
-  size: TextSize.L
-}
+  size: TextSize.L,
+};
 
-export const SizeM = Template.bind({})
+export const SizeM = Template.bind({});
 SizeM.args = {
   title: 'Title test',
   text: 'Title test',
-  size: TextSize.M
-}
+  size: TextSize.M,
+};
 
-export const SizeS = Template.bind({})
+export const SizeS = Template.bind({});
 SizeS.args = {
   title: 'Title test',
   text: 'Title test',
-  size: TextSize.S
-}
-export const Error = Template.bind({})
+  size: TextSize.S,
+};
+export const Error = Template.bind({});
 Error.args = {
   text: 'Error ex',
   title: 'Error ex',
-  theme: TextTheme.ERROR
-}
+  theme: TextTheme.ERROR,
+};

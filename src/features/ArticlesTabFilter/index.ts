@@ -1,1 +1,1 @@
-export { ArticlesTabFilter } from './ui/ArticlesTabFilter/ArticlesTabFilter'
+export { ArticlesTabFilter } from './ui/ArticlesTabFilter/ArticlesTabFilter';

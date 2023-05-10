@@ -1,10 +1,10 @@
-import { initArticlesPage } from './initArticlesPage'
-import { fetchArticlesList } from '../fetchArticlesList/fetchArticlesList'
-import { TestAsyncThunk } from '@/shared/config/tests/TestAsyncThunk/TestAsyncThunk'
+import { initArticlesPage } from './initArticlesPage';
+import { fetchArticlesList } from '../fetchArticlesList/fetchArticlesList';
+import { TestAsyncThunk } from '@/shared/config/tests/TestAsyncThunk/TestAsyncThunk';
 
-import { ArticleSortField, ArticleType, ArticleView } from '@/entities/Article'
+import { ArticleSortField, ArticleType, ArticleView } from '@/entities/Article';
 
-jest.mock('../fetchArticlesList/fetchArticlesList')
+jest.mock('../fetchArticlesList/fetchArticlesList');
 
 describe('initArticlesPage.test', () => {
   test('success', async () => {
@@ -21,15 +21,15 @@ describe('initArticlesPage.test', () => {
         search: '',
         sortOrder: 'asc',
         sort: ArticleSortField.VIEWS,
-        type: ArticleType.ALL
-      }
-    })
+        type: ArticleType.ALL,
+      },
+    });
 
-    await thunk.callThunk(new URLSearchParams())
+    await thunk.callThunk(new URLSearchParams());
 
-    expect(thunk.dispatch).toBeCalledTimes(7)
-    expect(fetchArticlesList).toHaveBeenCalledWith({ })
-  })
+    expect(thunk.dispatch).toBeCalledTimes(7);
+    expect(fetchArticlesList).toHaveBeenCalledWith({});
+  });
   test('initArticlesPage not called', async () => {
     const thunk = new TestAsyncThunk(initArticlesPage, {
       articlesList: {
@@ -44,13 +44,13 @@ describe('initArticlesPage.test', () => {
         search: '',
         sortOrder: 'asc',
         sort: ArticleSortField.VIEWS,
-        type: ArticleType.ALL
-      }
-    })
+        type: ArticleType.ALL,
+      },
+    });
 
-    await thunk.callThunk(new URLSearchParams())
+    await thunk.callThunk(new URLSearchParams());
 
-    expect(thunk.dispatch).toBeCalledTimes(2)
-    expect(fetchArticlesList).not.toHaveBeenCalled()
-  })
-})
+    expect(thunk.dispatch).toBeCalledTimes(2);
+    expect(fetchArticlesList).not.toHaveBeenCalled();
+  });
+});

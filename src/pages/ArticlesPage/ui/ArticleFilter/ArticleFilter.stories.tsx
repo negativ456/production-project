@@ -1,9 +1,9 @@
-import React from 'react'
-import { ComponentStory, ComponentMeta } from '@storybook/react'
+import React from 'react';
+import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { ArticleFilter } from './ArticleFilter'
-import { storeDecorator } from '@/shared/config/storybook/storeDecorator'
-import { ArticleSortField, ArticleView, ArticleType, Article, ArticleBlockType } from '@/entities/Article'
+import { ArticleFilter } from './ArticleFilter';
+import { storeDecorator } from '@/shared/config/storybook/storeDecorator';
+import { ArticleSortField, ArticleView, ArticleType, Article, ArticleBlockType } from '@/entities/Article';
 
 const article: Article = {
   id: '16',
@@ -13,33 +13,31 @@ const article: Article = {
   img: 'https://teknotower.com/wp-content/uploads/2020/11/js.png',
   views: 1022,
   createdAt: '26.02.2022',
-  type: [
-    ArticleType.IT
-  ],
+  type: [ArticleType.IT],
   blocks: [
     {
       id: '1',
       type: ArticleBlockType.TEXT,
       title: 'Заголовок этого блока',
       paragraphs: [
-        'Программа, которую по традиции называют «Hello, world!», очень проста. Она выводит куда-либо фразу «Hello, world!», или другую подобную, средствами некоего языка.'
-      ]
-    }
-  ]
-}
+        'Программа, которую по традиции называют «Hello, world!», очень проста. Она выводит куда-либо фразу «Hello, world!», или другую подобную, средствами некоего языка.',
+      ],
+    },
+  ],
+};
 
 export default {
   title: 'features/ArticleFilter',
   component: ArticleFilter,
   argTypes: {
-    backgroundColor: { control: 'color' }
-  }
-} as ComponentMeta<typeof ArticleFilter>
+    backgroundColor: { control: 'color' },
+  },
+} as ComponentMeta<typeof ArticleFilter>;
 
-const Template: ComponentStory<typeof ArticleFilter> = (args) => <ArticleFilter {...args} />
+const Template: ComponentStory<typeof ArticleFilter> = (args) => <ArticleFilter {...args} />;
 
-export const Normal = Template.bind({})
-Normal.args = {}
+export const Normal = Template.bind({});
+Normal.args = {};
 Normal.decorators = [
   storeDecorator({
     articlesList: {
@@ -48,7 +46,7 @@ Normal.decorators = [
       view: ArticleView.TILE,
       ids: ['1'],
       entities: {
-        1: article
+        1: article,
       },
       page: 1,
       hasMore: true,
@@ -56,7 +54,7 @@ Normal.decorators = [
       search: '',
       sortOrder: 'asc',
       sort: ArticleSortField.VIEWS,
-      type: ArticleType.ALL
-    }
-  })
-]
+      type: ArticleType.ALL,
+    },
+  }),
+];

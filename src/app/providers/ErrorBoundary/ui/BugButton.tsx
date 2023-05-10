@@ -1,22 +1,18 @@
-import React, { useEffect, useState } from 'react'
-import { Button } from '@/shared/ui/Button/Button'
+import React, { useEffect, useState } from 'react';
+import { Button } from '@/shared/ui/Button/Button';
 interface BugButtonProps {
-  className?: string
+  className?: string;
 }
 export const BugButton: React.FC<BugButtonProps> = () => {
-  const [error, setError] = useState(false)
+  const [error, setError] = useState(false);
 
   const throwError = () => {
-    setError(true)
-  }
+    setError(true);
+  };
   useEffect(() => {
     if (error) {
-      throw new Error()
+      throw new Error();
     }
-  }, [error])
-  return (
-      <Button onClick={throwError} >
-        throw error
-      </Button>
-  )
-}
+  }, [error]);
+  return <Button onClick={throwError}>throw error</Button>;
+};

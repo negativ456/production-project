@@ -2,18 +2,26 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
-    jest: true
+    jest: true,
   },
-  extends: ['plugin:react/recommended', 'standard-with-typescript', 'plugin:storybook/recommended'],
+  extends: [
+    'plugin:prettier/recommended',
+    'plugin:react/recommended',
+    'standard-with-typescript',
+    'plugin:storybook/recommended',
+  ],
   overrides: [],
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
-    project: ['./tsconfig.json']
+    project: ['./tsconfig.json'],
   },
   plugins: ['react', 'react-hooks', 'fsd-architecture-plugin'],
   rules: {
-    'no-tabs': 0,
+    'comma-dangle': 'off',
+    'multiline-ternary': 'off',
+    '@typescript-eslint/indent': 'off',
+    '@typescript-eslint/comma-dangle': 'off',
     'import/prefer-default-export': 'off',
     'no-unused-vars': 'warn',
     'react/require-default-props': 'off',
@@ -23,23 +31,32 @@ module.exports = {
     '@typescript-eslint/naming-convention': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/no-floating-promises': 'off',
+    '@typescript-eslint/space-before-function-paren': 'off',
     '@typescript-eslint/consistent-type-assertions': 'off',
+    '@typescript-eslint/restrict-template-expressions': 'off',
+    '@typescript-eslint/member-delimiter-style': 'off',
+    '@typescript-eslint/semi': 'off',
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',
     'react/display-name': 'warn',
+    '@typescript-eslint/no-namespace': 'warn',
+    '@typescript-eslint/method-signature-style': 'warn',
     'fsd-architecture-plugin/path-checker': ['error', { alias: '@' }],
-    'fsd-architecture-plugin/public-api-imports': ['error', { alias: '@', testFilesPatterns: ['**/*.test.ts', '**/*.test.tsx', '**/storeDecorator.tsx'] }],
+    'fsd-architecture-plugin/public-api-imports': [
+      'error',
+      { alias: '@', testFilesPatterns: ['**/*.test.ts', '**/*.test.tsx', '**/storeDecorator.tsx'] },
+    ],
     'fsd-architecture-plugin/layer-imports': [
       'error',
       {
         alias: '@',
-        ignoreImportPatterns: ['**/StoreProvider', '**/testing']
-      }
-    ]
+        ignoreImportPatterns: ['**/StoreProvider', '**/testing'],
+      },
+    ],
   },
   globals: {
     __IS_DEV__: true,
     __API__: true,
-    __PROJECT__: true
-  }
-}
+    __PROJECT__: true,
+  },
+};

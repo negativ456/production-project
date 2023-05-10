@@ -1,18 +1,23 @@
-import cls from './ArticleRecommendations.module.scss'
-import { useArticleRecommendations } from '../../api/articlesRecommendationsApi'
-import { ArticleList } from '@/entities/Article'
+import cls from './ArticleRecommendations.module.scss';
+import { useArticleRecommendations } from '../../api/articlesRecommendationsApi';
+import { ArticleList } from '@/entities/Article';
 
 interface ArticleRecommendationsProps {
-  className?: string
+  className?: string;
 }
 
 export const ArticleRecommendations = ({ className }: ArticleRecommendationsProps) => {
-  const { isLoading, data: articles, error } = useArticleRecommendations(3)
+  const { isLoading, data: articles, error } = useArticleRecommendations(3);
 
   if ((isLoading || error) ?? !articles) {
-    return null
+    return null;
   }
   return (
-      <ArticleList className={cls.recommendations} articles={articles} isLoading={isLoading}/>
-  )
-}
+    <ArticleList
+      data-testid={'ArticleRecommendations'}
+      className={cls.recommendations}
+      articles={articles}
+      isLoading={isLoading}
+    />
+  );
+};

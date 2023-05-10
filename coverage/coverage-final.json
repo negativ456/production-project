@@ -1,2 +1,49 @@
-{"C:\\Users\\m2005111\\WebstormProjects\\production-project\\src\\shared\\lib\\addQueryParams\\addQueryParams.ts": {"path":"C:\\Users\\m2005111\\WebstormProjects\\production-project\\src\\shared\\lib\\addQueryParams\\addQueryParams.ts","statementMap":{"0":{"start":{"line":2,"column":23},"end":{"line":2,"column":66}},"1":{"start":{"line":3,"column":2},"end":{"line":5,"column":4}},"2":{"start":{"line":4,"column":4},"end":{"line":4,"column":58}},"3":{"start":{"line":4,"column":29},"end":{"line":4,"column":58}},"4":{"start":{"line":6,"column":2},"end":{"line":6,"column":38}},"5":{"start":{"line":9,"column":2},"end":{"line":9,"column":60}}},"fnMap":{"0":{"name":"getQueryParams","decl":{"start":{"line":1,"column":16},"end":{"line":1,"column":30}},"loc":{"start":{"line":1,"column":64},"end":{"line":7,"column":1}},"line":1},"1":{"name":"(anonymous_1)","decl":{"start":{"line":3,"column":33},"end":{"line":3,"column":34}},"loc":{"start":{"line":3,"column":52},"end":{"line":5,"column":3}},"line":3},"2":{"name":"addQueryParams","decl":{"start":{"line":8,"column":16},"end":{"line":8,"column":30}},"loc":{"start":{"line":8,"column":64},"end":{"line":10,"column":1}},"line":8}},"branchMap":{"0":{"loc":{"start":{"line":4,"column":4},"end":{"line":4,"column":58}},"type":"if","locations":[{"start":{"line":4,"column":4},"end":{"line":4,"column":58}},{"start":{},"end":{}}],"line":4}},"s":{"0":3,"1":0,"2":0,"3":0,"4":0,"5":0},"f":{"0":3,"1":0,"2":0},"b":{"0":[0,0]},"_coverageSchema":"1a1c01bbd47fc00a2c39e90264f33305004495a9","hash":"7b5ef61a10c803fe216507fa2ab3a9136ae57d87"}
+{
+  "C:\\Users\\m2005111\\WebstormProjects\\production-project\\src\\shared\\lib\\addQueryParams\\addQueryParams.ts": {
+    "path": "C:\\Users\\m2005111\\WebstormProjects\\production-project\\src\\shared\\lib\\addQueryParams\\addQueryParams.ts",
+    "statementMap": {
+      "0": { "start": { "line": 2, "column": 23 }, "end": { "line": 2, "column": 66 } },
+      "1": { "start": { "line": 3, "column": 2 }, "end": { "line": 5, "column": 4 } },
+      "2": { "start": { "line": 4, "column": 4 }, "end": { "line": 4, "column": 58 } },
+      "3": { "start": { "line": 4, "column": 29 }, "end": { "line": 4, "column": 58 } },
+      "4": { "start": { "line": 6, "column": 2 }, "end": { "line": 6, "column": 38 } },
+      "5": { "start": { "line": 9, "column": 2 }, "end": { "line": 9, "column": 60 } }
+    },
+    "fnMap": {
+      "0": {
+        "name": "getQueryParams",
+        "decl": { "start": { "line": 1, "column": 16 }, "end": { "line": 1, "column": 30 } },
+        "loc": { "start": { "line": 1, "column": 64 }, "end": { "line": 7, "column": 1 } },
+        "line": 1
+      },
+      "1": {
+        "name": "(anonymous_1)",
+        "decl": { "start": { "line": 3, "column": 33 }, "end": { "line": 3, "column": 34 } },
+        "loc": { "start": { "line": 3, "column": 52 }, "end": { "line": 5, "column": 3 } },
+        "line": 3
+      },
+      "2": {
+        "name": "addQueryParams",
+        "decl": { "start": { "line": 8, "column": 16 }, "end": { "line": 8, "column": 30 } },
+        "loc": { "start": { "line": 8, "column": 64 }, "end": { "line": 10, "column": 1 } },
+        "line": 8
+      }
+    },
+    "branchMap": {
+      "0": {
+        "loc": { "start": { "line": 4, "column": 4 }, "end": { "line": 4, "column": 58 } },
+        "type": "if",
+        "locations": [
+          { "start": { "line": 4, "column": 4 }, "end": { "line": 4, "column": 58 } },
+          { "start": {}, "end": {} }
+        ],
+        "line": 4
+      }
+    },
+    "s": { "0": 3, "1": 0, "2": 0, "3": 0, "4": 0, "5": 0 },
+    "f": { "0": 3, "1": 0, "2": 0 },
+    "b": { "0": [0, 0] },
+    "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    "hash": "7b5ef61a10c803fe216507fa2ab3a9136ae57d87"
+  }
 }

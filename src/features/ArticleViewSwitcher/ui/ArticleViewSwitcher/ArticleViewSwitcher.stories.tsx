@@ -1,17 +1,17 @@
-import React from 'react'
-import { ComponentStory, ComponentMeta } from '@storybook/react'
+import React from 'react';
+import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { ArticleViewSwitcher } from './ArticleViewSwitcher'
+import { ArticleViewSwitcher } from './ArticleViewSwitcher';
 
 export default {
   title: 'features/ArticleViewSelector',
   component: ArticleViewSwitcher,
   argTypes: {
-    backgroundColor: { control: 'color' }
-  }
-} as ComponentMeta<typeof ArticleViewSwitcher>
+    backgroundColor: { control: 'color' },
+  },
+} as ComponentMeta<typeof ArticleViewSwitcher>;
 
-const Template: ComponentStory<typeof ArticleViewSwitcher> = (args) => <ArticleViewSwitcher {...args} />
+const Template: ComponentStory<typeof ArticleViewSwitcher> = (args) => <ArticleViewSwitcher {...args} />;
 
-export const Normal = Template.bind({})
-Normal.args = {}
+export const Normal = Template.bind({});
+Normal.args = {};

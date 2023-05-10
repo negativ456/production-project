@@ -1,10 +1,10 @@
-import { fetchNextArticlePage } from './fetchNextArticlePage'
-import { fetchArticlesList } from '../fetchArticlesList/fetchArticlesList'
-import { TestAsyncThunk } from '@/shared/config/tests/TestAsyncThunk/TestAsyncThunk'
+import { fetchNextArticlePage } from './fetchNextArticlePage';
+import { fetchArticlesList } from '../fetchArticlesList/fetchArticlesList';
+import { TestAsyncThunk } from '@/shared/config/tests/TestAsyncThunk/TestAsyncThunk';
 
-import { ArticleSortField, ArticleType, ArticleView } from '@/entities/Article'
+import { ArticleSortField, ArticleType, ArticleView } from '@/entities/Article';
 
-jest.mock('../fetchArticlesList/fetchArticlesList')
+jest.mock('../fetchArticlesList/fetchArticlesList');
 
 describe('fetchNextArticlesPage.test', () => {
   test('success', async () => {
@@ -21,15 +21,15 @@ describe('fetchNextArticlesPage.test', () => {
         search: '',
         sortOrder: 'asc',
         sort: ArticleSortField.VIEWS,
-        type: ArticleType.ALL
-      }
-    })
+        type: ArticleType.ALL,
+      },
+    });
 
-    await thunk.callThunk()
+    await thunk.callThunk();
 
-    expect(thunk.dispatch).toBeCalledTimes(4)
-    expect(fetchArticlesList).toHaveBeenCalledWith({})
-  })
+    expect(thunk.dispatch).toBeCalledTimes(4);
+    expect(fetchArticlesList).toHaveBeenCalledWith({});
+  });
   test('fetchArticleList not called', async () => {
     const thunk = new TestAsyncThunk(fetchNextArticlePage, {
       articlesList: {
@@ -44,13 +44,13 @@ describe('fetchNextArticlesPage.test', () => {
         search: '',
         sortOrder: 'asc',
         sort: ArticleSortField.VIEWS,
-        type: ArticleType.ALL
-      }
-    })
+        type: ArticleType.ALL,
+      },
+    });
 
-    await thunk.callThunk()
+    await thunk.callThunk();
 
-    expect(thunk.dispatch).toBeCalledTimes(2)
-    expect(fetchArticlesList).not.toHaveBeenCalled()
-  })
-})
+    expect(thunk.dispatch).toBeCalledTimes(2);
+    expect(fetchArticlesList).not.toHaveBeenCalled();
+  });
+});

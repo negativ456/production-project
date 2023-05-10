@@ -1,5 +1,4 @@
-
 const jestEmptyComponent = () => {
-  return 'div'
-}
-export default jestEmptyComponent()
+  return 'div';
+};
+export default jestEmptyComponent();

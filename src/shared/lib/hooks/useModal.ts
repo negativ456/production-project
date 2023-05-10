@@ -1,31 +1,34 @@
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react';
 
 interface UseModalProps {
-  onClose?: () => void
-  isOpen?: boolean
+  onClose?: () => void;
+  isOpen?: boolean;
 }
-export function useModal ({ isOpen, onClose }: UseModalProps) {
-  const [isMounted, setIsMounted] = useState(false)
+export function useModal({ isOpen, onClose }: UseModalProps) {
+  const [isMounted, setIsMounted] = useState(false);
   useEffect(() => {
     if (isOpen) {
-      setIsMounted(true)
+      setIsMounted(true);
     }
-  }, [isOpen])
+  }, [isOpen]);
 
-  const onKeyDown = useCallback((event: KeyboardEvent) => {
-    if (isOpen && event.key === 'Escape') {
-      if (onClose) {
-        onClose()
+  const onKeyDown = useCallback(
+    (event: KeyboardEvent) => {
+      if (isOpen && event.key === 'Escape') {
+        if (onClose) {
+          onClose();
+        }
       }
-    }
-  }, [onClose, isOpen])
+    },
+    [onClose, isOpen]
+  );
   useEffect(() => {
-    document.body.addEventListener('keydown', onKeyDown)
+    document.body.addEventListener('keydown', onKeyDown);
     return () => {
-      window.removeEventListener('keydown', onKeyDown)
-    }
-  }, [onKeyDown])
+      window.removeEventListener('keydown', onKeyDown);
+    };
+  }, [onKeyDown]);
   return {
-    isMounted
-  }
+    isMounted,
+  };
 }

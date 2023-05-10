@@ -1,27 +1,23 @@
-import React from 'react'
-import { ComponentStory, ComponentMeta } from '@storybook/react'
+import React from 'react';
+import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { NotificationButton } from './NotificationButton'
-import { storeDecorator } from '@/shared/config/storybook/storeDecorator'
-import withMock from 'storybook-addon-mock'
+import { NotificationButton } from './NotificationButton';
+import { storeDecorator } from '@/shared/config/storybook/storeDecorator';
+import withMock from 'storybook-addon-mock';
 
 export default {
   title: 'features/NotificationButton',
   component: NotificationButton,
   argTypes: {
-    backgroundColor: { control: 'color' }
+    backgroundColor: { control: 'color' },
   },
-  decorators: [withMock]
-} as ComponentMeta<typeof NotificationButton>
+  decorators: [withMock],
+} as ComponentMeta<typeof NotificationButton>;
 
-const Template: ComponentStory<typeof NotificationButton> = (args) => <NotificationButton {...args} />
+const Template: ComponentStory<typeof NotificationButton> = (args) => <NotificationButton {...args} />;
 
-export const Normal = Template.bind({})
-Normal.decorators = [
-  storeDecorator({
-
-  })
-]
+export const Normal = Template.bind({});
+Normal.decorators = [storeDecorator({})];
 Normal.parameters = {
   mockData: [
     {
@@ -32,19 +28,19 @@ Normal.parameters = {
         {
           id: '1',
           title: 'notification',
-          description: 'desc'
+          description: 'desc',
         },
         {
           id: '2',
           title: 'notification',
-          description: 'desc'
+          description: 'desc',
         },
         {
           id: '3',
           title: 'notification',
-          description: 'desc'
-        }
-      ]
-    }
-  ]
-}
+          description: 'desc',
+        },
+      ],
+    },
+  ],
+};

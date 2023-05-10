@@ -1,7 +1,7 @@
 export enum ArticleSortField {
   VIEWS = 'views',
   TITLE = 'title',
-  CREATED = 'created'
+  CREATED = 'created',
 }
 
 export enum ArticleBlockType {
@@ -14,10 +14,10 @@ export enum ArticleType {
   ALL = 'ALL',
   IT = 'IT',
   SCIENCE = 'SCIENCE',
-  ECONOMICS = 'ECONOMICS'
+  ECONOMICS = 'ECONOMICS',
 }
 
 export enum ArticleView {
   TILE = 'TILE',
-  LIST = 'LIST'
+  LIST = 'LIST',
 }
