@@ -3,17 +3,17 @@ const jsonServer = require('json-server');
 const path = require('path');
 const https = require('https');
 
+const options = {
+  key: fs.readFileSync(path.resolve(__dirname, 'key.pem')),
+  cert: fs.readFileSync(path.resolve(__dirname, 'cert.pem')),
+};
+
 const server = jsonServer.create();
 
 const router = jsonServer.router(path.resolve(__dirname, 'db.json'));
 
 server.use(jsonServer.defaults({}));
 server.use(jsonServer.bodyParser);
-
-const options = {
-  key: fs.readFileSync(path.resolve(__dirname, 'key.pem')),
-  cert: fs.readFileSync(path.resolve(__dirname, 'cert.pem')),
-};
 
 // Нужно для небольшой задержки, чтобы запрос проходил не мгновенно, имитация реального апи
 server.use(async (req, res, next) => {
@@ -57,8 +57,8 @@ server.use((req, res, next) => {
 server.use(router);
 
 // запуск сервера
-const httpsServer = https.createServer(options, server);
 const PORT = 8443;
+const httpsServer = https.createServer(options, server);
 httpsServer.listen(PORT, () => {
   console.log(`server is running on ${PORT} port`);
 });
