@@ -18,6 +18,7 @@ module.exports = {
   },
   plugins: ['react', 'react-hooks', 'fsd-architecture-plugin'],
   rules: {
+    semi: 'off',
     'comma-dangle': 'off',
     'multiline-ternary': 'off',
     '@typescript-eslint/indent': 'off',
