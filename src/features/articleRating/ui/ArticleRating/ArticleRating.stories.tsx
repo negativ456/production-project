@@ -17,7 +17,9 @@ export default {
 const Template: ComponentStory<typeof ArticleRating> = (args) => <ArticleRating {...args} />;
 
 export const Normal = Template.bind({});
-Normal.args = {};
+Normal.args = {
+  articleId: '1',
+};
 Normal.decorators = [
   storeDecorator({
     user: {
@@ -41,6 +43,9 @@ Normal.parameters = {
 };
 
 export const WithoutRate = Template.bind({});
+WithoutRate.args = {
+  articleId: '1',
+};
 WithoutRate.decorators = [
   storeDecorator({
     user: {

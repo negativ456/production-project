@@ -10,7 +10,11 @@ module.exports = {
     'standard-with-typescript',
     'plugin:storybook/recommended',
   ],
-  overrides: [],
+  overrides: [
+    {
+      files: ['*.ts', '*.tsx'],
+    },
+  ],
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',

@@ -1,0 +1,3 @@
+/cypress/**/*.ts
+/cypress/**/*.tsx
+/cypress.config.ts
