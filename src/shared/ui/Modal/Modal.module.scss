@@ -5,6 +5,8 @@
   left: 0;
   top: 0;
   right: 0;
+  opacity: 0;
+  pointer-events: none;
   bottom: 0;
   position: fixed;
   z-index: var(--modal-z-index);
@@ -16,4 +18,9 @@
   color: var(--primary-color);
   padding: 10px;
   border-radius: 12px;
+}
+
+.opened {
+  pointer-events: auto;
+  opacity: 1;
 }

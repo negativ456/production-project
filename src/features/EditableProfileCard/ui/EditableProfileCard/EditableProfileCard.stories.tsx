@@ -4,7 +4,6 @@ import { EditableProfileCard } from './EditableProfileCard';
 import { storeDecorator } from '@/shared/config/storybook/storeDecorator';
 import { Currency } from '@/entities/Currency';
 import { Country } from '@/entities/Country';
-import avatar from '@/shared/assets/tests/storybook.jpg';
 export default {
   title: 'features/EditableProfileCard',
   component: EditableProfileCard,
@@ -28,7 +27,8 @@ Primary.decorators = [
         country: Country.Russia,
         city: 'Mos',
         username: '123',
-        avatar,
+        avatar:
+          'https://media.istockphoto.com/id/1322277517/photo/wild-grass-in-the-mountains-at-sunset.jpg?s=612x612&w=0&k=20&c=6mItwwFFGqKNKEAzv0mv6TaxhLN3zSE43bWmFN--J5w=',
       },
     },
   }),

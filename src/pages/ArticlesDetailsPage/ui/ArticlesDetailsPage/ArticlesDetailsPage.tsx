@@ -9,9 +9,9 @@ import { VStack } from '@/shared/ui/Stack';
 import { ArticleRecommendations } from '@/features/articleRecommendations';
 import { ArticleCommentList } from '@/features/ArticleCommentList';
 import { ArticleRating } from '@/features/articleRating';
-import { toggleFeatures } from '@/shared/lib/features/toggleFeatures';
 import { Card } from '@/shared/ui/Card/Card';
 import { useTranslation } from 'react-i18next';
+import { ToggleFeatures } from '@/shared/lib/features';
 
 interface ArticlesDetailsPageProps {
   className?: string;
@@ -25,18 +25,16 @@ const ArticlesDetailsPage: React.FC<ArticlesDetailsPageProps> = ({ className }) 
     return null;
   }
 
-  const rating = toggleFeatures({
-    name: 'isArticleRatingEnabled',
-    on: () => <ArticleRating articleId={id} />,
-    off: () => <Card>{t('Оценка статей скоро появится')}</Card>,
-  });
-
   return (
     <Page className={classNames(cls.ArticlesDetailsPage, {}, [className])}>
       <Header />
       <VStack align={'stretch'} gap={'16'} max>
         <ArticleDetails id={id} />
-        {rating}
+        <ToggleFeatures
+          feature={'isArticleRatingEnabled'}
+          on={<ArticleRating articleId={id} />}
+          off={<Card>{t('Оценка статей скоро появится')}</Card>}
+        />
         <ArticleRecommendations />
         <ArticleCommentList articleID={id} />
       </VStack>

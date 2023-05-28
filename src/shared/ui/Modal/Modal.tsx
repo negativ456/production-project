@@ -31,7 +31,7 @@ export const Modal: React.FC<ModalProps> = ({ className, onClose, children, open
   }, [onKeyDown]);
   return (
     <Portal>
-      <div className={classNames(cls.Modal, {}, [className])}>
+      <div className={classNames(cls.Modal, { [cls.opened]: open }, [className])}>
         <Overlay onClick={onClose} />
         <div className={cls.content}>{children}</div>
       </div>

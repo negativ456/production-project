@@ -40,6 +40,15 @@ export const Normal = Template.bind({});
 Normal.args = {};
 Normal.decorators = [
   storeDecorator({
+    user: {
+      userData: {
+        id: '1',
+        username: 'user',
+        jsonSettings: {
+          isArticlePageWasOpened: true,
+        },
+      },
+    },
     articlesList: {
       isLoading: true,
       error: '',
