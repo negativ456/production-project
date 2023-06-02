@@ -15,11 +15,11 @@ import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
 import { ArticleViewSwitcher } from '@/features/ArticleViewSwitcher';
 import { fetchArticlesList } from '../../model/services/fetchArticlesList/fetchArticlesList';
 import { articlesListActions } from '../../model/slice/articlesListSlice';
-import { Card } from '@/shared/ui/Card/Card';
-import { Input } from '@/shared/ui/Input/Input';
+import { Card } from '@/shared/ui/deprecated/Card/Card';
+import { Input } from '@/shared/ui/deprecated/Input/Input';
 import { SortOrder } from '@/shared/types/SortOrder';
 import { useDebounce } from '@/shared/lib/hooks/useDebounce';
-import { TabItem } from '@/shared/ui/Tabs/Tabs';
+import { TabItem } from '@/shared/ui/deprecated/Tabs/Tabs';
 import { ArticleSortSelector } from '@/features/ArticleSortSelector';
 import { ArticlesTabFilter } from '@/features/ArticlesTabFilter';
 

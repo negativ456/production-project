@@ -2,8 +2,8 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './ArticleViewSwitcher.module.scss';
 import Tile from '@/shared/assets/icons/tile.svg';
 import List from '@/shared/assets/icons/list.svg';
-import { Button, ButtonTheme } from '@/shared/ui/Button/Button';
-import { Icon } from '@/shared/ui/Icon/Icon';
+import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button/Button';
+import { Icon } from '@/shared/ui/deprecated/Icon/Icon';
 import { ArticleView } from '@/entities/Article';
 
 interface ArticleViewSwitcherProps {
@@ -32,7 +32,12 @@ export const ArticleViewSwitcher = ({ className, view, onViewClick }: ArticleVie
     <div className={classNames(cls.ArticleViewSelector, {}, [className])}>
       {viewTypes.map((viewType) => (
         <Button theme={ButtonTheme.CLEAR} key={viewType.view} onClick={onClick(viewType.view)}>
-          <Icon Svg={viewType.icon} className={classNames('', { [cls.not_selected]: viewType.view !== view }, [])} />
+          <Icon
+            width={24}
+            height={24}
+            Svg={viewType.icon}
+            className={classNames('', { [cls.not_selected]: viewType.view !== view }, [])}
+          />
         </Button>
       ))}
     </div>

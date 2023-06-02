@@ -9,6 +9,8 @@ import { getUserMounted, initAuthData } from '@/entities/User';
 import { useTheme } from '@/shared/lib/hooks/useTheme';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
 import { PageLoader } from '@/widgets/PageLoader';
+import { ToggleFeatures } from '@/shared/lib/features';
+import { MainLayout } from '@/shared/ui/layouts/MainLayout';
 
 const App = () => {
   const dispatch = useAppDispatch();
@@ -24,15 +26,27 @@ const App = () => {
   }
 
   return (
-    <div className={classNames('app', {}, [])}>
-      <Suspense fallback="">
-        <Navbar />
-        <div className="content-page">
-          <Sidebar />
-          {mounted && <AppRouter />}
+    <ToggleFeatures
+      feature={'isAppRedesigned'}
+      off={
+        <div className={classNames('app', {}, [])}>
+          <Suspense fallback="">
+            <Navbar />
+            <div className="content-page">
+              <Sidebar />
+              <AppRouter />
+            </div>
+          </Suspense>
         </div>
-      </Suspense>
-    </div>
+      }
+      on={
+        <div className={classNames('app_redesigned', {}, [])}>
+          <Suspense fallback="">
+            <MainLayout header={<Navbar />} sidebar={<Sidebar />} content={<AppRouter />} />
+          </Suspense>
+        </div>
+      }
+    />
   );
 };
 

@@ -3,8 +3,8 @@ import cls from './CommentList.module.scss';
 import { useTranslation } from 'react-i18next';
 import { CommentTypes } from '../../model/types/comment';
 import { CommentCard } from '../CommentCard/CommentCard';
-import { Text } from '@/shared/ui/Text/Text';
-import { VStack } from '@/shared/ui/Stack';
+import { Text } from '@/shared/ui/deprecated/Text/Text';
+import { VStack } from 'src/shared/ui/deprecated/Stack';
 
 interface CommentListProps {
   className?: string;

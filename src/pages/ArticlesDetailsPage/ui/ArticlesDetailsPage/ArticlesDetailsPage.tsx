@@ -5,11 +5,11 @@ import { ArticleDetails } from '@/entities/Article';
 import { useParams } from 'react-router-dom';
 import { Page } from '@/widgets/Page';
 import { Header } from '../Header/Header';
-import { VStack } from '@/shared/ui/Stack';
+import { VStack } from 'src/shared/ui/deprecated/Stack';
 import { ArticleRecommendations } from '@/features/articleRecommendations';
 import { ArticleCommentList } from '@/features/ArticleCommentList';
 import { ArticleRating } from '@/features/articleRating';
-import { Card } from '@/shared/ui/Card/Card';
+import { Card } from '@/shared/ui/deprecated/Card/Card';
 import { useTranslation } from 'react-i18next';
 import { ToggleFeatures } from '@/shared/lib/features';
 

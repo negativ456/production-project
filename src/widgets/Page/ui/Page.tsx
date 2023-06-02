@@ -11,6 +11,7 @@ import { StateSchema } from '@/app/providers/StoreProvider';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect';
 import { useThrottle } from '@/shared/lib/hooks/useThrottle';
 import { TestProps } from '@/shared/types/tests';
+import { toggleFeatures } from '@/shared/lib/features/toggleFeatures';
 
 interface PageProps extends TestProps {
   className?: string;
@@ -33,6 +34,7 @@ export const Page = (props: PageProps) => {
   useInitialEffect(() => {
     wrapperRef.current.scrollTop = scrollPosition;
   });
+
   const onScroll = useThrottle<UIEvent<HTMLDivElement>>((e) => {
     console.log('scroll');
     dispatch(
@@ -47,7 +49,15 @@ export const Page = (props: PageProps) => {
       data-testid={props['data-testid'] ?? 'Page'}
       onScroll={onScroll}
       ref={wrapperRef}
-      className={classNames(cls.Page, {}, [className])}>
+      className={classNames(
+        toggleFeatures({
+          name: 'isAppRedesigned',
+          on: () => cls.Page_redesigned,
+          off: () => cls.Page,
+        }),
+        {},
+        [className]
+      )}>
       {children}
       {onScrollCallback && <div className={cls.trigger} ref={triggerRef} />}
     </section>

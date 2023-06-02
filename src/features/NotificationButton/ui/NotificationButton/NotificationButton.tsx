@@ -1,12 +1,12 @@
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './NotificationButton.module.scss';
-import { Popover } from '@/shared/ui/Popups';
-import { Button, ButtonTheme } from '@/shared/ui/Button/Button';
-import { Icon } from '@/shared/ui/Icon/Icon';
+import { Popover } from 'src/shared/ui/deprecated/Popups';
+import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button/Button';
+import { Icon } from '@/shared/ui/deprecated/Icon/Icon';
 import NotificationIcon from '@/shared/assets/icons/notifications.svg';
 import { NotificationList } from '@/entities/Notification';
 import { useState } from 'react';
-import { Drawer } from '@/shared/ui/Drawer/Drawer';
+import { Drawer } from '@/shared/ui/deprecated/Drawer/Drawer';
 import { isMobile } from '@/shared/lib/detectDevice/detectDevice';
 import { AnimationProvider } from '@/shared/lib/AnimationProvider';
 

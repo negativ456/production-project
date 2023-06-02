@@ -14,9 +14,9 @@ import { getProfileForm } from '../../model/selectors/getProfileForm/getProfileF
 import { Currency } from '@/entities/Currency';
 import { Country } from '@/entities/Country';
 import { getProfileValidateErrors } from '../../model/selectors/getProfileValidateErrors/getProfileValidateErrors';
-import { Text, TextTheme } from '@/shared/ui/Text/Text';
+import { Text, TextTheme } from '@/shared/ui/deprecated/Text/Text';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect';
-import { VStack } from '@/shared/ui/Stack/VStack/VStack';
+import { VStack } from '@/shared/ui/deprecated/Stack/VStack/VStack';
 import { ValidateProfileError } from '../../model/const/const';
 
 const reducers: ReducersList = {

@@ -14,6 +14,13 @@ body {
   transition: background 0.5s, color 0.5s;
 }
 
+.app_redesigned {
+  background: var(--bg-redesigned);
+  min-height: 100vh;
+  font: var(--font-m-redesigned);
+  color: var(--text-redesigned);
+}
+
 .app_drawer {
   height: 100vh;
 }

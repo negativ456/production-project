@@ -1,12 +1,12 @@
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './Header.module.scss';
 import { useTranslation } from 'react-i18next';
-import { Button, ButtonTheme } from '@/shared/ui/Button/Button';
+import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button/Button';
 import { useSelector } from 'react-redux';
 import { getArticleDetailsData, getCanEditArticle } from '@/entities/Article';
 import { useNavigate } from 'react-router-dom';
 
-import { HStack } from '@/shared/ui/Stack';
+import { HStack } from 'src/shared/ui/deprecated/Stack';
 import { AppRoutes, routes } from '@/shared/const/router';
 
 interface HeaderProps {

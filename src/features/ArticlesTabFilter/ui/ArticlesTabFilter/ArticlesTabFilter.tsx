@@ -2,7 +2,7 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './ArticlesTabFilter.module.scss';
 import { useTranslation } from 'react-i18next';
 import { useMemo } from 'react';
-import { TabItem, Tabs } from '@/shared/ui/Tabs/Tabs';
+import { TabItem, Tabs } from '@/shared/ui/deprecated/Tabs/Tabs';
 import { ArticleType } from '../../../../entities/Article/model/consts/articleConsts';
 
 interface ArticlesTabFilterProps {
