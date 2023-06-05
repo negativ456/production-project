@@ -1,0 +1,21 @@
+.Input {
+  display: flex;
+
+  input {
+    border: 0;
+    outline: none;
+    background: transparent;
+    margin-left: 10px;
+    color: var(--primary-color);
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      appearance: none;
+      margin: 0;
+    }
+  }
+}
+
+.readonly {
+  opacity: 0.7;
+}

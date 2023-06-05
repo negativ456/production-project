@@ -10,7 +10,7 @@ import { fetchCommentsByID } from '../../model/services/fetchCommentsByID/fetchC
 import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle';
 // eslint-disable-next-line fsd-architecture-plugin/layer-imports
 import { AddNewComment } from '@/features/addNewComment';
-import { VStack } from 'src/shared/ui/deprecated/Stack';
+import { VStack } from '@/shared/ui/redesigned/Stack';
 import { Text } from '@/shared/ui/deprecated/Text/Text';
 import { useTranslation } from 'react-i18next';
 

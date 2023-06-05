@@ -2,25 +2,25 @@ import { Fragment, ReactNode } from 'react';
 import { Listbox as HListBox } from '@headlessui/react';
 import cls from './ListBox.module.scss';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Button } from '../../../Button/Button';
-import { HStack } from '../../../Stack/HStack/HStack';
+import { Button } from '../../../../deprecated/Button/Button';
+import { HStack } from '../../../../redesigned/Stack/HStack/HStack';
 import { DropdownDirection } from '@/shared/types/ui';
 import { mapDirectionClass } from '../../styles/consts';
 import popUpCls from '../../styles/popup.module.scss';
 
-export interface ListBoxItem {
-  value: string;
+export interface ListBoxItem<T> {
+  value: T;
   content: ReactNode;
   disabled?: boolean;
 }
 
-interface ListBoxProps {
+interface ListBoxProps<T extends string> {
   className?: string;
-  items?: ListBoxItem[];
-  value?: string;
+  items?: Array<ListBoxItem<T>>;
+  value?: T;
   readonly?: boolean;
   defaultValue?: string;
-  onChange: (value: string) => void;
+  onChange: (value: T) => void;
   direction?: DropdownDirection;
   label?: string;
 }
@@ -28,7 +28,7 @@ interface ListBoxProps {
  * Deprecated, you should use new components from redesigned folder
  * @deprecated
  */
-export function ListBox(props: ListBoxProps) {
+export function ListBox<T extends string>(props: ListBoxProps<T>) {
   const { items = [], className, label, direction = 'bottom left', value, readonly, defaultValue, onChange } = props;
 
   return (

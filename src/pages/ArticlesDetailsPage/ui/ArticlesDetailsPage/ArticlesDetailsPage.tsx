@@ -5,7 +5,7 @@ import { ArticleDetails } from '@/entities/Article';
 import { useParams } from 'react-router-dom';
 import { Page } from '@/widgets/Page';
 import { Header } from '../Header/Header';
-import { VStack } from 'src/shared/ui/deprecated/Stack';
+import { VStack } from '@/shared/ui/redesigned/Stack';
 import { ArticleRecommendations } from '@/features/articleRecommendations';
 import { ArticleCommentList } from '@/features/ArticleCommentList';
 import { ArticleRating } from '@/features/articleRating';

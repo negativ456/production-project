@@ -1,3 +1,13 @@
-.not_selected {
-  fill-opacity: 0.3;
+.ArticleViewSelector {
+  .not_selected {
+    fill-opacity: 0.3;
+  }
+
+}
+
+
+.ArticleViewSelectorRedesigned {
+  .not_selected {
+    color: var(--light-bg-redesigned);
+  }
 }

@@ -1,0 +1,12 @@
+.option {
+  position: absolute;
+  z-index: 1000;
+  background: var(--dark-bg-redesigned);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.item {
+  padding: 10px 20px;
+  cursor: pointer;
+}

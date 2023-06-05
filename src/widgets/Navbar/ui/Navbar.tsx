@@ -8,7 +8,7 @@ import { useSelector } from 'react-redux';
 import { getUserAuthData } from '@/entities/User';
 import { Text, TextTheme } from '@/shared/ui/deprecated/Text/Text';
 import { AppLink } from '@/shared/ui/deprecated/AppLink/AppLink';
-import { HStack } from 'src/shared/ui/deprecated/Stack';
+import { HStack } from '@/shared/ui/redesigned/Stack';
 import { NotificationButton } from '@/features/NotificationButton';
 import { AvatarDropdown } from '@/features/AvatarDropdown';
 import { AppRoutes, routes } from '@/shared/const/router';

@@ -16,7 +16,7 @@ import { Country } from '@/entities/Country';
 import { getProfileValidateErrors } from '../../model/selectors/getProfileValidateErrors/getProfileValidateErrors';
 import { Text, TextTheme } from '@/shared/ui/deprecated/Text/Text';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect';
-import { VStack } from '@/shared/ui/deprecated/Stack/VStack/VStack';
+import { VStack } from '@/shared/ui/redesigned/Stack/VStack/VStack';
 import { ValidateProfileError } from '../../model/const/const';
 
 const reducers: ReducersList = {

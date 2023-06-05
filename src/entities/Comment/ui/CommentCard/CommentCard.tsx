@@ -5,7 +5,7 @@ import { Avatar } from '@/shared/ui/deprecated/Avatar/Avatar';
 import { Text } from '@/shared/ui/deprecated/Text/Text';
 import { Skeleton } from '@/shared/ui/deprecated/Skeleton/Skeleton';
 import { AppLink } from '@/shared/ui/deprecated/AppLink/AppLink';
-import { VStack } from 'src/shared/ui/deprecated/Stack';
+import { VStack } from '@/shared/ui/redesigned/Stack';
 import { AppRoutes, routes } from '@/shared/const/router';
 
 interface CommentCardProps {

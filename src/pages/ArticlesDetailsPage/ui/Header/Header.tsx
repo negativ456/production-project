@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux';
 import { getArticleDetailsData, getCanEditArticle } from '@/entities/Article';
 import { useNavigate } from 'react-router-dom';
 
-import { HStack } from 'src/shared/ui/deprecated/Stack';
+import { HStack } from '@/shared/ui/redesigned/Stack';
 import { AppRoutes, routes } from '@/shared/const/router';
 
 interface HeaderProps {

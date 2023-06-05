@@ -4,7 +4,7 @@ import React, { CSSProperties, useMemo } from 'react';
 import { Skeleton } from '../Skeleton/Skeleton';
 import { Icon } from '../Icon/Icon';
 import UserIcon from '@/shared/assets/icons/user.svg';
-import { AppImage } from '../AppImage/AppImage';
+import { AppImage } from '../../redesigned/AppImage/AppImage';
 interface AvatarProps {
   className?: string;
   src?: string;

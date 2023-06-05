@@ -1,22 +1,27 @@
 import { MutableRefObject, useRef } from 'react';
 import { useInitialEffect } from './useInitialEffect';
+import { toggleFeatures } from '../features/toggleFeatures';
 
 export interface UseInfiniteScrollOptions {
   callback?: () => void;
   triggerRef: MutableRefObject<HTMLElement>;
-  wrapperRef: MutableRefObject<HTMLElement>;
+  wrapperRef?: MutableRefObject<HTMLElement>;
 }
 
 export function useInfiniteScroll({ callback, wrapperRef, triggerRef }: UseInfiniteScrollOptions) {
   const observer = useRef<IntersectionObserver | null>(null);
 
   useInitialEffect(() => {
-    const wrapperElement = wrapperRef.current;
+    const wrapperElement = wrapperRef?.current;
     const triggerElement = triggerRef.current;
 
     if (callback) {
       const options = {
-        root: wrapperElement,
+        root: toggleFeatures({
+          name: 'isAppRedesigned',
+          on: () => null,
+          off: () => wrapperElement,
+        }),
         rootMargin: '0px',
         threshold: 1.0,
       };

@@ -2,14 +2,14 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './AddNewComment.module.scss';
 import { useTranslation } from 'react-i18next';
 import { Input } from '@/shared/ui/deprecated/Input/Input';
-import { Button } from '@/shared/ui/deprecated/Button/Button';
+import { Button } from '@/shared/ui/redesigned/Button/Button';
 import { useSelector } from 'react-redux';
 import { getAddNewCommentText } from '../../model/selectors/addNewCommentSelectors';
 import { useCallback } from 'react';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
 import { addNewCommentActions, addNewCommentReducer } from '../../model/slice/addNewCommentSlice';
 import { DynamicModuleLoader, ReducersList } from '@/shared/lib/DynamicModuleLoader/DynamicModuleLoader';
-import { HStack } from 'src/shared/ui/deprecated/Stack';
+import { HStack } from '@/shared/ui/redesigned/Stack';
 
 interface AddNewCommentProps {
   className?: string;

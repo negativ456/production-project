@@ -7,9 +7,12 @@ import { Button, ButtonSize, ButtonTheme } from '@/shared/ui/deprecated/Button/B
 import { SidebarItem } from '../SidebarItem/SidebarItem';
 import { useSelector } from 'react-redux';
 import { getSidebarItems } from '../../model/selectors/getSidebarItems';
-import { VStack } from '@/shared/ui/deprecated/Stack/VStack/VStack';
+import { VStack } from '@/shared/ui/redesigned/Stack/VStack/VStack';
 import { ToggleFeatures } from '@/shared/lib/features';
-import { AppLogo } from '@/shared/ui/deprecated/AppLogo/AppLogo';
+import { AppLogo } from '@/shared/ui/redesigned/AppLogo/AppLogo';
+import { Icon } from '@/shared/ui/redesigned/Icon/Icon';
+import ArrowIcon from '@/shared/assets/icons/arrow-down.svg';
+import { HStack } from '@/shared/ui/redesigned/Stack';
 
 interface SidebarProps {
   className?: string;
@@ -27,8 +30,18 @@ export const Sidebar = ({ className }: SidebarProps) => {
       on={
         <aside
           data-testid="sidebar"
-          className={classNames(cls.SidebarRedesigned, { [cls.collapsed]: collapsed }, [className])}>
-          <AppLogo className={cls.appLogo} />
+          className={classNames(cls.SidebarRedesigned, { [cls.collapsedRedesigned]: collapsed }, [className])}>
+          <AppLogo size={collapsed ? 30 : 50} className={cls.appLogo} />
+          <VStack role={'navigation'} gap={'16'} className={cls.links}>
+            {SidebarItemsList.map((item) => (
+              <SidebarItem item={item} collapsed={collapsed} key={item.path} />
+            ))}
+          </VStack>
+          <Icon Svg={ArrowIcon} onClick={onToggle} clickable className={cls.toggle} />
+          <HStack gap={'16'} justify={'center'} className={cls.switchers}>
+            <ThemeSwitcher />
+            <LangSwitcher short={collapsed} className={cls.lang} />
+          </HStack>
         </aside>
       }
       off={

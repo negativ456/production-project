@@ -1,9 +1,14 @@
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './ArticleSortSelector.module.scss';
 import { useTranslation } from 'react-i18next';
-import { Select, SelectOption } from '@/shared/ui/deprecated/Select/Select';
 import { ArticleSortField } from '../../../../entities/Article/model/consts/articleConsts';
 import { SortOrder } from '@/shared/types/SortOrder';
+import { ToggleFeatures } from '@/shared/lib/features';
+import { ListBox } from '@/shared/ui/redesigned/Popups';
+import { ListBox as ListBoxDeprecated } from '@/shared/ui/deprecated/Popups';
+import { ListBoxItem } from '@/shared/ui/redesigned/Popups/ui/ListBox/ListBox';
+import { VStack } from '@/shared/ui/redesigned/Stack';
+import { Text } from '@/shared/ui/redesigned/Text/Text';
 
 interface ArticleSortSelectorProps {
   className?: string;
@@ -21,34 +26,51 @@ export const ArticleSortSelector = ({
   onChangeOrder,
 }: ArticleSortSelectorProps) => {
   const { t } = useTranslation();
-  const sortFieldOptions: Array<SelectOption<ArticleSortField>> = [
+  const sortFieldOptions: Array<ListBoxItem<ArticleSortField>> = [
     {
       value: ArticleSortField.VIEWS,
-      name: t('просмотрам'),
+      content: t('просмотрам'),
     },
     {
       value: ArticleSortField.CREATED,
-      name: t('дате создания'),
+      content: t('дате создания'),
     },
     {
       value: ArticleSortField.TITLE,
-      name: t('заголовку'),
+      content: t('заголовку'),
     },
   ];
-  const orderOptions: Array<SelectOption<SortOrder>> = [
+  const orderOptions: Array<ListBoxItem<SortOrder>> = [
     {
       value: 'asc',
-      name: t('возрастанию'),
+      content: t('возрастанию'),
     },
     {
       value: 'desc',
-      name: t('убыванию'),
+      content: t('убыванию'),
     },
   ];
   return (
-    <div className={classNames(cls.ArticleSortSelector, {}, [className])}>
-      <Select options={sortFieldOptions} value={sort} onChange={onChangeSort} label={t('Сортировать по')} />
-      <Select options={orderOptions} value={order} onChange={onChangeOrder} label={t('по')} />
-    </div>
+    <ToggleFeatures
+      feature={'isAppRedesigned'}
+      on={
+        <VStack gap={'8'} className={classNames(cls.ArticleSortSelectorRedesigned, {}, [className])}>
+          <Text text={t('Сортировать по')} />
+          <ListBox items={sortFieldOptions} value={sort} onChange={onChangeSort} />
+          <ListBox items={orderOptions} value={order} onChange={onChangeOrder} />
+        </VStack>
+      }
+      off={
+        <div className={classNames(cls.ArticleSortSelector, {}, [className])}>
+          <ListBoxDeprecated
+            items={sortFieldOptions}
+            value={sort}
+            onChange={onChangeSort}
+            label={t('Сортировать по')}
+          />
+          <ListBoxDeprecated items={orderOptions} value={order} onChange={onChangeOrder} label={t('по')} />
+        </div>
+      }
+    />
   );
 };

@@ -1,6 +1,7 @@
 .SidebarItem {
   display: flex;
   align-items: center;
+  gap: 15px;
 
   .icon {
     fill: var(--inverted-primary-color);
@@ -16,4 +17,29 @@
   span {
     display: none;
   }
+}
+
+.collapsedRedesigned {
+  padding: 0 8px;
+
+  .icon {
+    margin-right: 0;
+  }
+
+  span {
+    display: none;
+  }
+}
+
+.active {
+  background: linear-gradient(89.97deg, rgb(94 211 243 / 30%) 1.15%, rgb(94 211 243 / 0%) 99.97%);
+  border-left: 2px solid var(--accent-redesigned);
+}
+
+.SidebarItemRedesigned {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 0 14px;
+  gap: 15px;
 }

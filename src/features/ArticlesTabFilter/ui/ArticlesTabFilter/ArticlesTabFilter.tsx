@@ -1,9 +1,10 @@
 import { classNames } from '@/shared/lib/classNames/classNames';
-import cls from './ArticlesTabFilter.module.scss';
 import { useTranslation } from 'react-i18next';
 import { useMemo } from 'react';
-import { TabItem, Tabs } from '@/shared/ui/deprecated/Tabs/Tabs';
+import { TabItem, Tabs as TabsDeprecated } from '@/shared/ui/deprecated/Tabs/Tabs';
 import { ArticleType } from '../../../../entities/Article/model/consts/articleConsts';
+import { ToggleFeatures } from '@/shared/lib/features';
+import { Tabs } from '@/shared/ui/redesigned/Tabs/Tabs';
 
 interface ArticlesTabFilterProps {
   className?: string;
@@ -37,11 +38,25 @@ export const ArticlesTabFilter = ({ className, onChangeTab, value }: ArticlesTab
   );
 
   return (
-    <Tabs
-      value={value}
-      onTabClick={onChangeTab}
-      tabs={tabList}
-      className={classNames(cls.ArticlesTabFilter, {}, [className])}
+    <ToggleFeatures
+      feature={'isAppRedesigned'}
+      on={
+        <Tabs
+          value={value}
+          onTabClick={onChangeTab}
+          tabs={tabList}
+          direction={'column'}
+          className={classNames('', {}, [className])}
+        />
+      }
+      off={
+        <TabsDeprecated
+          value={value}
+          onTabClick={onChangeTab}
+          tabs={tabList}
+          className={classNames('', {}, [className])}
+        />
+      }
     />
   );
 };

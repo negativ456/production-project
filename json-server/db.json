@@ -711,7 +711,7 @@
         "isAppRedesigned": true
       },
       "jsonSettings": {
-        "theme": "light",
+        "theme": "dark",
         "isFirstVisit": true,
         "settingsPageHasBeenOpen": true,
         "isArticlePageWasOpened": true
