@@ -24,7 +24,7 @@ export const ArticleFilter = ({ className }: ArticleFilterProps) => {
         <ArticleViewSwitcher view={view} onViewClick={onChangeView} />
       </div>
       <Card className={cls.search}>
-        <Input onChange={onChangeSearch} placeholder={t('Поиск по статьям')} value={search} />
+        <Input onChange={onChangeSearch} placeholder={t('Поиск')} value={search} />
       </Card>
       <ArticlesTabFilter value={type} onChangeTab={onChangeType} />
     </div>

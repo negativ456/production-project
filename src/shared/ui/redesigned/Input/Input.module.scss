@@ -1,12 +1,30 @@
 .Input {
   display: flex;
+  align-items: center;
+  border-radius: 48px;
+  padding: 8px 16px;
+  border: 2px solid var(--icon-redesigned);
+  height: 38px;
+  width: 100%;
+
+  &:focus {
+    border: 2px solid var(--accent-redesigned);
+
+    .addonLeft svg, .addonRight svg {
+      color: var(--accent-redesigned);
+    }
+  }
 
   input {
-    border: 0;
+    border: none;
     outline: none;
+    width: 100%;
     background: transparent;
-    margin-left: 10px;
-    color: var(--primary-color);
+    color: var(--text-redesigned);
+
+    &::placeholder {
+      color: var(--hint-redesigned);
+    }
 
     &::-webkit-outer-spin-button,
     &::-webkit-inner-spin-button {
@@ -18,4 +36,24 @@
 
 .readonly {
   opacity: 0.7;
+}
+
+.addonLeft, .addonRight {
+  display: flex;
+}
+
+.addonLeft {
+  margin-right: 8px;
+}
+
+.addonRight {
+  margin-left: 8px;
+}
+
+.withAddonLeft {
+  padding-left: 8px;
+}
+
+.withAddonRight {
+  padding-right: 8px;
 }
