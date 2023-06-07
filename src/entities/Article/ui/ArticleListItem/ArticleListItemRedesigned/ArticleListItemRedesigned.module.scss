@@ -71,12 +71,9 @@
   }
 
   .text_block {
-    height: 170px;
+    height: 66px;
     width: 100%;
     overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    margin: 10px 0;
   }
 
   .title {
@@ -88,9 +85,8 @@
 
   .image {
     width: 100%;
-    max-height: 200px;
+    height: 420px;
     object-fit: cover;
-    margin-top: 15px;
   }
 
   .bottom {

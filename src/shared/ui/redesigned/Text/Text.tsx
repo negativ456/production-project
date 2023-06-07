@@ -26,6 +26,7 @@ interface TextProps {
   size?: TextSize;
   variant?: TextVariant;
   align?: TextAlign;
+  bold?: boolean;
   'data-testid'?: string;
 }
 
@@ -36,6 +37,7 @@ export const Text: React.FC<TextProps> = (props) => {
     title,
     size = 'm',
     variant = 'primary',
+    bold,
     align = 'left',
     'data-testid': dataTestId = 'Text',
   } = props;
@@ -43,7 +45,7 @@ export const Text: React.FC<TextProps> = (props) => {
   const HeaderTag = mapSizeToHeaderTag[size];
   const sizeClass = mapSizeToClass[size];
   return (
-    <div className={classNames(cls.Text, {}, [className, cls[variant], cls[align], cls[sizeClass]])}>
+    <div className={classNames(cls.Text, { [cls.bold]: bold }, [className, cls[variant], cls[align], cls[sizeClass]])}>
       {title && (
         <HeaderTag data-testid={`${dataTestId}.Header`} className={cls.title}>
           {title}
