@@ -7,7 +7,7 @@ import Tile from '@/shared/assets/icons/article-tile.svg';
 import { Button as ButtonDeprecated, ButtonTheme } from '@/shared/ui/deprecated/Button/Button';
 import { Icon as IconDeprecated } from '@/shared/ui/deprecated/Icon/Icon';
 import { ArticleView } from '@/entities/Article';
-import { toggleFeatures } from '@/shared/lib/features/toggleFeatures';
+import { toggleFeatures } from '@/shared/lib/features/lib/toggleFeatures';
 import { ToggleFeatures } from '@/shared/lib/features';
 import { Icon } from '@/shared/ui/redesigned/Icon/Icon';
 import { Card } from '@/shared/ui/redesigned/Card/Card';

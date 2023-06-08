@@ -99,3 +99,14 @@
     justify-content: space-between;
   }
 }
+
+.ArticleListRedesigned {
+  width: 246px;
+  height: 350px;
+  overflow: hidden;
+
+  .article_bottom {
+    padding: 8px;
+    margin-bottom: 5px;
+  }
+}

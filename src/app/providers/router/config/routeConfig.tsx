@@ -10,6 +10,7 @@ import { ForbiddenPage } from '@/pages/ForbiddenPage';
 import { NotFoundPage } from '@/pages/NotFoundPage';
 import { AppRoutesProps } from '@/shared/types/router';
 import { AppRoutes, routes } from '@/shared/const/router';
+import { SettingsPage } from '@/pages/SettingsPage';
 
 export const routeConfig: AppRoutesProps[] = [
   {
@@ -19,6 +20,10 @@ export const routeConfig: AppRoutesProps[] = [
   {
     path: routes[AppRoutes.ABOUT](),
     element: <AboutPage />,
+  },
+  {
+    path: routes[AppRoutes.SETTINGS](),
+    element: <SettingsPage />,
   },
   {
     path: routes[AppRoutes.PROFILE](':id'),

@@ -3,6 +3,7 @@ export enum AppRoutes {
   ABOUT = 'about',
   PROFILE = 'profile',
   ARTICLES = 'articles',
+  SETTINGS = 'settings',
   ARTICLES_DETAILS = 'articles_details',
   ARTICLE_CREATE = 'article_create',
   ARTICLE_EDIT = 'article_edit',
@@ -20,6 +21,7 @@ export const routes = {
   [AppRoutes.ARTICLE_CREATE]: () => '/articles/new',
   [AppRoutes.ARTICLE_EDIT]: (id: string) => `/articles/${id}/edit`,
   [AppRoutes.ADMIN_PANEL]: () => '/admin-panel',
+  [AppRoutes.SETTINGS]: () => '/settings',
   [AppRoutes.FORBIDDEN]: () => '/forbidden',
   [AppRoutes.NOT_FOUND]: () => '*',
 };

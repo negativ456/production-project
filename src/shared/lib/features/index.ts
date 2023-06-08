@@ -1,2 +1,3 @@
-export { setFeatureFlags, getFeatureFlags } from './setGetFeatures';
-export { ToggleFeatures } from './ToggleFeatures/ToggleFeatures';
+export { setFeatureFlags, getFeatureFlags } from './lib/setGetFeatures';
+export { ToggleFeatures } from '@/shared/lib/features/components/ToggleFeatures/ToggleFeatures';
+export { useUpdateFeatureFlags } from './api/featureFlagsApi';

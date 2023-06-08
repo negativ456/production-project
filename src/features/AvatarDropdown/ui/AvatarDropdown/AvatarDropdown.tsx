@@ -33,6 +33,7 @@ export const AvatarDropdown = ({ className }: AvatarDropdownProps) => {
   const items = [
     ...(isAdminAvailable ? [{ content: t('Админка'), href: routes[AppRoutes.ADMIN_PANEL]() }] : []),
     { content: t('Профиль'), href: routes[AppRoutes.PROFILE](userData.id) },
+    { content: t('Настройки'), href: routes[AppRoutes.SETTINGS]() },
     { content: t('Выйти'), onClick: onLogout },
   ];
   return (

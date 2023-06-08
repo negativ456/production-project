@@ -1,6 +1,6 @@
 import { MutableRefObject, useRef } from 'react';
 import { useInitialEffect } from './useInitialEffect';
-import { toggleFeatures } from '../features/toggleFeatures';
+import { toggleFeatures } from '../features/lib/toggleFeatures';
 
 export interface UseInfiniteScrollOptions {
   callback?: () => void;

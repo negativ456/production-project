@@ -5,13 +5,20 @@ import { Card as CardRedesigned } from '@/shared/ui/redesigned/Card/Card';
 import { Skeleton as SkeletonDeprecated } from '@/shared/ui/deprecated/Skeleton/Skeleton';
 import { Skeleton as SkeletonRedesigned } from '@/shared/ui/redesigned/Skeleton/Skeleton';
 import { ArticleView } from '../../model/consts/articleConsts';
-import { toggleFeatures } from '@/shared/lib/features/toggleFeatures';
+import { toggleFeatures } from '@/shared/lib/features/lib/toggleFeatures';
+import { HStack, VStack } from '@/shared/ui/redesigned/Stack';
 
 interface ArticleListItemSkeletonProps {
   className?: string;
   view: ArticleView;
 }
 export const ArticleListItemSkeleton = ({ className, view }: ArticleListItemSkeletonProps) => {
+  const mainClass = toggleFeatures({
+    name: 'isAppRedesigned',
+    on: () => cls.ArticleListRedesigned,
+    off: () => cls.ArticleListItem,
+  });
+
   const Skeleton = toggleFeatures({
     name: 'isAppRedesigned',
     on: () => SkeletonRedesigned,
@@ -48,16 +55,19 @@ export const ArticleListItemSkeleton = ({ className, view }: ArticleListItemSkel
     );
   }
   return (
-    <Card className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}>
-      <div className={cls.article_top}>
-        <Skeleton width={'100%'} height={170} />
-      </div>
-      <div className={cls.article_bottom}>
-        <div className={cls.info}>
-          <Skeleton width={75} height={15} />
-        </div>
-        <Skeleton width={150} height={15} />
-      </div>
+    <Card padding={'0'} borderRadius={'40'} className={classNames(mainClass, {}, [className, cls[view]])}>
+      <Skeleton width={'100%'} height={140} />
+      <VStack gap={'8'} className={cls.article_bottom}>
+        <Skeleton width={'100%'} height={130} />
+        <HStack max justify={'between'}>
+          <Skeleton width={85} height={20} />
+          <Skeleton width={85} height={20} />
+        </HStack>
+        <HStack gap={'8'}>
+          <Skeleton border={'50%'} width={32} height={32} />
+          <Skeleton width={85} height={20} />
+        </HStack>
+      </VStack>
     </Card>
   );
 };

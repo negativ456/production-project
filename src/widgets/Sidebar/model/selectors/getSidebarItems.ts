@@ -1,7 +1,6 @@
 import { createSelector } from '@reduxjs/toolkit';
 import { getUserAuthData } from '@/entities/User';
 import MainIconDeprecated from '@/shared/assets/icons/main.svg';
-import AboutIconDeprecated from '@/shared/assets/icons/about.svg';
 import ProfileIconDeprecated from '@/shared/assets/icons/profile.svg';
 import ArticlesIconDeprecated from '@/shared/assets/icons/articles.svg';
 
@@ -12,7 +11,7 @@ import ArticlesIcon from '@/shared/assets/icons/articles-new.svg';
 
 import { SidebarItemType } from '../types/sidebarTypes';
 import { AppRoutes, routes } from '@/shared/const/router';
-import { toggleFeatures } from '@/shared/lib/features/toggleFeatures';
+import { toggleFeatures } from '@/shared/lib/features/lib/toggleFeatures';
 
 export const getSidebarItems = createSelector(getUserAuthData, (userData) => {
   const sidebarItemsList: SidebarItemType[] = [
