@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { Modal } from '@/shared/ui/deprecated/Modal/Modal';
+import { Modal } from '@/shared/ui/redesigned/Modal/Modal';
 import { useEffect, useState } from 'react';
 import { Text } from '@/shared/ui/deprecated/Text/Text';
 import { saveJsonSettings, useJsonSettings } from '@/entities/User';

@@ -24,7 +24,7 @@ export const CommentList = ({ className, comments, isLoading = true }: CommentLi
     );
   }
   return (
-    <VStack gap={'16'} max className={classNames(cls.CommentList, {}, [className])}>
+    <VStack gap={'16'} max className={classNames('', {}, [className])}>
       {comments?.length ? (
         comments.map((comment) => (
           <CommentCard isLoading={isLoading} className={cls.comment} key={comment.id} comment={comment} />

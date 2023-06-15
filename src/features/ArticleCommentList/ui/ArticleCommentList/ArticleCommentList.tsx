@@ -11,8 +11,10 @@ import { addCommentForArticle } from '../../model/services/addCommentForArticle/
 // eslint-disable-next-line fsd-architecture-plugin/layer-imports
 import { AddNewComment } from '@/features/addNewComment';
 import { VStack } from '@/shared/ui/redesigned/Stack';
-import { Text } from '@/shared/ui/deprecated/Text/Text';
+import { Text as TextDeprecated } from '@/shared/ui/deprecated/Text/Text';
+import { Text } from '@/shared/ui/redesigned/Text/Text';
 import { useTranslation } from 'react-i18next';
+import { ToggleFeatures } from '@/shared/lib/features';
 
 interface ArticleCommentListProps {
   className?: string;
@@ -37,7 +39,12 @@ export const ArticleCommentList = ({ articleID }: ArticleCommentListProps) => {
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
       <VStack data-testid={'AddCommentForm'} max gap={'16'}>
-        <Text title={t('Комментарии')} />
+        <ToggleFeatures
+          feature={'isAppRedesigned'}
+          on={<Text title={t('Комментарии')} />}
+          off={<TextDeprecated title={t('Комментарии')} />}
+        />
+
         <AddNewComment onSendComment={onSendComment} />
         <CommentList isLoading={isLoading} comments={comments} />
       </VStack>

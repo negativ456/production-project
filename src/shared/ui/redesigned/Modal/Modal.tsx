@@ -1,8 +1,8 @@
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './Modal.module.scss';
 import React, { ReactNode, useCallback, useEffect } from 'react';
-import { Portal } from '../../redesigned/Portal/Portal';
-import { Overlay } from '../../redesigned/Overlay/Overlay';
+import { Portal } from '../Portal/Portal';
+import { Overlay } from '../Overlay/Overlay';
 interface ModalProps {
   className?: string;
   children?: ReactNode;
@@ -12,10 +12,7 @@ interface ModalProps {
 interface KeyboardEvent {
   key: string;
 }
-/**
- * Deprecated, you should use new components from redesigned folder
- * @deprecated
- */
+
 export const Modal: React.FC<ModalProps> = ({ className, onClose, children, open }) => {
   const onKeyDown = useCallback(
     (event: KeyboardEvent) => {

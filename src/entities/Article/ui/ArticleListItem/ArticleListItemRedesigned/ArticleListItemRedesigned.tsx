@@ -25,6 +25,7 @@ export const ArticleListItemRedesigned = (props: ArticleListItemProps) => {
       <Text text={String(article.views)} />
     </HStack>
   );
+  console.log(article);
   const textBlock = article.blocks.find((block) => block.type === ArticleBlockType.TEXT) as ArticleTextBlock;
   if (view === ArticleView.LIST) {
     return (
