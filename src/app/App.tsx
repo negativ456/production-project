@@ -11,18 +11,32 @@ import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
 import { PageLoader } from '@/widgets/PageLoader';
 import { ToggleFeatures } from '@/shared/lib/features';
 import { MainLayout } from '@/shared/ui/layouts/MainLayout';
+import { AppLoaderLayout } from '@/shared/ui/layouts/AppLoaderLayout/AppLoaderLayout';
+import { useAppToolbar } from './lib/useAppToolbar';
+import { WithTheme } from './providers/ThemeProvider/ui/withTheme';
 
 const App = () => {
   const dispatch = useAppDispatch();
   const mounted = useSelector(getUserMounted);
   const { theme } = useTheme();
+  const toolbar = useAppToolbar();
   useEffect(() => {
     dispatch(initAuthData());
     document.body.className = theme as string;
   }, [dispatch, theme]);
 
   if (!mounted) {
-    return <PageLoader />;
+    return (
+      <ToggleFeatures
+        feature={'isAppRedesigned'}
+        on={
+          <div className={classNames('app_redesigned', {}, [])}>
+            <AppLoaderLayout />
+          </div>
+        }
+        off={<PageLoader />}
+      />
+    );
   }
 
   return (
@@ -42,7 +56,7 @@ const App = () => {
       on={
         <div className={classNames('app_redesigned', {}, [])}>
           <Suspense fallback="">
-            <MainLayout header={<Navbar />} sidebar={<Sidebar />} content={<AppRouter />} />
+            <MainLayout header={<Navbar />} sidebar={<Sidebar />} content={<AppRouter />} toolbar={toolbar} />
           </Suspense>
         </div>
       }
@@ -50,4 +64,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default WithTheme(App);
