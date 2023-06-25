@@ -14,10 +14,12 @@ import { getProfileForm } from '../../model/selectors/getProfileForm/getProfileF
 import { Currency } from '@/entities/Currency';
 import { Country } from '@/entities/Country';
 import { getProfileValidateErrors } from '../../model/selectors/getProfileValidateErrors/getProfileValidateErrors';
-import { Text, TextTheme } from '@/shared/ui/deprecated/Text/Text';
+import { Text as TextDeprecated, TextTheme } from '@/shared/ui/deprecated/Text/Text';
+import { Text } from '@/shared/ui/redesigned/Text/Text';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect';
 import { VStack } from '@/shared/ui/redesigned/Stack/VStack/VStack';
 import { ValidateProfileError } from '../../model/const/const';
+import { ToggleFeatures } from '@/shared/lib/features';
 
 const reducers: ReducersList = {
   profile: profileReducer,
@@ -110,11 +112,19 @@ export const EditableProfileCard: React.FC<EditableProfileCardProps> = ({ classN
         <EditHeader />
         {validateErrors?.length &&
           validateErrors.map((err) => (
-            <Text
-              data-testid={'EditableProfileCard.Error'}
+            <ToggleFeatures
               key={err}
-              theme={TextTheme.ERROR}
-              text={validateErrorTranslates[err]}
+              feature={'isAppRedesigned'}
+              on={
+                <Text data-testid={'EditableProfileCard.Error'} variant={'error'} text={validateErrorTranslates[err]} />
+              }
+              off={
+                <TextDeprecated
+                  data-testid={'EditableProfileCard.Error'}
+                  theme={TextTheme.ERROR}
+                  text={validateErrorTranslates[err]}
+                />
+              }
             />
           ))}
         <ProfileCard

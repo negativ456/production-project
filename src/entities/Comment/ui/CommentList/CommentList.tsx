@@ -3,8 +3,10 @@ import cls from './CommentList.module.scss';
 import { useTranslation } from 'react-i18next';
 import { CommentTypes } from '../../model/types/comment';
 import { CommentCard } from '../CommentCard/CommentCard';
-import { Text } from '@/shared/ui/deprecated/Text/Text';
+import { Text as TextDeprecated } from '@/shared/ui/deprecated/Text/Text';
+import { Text } from '@/shared/ui/redesigned/Text/Text';
 import { VStack } from '@/shared/ui/redesigned/Stack';
+import { ToggleFeatures } from '@/shared/lib/features';
 
 interface CommentListProps {
   className?: string;
@@ -30,7 +32,11 @@ export const CommentList = ({ className, comments, isLoading = true }: CommentLi
           <CommentCard isLoading={isLoading} className={cls.comment} key={comment.id} comment={comment} />
         ))
       ) : (
-        <Text text={t('Комментарии отсутствуют')} />
+        <ToggleFeatures
+          feature={'isAppRedesigned'}
+          on={<Text text={t('Комментарии отсутствуют')} />}
+          off={<TextDeprecated text={t('Комментарии отсутствуют')} />}
+        />
       )}
     </VStack>
   );
