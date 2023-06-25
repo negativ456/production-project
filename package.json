@@ -7,7 +7,7 @@
     "start": "npx webpack serve",
     "start:dev": "concurrently \"npm start\" \"npm run start:dev:server\"",
     "start:dev:server": "node ./json-server/index.js",
-    "build:prod": "npx webpack --env mode=production",
+    "build:prod": "npx webpack --env mode=production apiUrl=https://production-project-backend.vercel.app/",
     "build:dev": "npx webpack --env mode=development",
     "lint:ts": "npx eslint \"**/*.{ts,tsx}\"",
     "lint:ts:fix": "npx eslint \"**/*.{ts,tsx}\" --fix",
