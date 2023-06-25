@@ -8,7 +8,7 @@
 ## Deploy
 
 Деплой проекта осуществляется с помощью сервиса Netlify - 
-[https://glowing-beijinho-2ad375.netlify.app/](https://glowing-beijinho-2ad375.netlify.app/)
+[https://course-app.ru/](https://course-app.ru/)
 
 Для входа можно использовать следующие данные:
 
