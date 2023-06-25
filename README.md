@@ -5,7 +5,32 @@
     npm run start:dev - запуск сервера + frontend проекта
 ```
 
+## Deploy
+
+Деплой проекта осуществляется с помощью сервиса Netlify - 
+[https://glowing-beijinho-2ad375.netlify.app/](https://glowing-beijinho-2ad375.netlify.app/)
+
+Для входа можно использовать следующие данные:
+
+Admin
+```tsx
+username: 'admin'
+password: '123'
+```
+
+User
+```tsx
+username: 'admin'
+password: '123'
+```
+
+
+## Backend
+
+В качестве бекэнда используется [JsonServer](https://github.com/typicode/json-server) 
+
 ---
+
 ## Скрипты
 
 - `npm run start` - Запуск frontend проекта на webpack dev server
